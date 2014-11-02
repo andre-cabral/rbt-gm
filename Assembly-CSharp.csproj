@@ -46,8 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\Buttons.cs" />
+     <Compile Include="Assets\Scripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\ChangeClass.cs" />
      <Compile Include="Assets\Scripts\DefaultMovement.cs" />
      <Compile Include="Assets\Scripts\Hash.cs" />

@@ -3,8 +3,9 @@ using System.Collections;
 
 public class CameraMovement : MonoBehaviour {
 	public GameObject characterClassesContainer;
-	public float height;
-	public float distance;
+	public float height = 15.5f;
+	public float distance = 13f;
+	public float smoothVelocity = 7f;
 
 	private ArrayList classesObjects;
 
@@ -17,7 +18,8 @@ public class CameraMovement : MonoBehaviour {
 		foreach(GameObject classObject in classesObjects){
 			if(classObject.activeSelf){
 				//transform.LookAt(classObject.transform.position);
-				transform.position = new Vector3(classObject.transform.position.x, height, classObject.transform.position.z-distance);
+				Vector3 targetPosition = new Vector3(classObject.transform.position.x, height, classObject.transform.position.z-distance);
+				transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * smoothVelocity);
 			}
 		}
 	}
