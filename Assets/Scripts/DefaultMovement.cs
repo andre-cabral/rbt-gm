@@ -2,33 +2,30 @@
 using System.Collections;
 
 public class DefaultMovement : MonoBehaviour {
-
-	private GameObject characterContainer;
 	public float movementSpeed;
 	public float turnSpeed = 20f;
-
-	void Awake(){
-		characterContainer = GameObject.FindGameObjectWithTag(Tags.characterContainer);
-	}
 
 	void FixedUpdate(){
 		Walking();
 		RotateToMouse();
+
+		if(Input.GetKey("e")){
+			rigidbody.AddForce(0f,150f,0f);
+		}
+
 	}
 
 	void Walking(){
 		float horizontal = Input.GetAxis(Buttons.horizontal);
 		float vertical = Input.GetAxis(Buttons.vertical);
 		
-		if(horizontal != 0 || vertical != 0){
-			float x = horizontal * movementSpeed;
-			float y = 0f;
-			float z = vertical * movementSpeed;
-			
-			Vector3 targetTranslation = new Vector3( x ,y, z);
-			
-			characterContainer.transform.Translate(targetTranslation);
-		}
+		float x = horizontal * movementSpeed;
+		float y = 0f;
+		float z = vertical * movementSpeed;
+		
+		Vector3 targetTranslation = new Vector3( x ,y, z);
+		
+		transform.Translate(targetTranslation, Space.World);
 	}
 
 	void RotateToMouse(){
@@ -46,6 +43,9 @@ public class DefaultMovement : MonoBehaviour {
 			Quaternion rotationToLookAt = Quaternion.LookRotation(rayFromTheCamera.GetPoint(distanceRayCameraToPlane) - transform.position);
 			
 			transform.rotation = Quaternion.Slerp(transform.rotation, rotationToLookAt, turnSpeed * Time.deltaTime);
+
+			//transform.localPosition = new Vector3(0f,transform.localPosition.y,0f);
 		}
 	}
+
 }

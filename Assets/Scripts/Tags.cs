@@ -4,5 +4,5 @@ using System.Collections;
 public class Tags : MonoBehaviour {
 
 	public const string characterClass = "CharacterClass";
-	public const string characterContainer = "CharacterContainer";
+	public const string characterClassesContainer = "CharacterClassesContainer";
 }

@@ -47,4 +47,8 @@ public class ChangeClass : MonoBehaviour {
 		changingClass = false;
 	}
 
+	public ArrayList GetClassesObjects(){
+		return classesObjects;
+	}
+
 }
