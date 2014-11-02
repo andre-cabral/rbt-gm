@@ -1,0 +1,51 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class DefaultMovement : MonoBehaviour {
+
+	private GameObject characterContainer;
+	public float movementSpeed;
+	public float turnSpeed = 20f;
+
+	void Awake(){
+		characterContainer = GameObject.FindGameObjectWithTag(Tags.characterContainer);
+	}
+
+	void FixedUpdate(){
+		Walking();
+		RotateToMouse();
+	}
+
+	void Walking(){
+		float horizontal = Input.GetAxis(Buttons.horizontal);
+		float vertical = Input.GetAxis(Buttons.vertical);
+		
+		if(horizontal != 0 || vertical != 0){
+			float x = horizontal * movementSpeed;
+			float y = 0f;
+			float z = vertical * movementSpeed;
+			
+			Vector3 targetTranslation = new Vector3( x ,y, z);
+			
+			characterContainer.transform.Translate(targetTranslation);
+		}
+	}
+
+	void RotateToMouse(){
+		//plane that intersect with the raycast from the camera to find the point which the player should look at
+		Plane intersectPlane = new Plane(Vector3.up, transform.position);
+		
+		//ray that comes from the camera
+		Ray rayFromTheCamera = Camera.main.ScreenPointToRay(Input.mousePosition);
+		
+		float distanceRayCameraToPlane;
+		
+		//this if changes the distanceRayCameraToPlane to the correct value. 
+		//the out keyword makes a parameter that is not returned to be changed
+		if(intersectPlane.Raycast(rayFromTheCamera, out distanceRayCameraToPlane)){
+			Quaternion rotationToLookAt = Quaternion.LookRotation(rayFromTheCamera.GetPoint(distanceRayCameraToPlane) - transform.position);
+			
+			transform.rotation = Quaternion.Slerp(transform.rotation, rotationToLookAt, turnSpeed * Time.deltaTime);
+		}
+	}
+}
