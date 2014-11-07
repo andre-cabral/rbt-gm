@@ -46,12 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Buttons.cs" />
-     <Compile Include="Assets\Scripts\CameraMovement.cs" />
-     <Compile Include="Assets\Scripts\ChangeClass.cs" />
-     <Compile Include="Assets\Scripts\DefaultMovement.cs" />
-     <Compile Include="Assets\Scripts\Hash.cs" />
-     <Compile Include="Assets\Scripts\Tags.cs" />
+     <Compile Include="Assets\Scripts\Character\CameraMovement.cs" />
+     <Compile Include="Assets\Scripts\Character\ChangeClass.cs" />
+     <Compile Include="Assets\Scripts\Character\DefaultMovement.cs" />
+     <Compile Include="Assets\Scripts\NamesPatterns\Buttons.cs" />
+     <Compile Include="Assets\Scripts\NamesPatterns\Hash.cs" />
+     <Compile Include="Assets\Scripts\NamesPatterns\Tags.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
