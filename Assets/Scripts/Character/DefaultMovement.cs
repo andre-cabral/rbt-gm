@@ -8,7 +8,7 @@ public class DefaultMovement : MonoBehaviour {
 	void FixedUpdate(){
 		Walking();
 		RotateToMouse();
-		//okay!!!
+
 		if(Input.GetKey("e")){
 			rigidbody.AddForce(0f,150f,0f);
 		}
