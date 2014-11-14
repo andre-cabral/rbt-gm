@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Character\AlternativeMovement.cs" />
      <Compile Include="Assets\Scripts\Character\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\Character\ChangeClass.cs" />
      <Compile Include="Assets\Scripts\Character\DefaultMovement.cs" />

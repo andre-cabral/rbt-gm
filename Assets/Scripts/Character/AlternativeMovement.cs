@@ -1,9 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DefaultMovement : MonoBehaviour {
+public class AlternativeMovement : MonoBehaviour {
 	public float movementSpeed;
 	public float turnSpeed = 20f;
+
+	Animator anim;
+
+	void Start ()
+	{
+		anim = GetComponent<Animator> ();
+	}
 
 	void FixedUpdate(){
 		Walking();
@@ -24,7 +31,10 @@ public class DefaultMovement : MonoBehaviour {
 		
 		Vector3 targetTranslation = new Vector3( x ,y, z);
 		
-		transform.Translate(targetTranslation, Space.World);
+		transform.Translate(targetTranslation, Space.Self);
+
+		anim.SetFloat ("SentidoZ", vertical);
+		anim.SetFloat ("SentidoX", horizontal);
 	}
 
 	void RotateToMouse(){
