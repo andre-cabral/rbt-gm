@@ -9,8 +9,8 @@ public class DefaultMovement : MonoBehaviour {
 		Walking();
 		RotateToMouse();
 
-		if(Input.GetKey("e")){
-			rigidbody.AddForce(0f,150f,0f);
+		if(Input.GetKey("space")){
+			rigidbody.AddForce(0f,25f,0f);
 		}
 
 	}
