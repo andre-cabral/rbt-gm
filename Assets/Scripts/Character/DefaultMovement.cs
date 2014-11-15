@@ -95,6 +95,9 @@ public class DefaultMovement : MonoBehaviour {
 			if(sign>0 && movementAngle > 0 && movementAngle < 90){
 				valueX = Mathf.Sin(movementAngle);
 				valueZ = Mathf.Cos(movementAngle);
+
+				valueX = 1;
+				valueZ = 1;
 				Debug.Log("1-89");
 			}
 			
@@ -107,6 +110,9 @@ public class DefaultMovement : MonoBehaviour {
 			if(sign>0 && movementAngle > 90 && movementAngle < 180){
 				valueX = Mathf.Cos(movementAngle-90);
 				valueZ = - Mathf.Sin(movementAngle-90);
+
+				valueX = 1;
+				valueZ = - 1;
 				Debug.Log("91-179");
 			}
 			
@@ -119,6 +125,9 @@ public class DefaultMovement : MonoBehaviour {
 			if(sign<0 && movementAngle > 90){
 				valueX = - Mathf.Cos(movementAngle-90);
 				valueZ = - Mathf.Sin(movementAngle-90);
+
+				valueX = -1;
+				valueZ = -1;
 				Debug.Log("-91 -179");
 			}
 			
@@ -131,6 +140,9 @@ public class DefaultMovement : MonoBehaviour {
 			if(sign<0 && movementAngle < 90){
 				valueX = - Mathf.Sin(movementAngle);
 				valueZ = Mathf.Cos(movementAngle);
+
+				valueX = -1;
+				valueZ = 1;
 				Debug.Log("-1 -89");
 			}
 		}else{
