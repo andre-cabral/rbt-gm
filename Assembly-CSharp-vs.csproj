@@ -51,7 +51,7 @@
      <Compile Include="Assets\Scripts\Character\ChangeClass.cs" />
      <Compile Include="Assets\Scripts\Character\DefaultMovement.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\Buttons.cs" />
-     <Compile Include="Assets\Scripts\NamesPatterns\Hash.cs" />
+     <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorDefaultMovement.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\Tags.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -33,8 +33,8 @@ public class AlternativeMovement : MonoBehaviour {
 		
 		transform.Translate(targetTranslation, Space.Self);
 
-		anim.SetFloat ("SentidoZ", vertical);
-		anim.SetFloat ("SentidoX", horizontal);
+		anim.SetFloat ("ValueZ", vertical);
+		anim.SetFloat ("ValueX", horizontal);
 	}
 
 	void RotateToMouse(){
