@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DefaultMovement : MonoBehaviour {
+public class DefaultMovement8Directions : MonoBehaviour {
 	public float movementSpeed;
 	public float turnSpeed = 20f;
 	public GameObject legs;
@@ -53,8 +53,10 @@ public class DefaultMovement : MonoBehaviour {
 		
 		//the dot return positive if its on the right and negative on the left
 		float sign = Mathf.Sign(Vector3.Dot(targetTranslation, referenceRight));
+
+		movementAngle *= sign;
 	
-		walkingAnimation(movementAngle, sign, isIdle);
+		walkingAnimation(movementAngle, isIdle);
 	}
 	
 	void RotateToMouse(){
@@ -81,92 +83,70 @@ public class DefaultMovement : MonoBehaviour {
 		return hash;
 	}
 
-	private void walkingAnimation(float movementAngle, float sign, bool isIdle){
+	private void walkingAnimation(float movementAngle, bool isIdle){
 		float valueX = 0;
 		float valueZ = 0;
 		
 		if(!isIdle){
-			//0
-			if(movementAngle == 0){
+			//forward
+			if(movementAngle >= -30 && movementAngle <= 30){
 				valueX = 0;
 				valueZ = 1;
 			}
-			//1_45
-			if(sign>0 && movementAngle > 0 && movementAngle <= 45){
-				valueX = Mathf.Tan(toRadians(movementAngle));
+			//forward right
+			if(movementAngle > 30 && movementAngle <= 60){
+				valueX = 1;
 				valueZ = 1;
 			}
-			//46_89
-			if(sign>0 && movementAngle > 45 && movementAngle < 90){
-				valueX = 1;
-				valueZ = Mathf.Tan(toRadians(90-movementAngle));
-			}
-			//90
-			if(sign>0 && movementAngle == 90){
+			//right
+			if(movementAngle > 60 && movementAngle < 120){
 				valueX = 1;
 				valueZ = 0;
 			}
-			//91_135
-			if(sign>0 && movementAngle > 90 && movementAngle <= 135){
+			//backward right
+			if(movementAngle >= 120 && movementAngle <= 150){
 				valueX = 1;
-				valueZ = - Mathf.Tan(toRadians(movementAngle-90));
+				valueZ = - 1;
 			}
-			//136_179
-			if(sign>0 && movementAngle > 135 && movementAngle < 180){
-				valueX = Mathf.Tan(toRadians(90-(movementAngle-90)));
+			//backward
+			if(movementAngle > 150 && movementAngle <= 180){
+				valueX = 0;
+				valueZ = - 1;
+			}
+			//forward left
+			if(movementAngle < -30 && movementAngle >= -60){
+				valueX = -1;
+				valueZ = 1;
+			}
+			//left
+			if(movementAngle < -60 && movementAngle > -120){
+				valueX = -1;
+				valueZ = 0;
+			}
+			//backward left
+			if(movementAngle <= -120 && movementAngle >= -150){
+				valueX = -1;
 				valueZ = -1;
 			}
-			//180
-			if(movementAngle == 180){
+			//backward
+			if(movementAngle < -150 && movementAngle >= -180){
 				valueX = 0;
 				valueZ = -1;
 			}
-			
 
-			//-1_-45
-			if(sign<0 && movementAngle > 0 && movementAngle <= 45){
-				valueX = - Mathf.Tan(toRadians(movementAngle));
-				valueZ = 1;
-			}
-			//-46_-89
-			if(sign<0 && movementAngle > 45 && movementAngle < 90){
-				valueX = -1;
-				valueZ = Mathf.Tan(toRadians(90-movementAngle));
-			}
-			//-90
-			if(sign<0 && movementAngle == 90){
-				valueX = -1;
-				valueZ = 0;
-			}
-			//-91_-135
-			if(sign<0 && movementAngle > 90 && movementAngle <= 135){
-				valueX = -1;
-				valueZ = - Mathf.Tan(toRadians(movementAngle-90));
-			}
-			//-136_-179
-			if(sign<0 && movementAngle > 135 && movementAngle < 180){
-				valueX = - Mathf.Tan(toRadians(90-(movementAngle-90)));
-				valueZ = -1;
-			}
-			//-180
-			if(movementAngle == -180){
-				valueX = 0;
-				valueZ = -1;
-			}
+
 		}else{
 			valueX = 0;
 			valueZ = 0;
 		}
-		
-		//valueX = Mathf.Round(valueX * 100f)/100;
-		//valueZ = Mathf.Round(valueZ * 100f)/100;
+
+
+		Debug.Log("x="+valueX+"\nz="+valueZ);
+		//Debug.Log("sign="+sign);
+		//Debug.Log("movementAngle="+movementAngle);
 
 		animator.SetFloat(hash.valueX, valueX);
 		animator.SetFloat(hash.valueZ, valueZ);
-	}
-
-	public float toRadians(float degrees){
-		return (degrees * Mathf.PI)/180;
 	}
 	
 	public bool getStoppedOnAnimation(){

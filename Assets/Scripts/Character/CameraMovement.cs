@@ -17,7 +17,7 @@ public class CameraMovement : MonoBehaviour {
 	void FixedUpdate () {
 		foreach(GameObject classObject in classesObjects){
 			if(classObject.activeSelf){
-				transform.LookAt(classObject.transform.position);
+				//transform.LookAt(classObject.transform.position);
 				Vector3 targetPosition = new Vector3(classObject.transform.position.x, height, classObject.transform.position.z-distance);
 				transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, Time.deltaTime * smoothVelocity);
 			}
