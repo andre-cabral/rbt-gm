@@ -4,8 +4,8 @@ using System.Collections;
 public class DefaultMovement : MonoBehaviour {
 	public float movementSpeed;
 	public float turnSpeed = 20f;
-	public GameObject legs;
-	
+
+	private float inputTotal = 0f;
 	private Animator animator;
 	private HashAnimatorDefaultMovement hash;
 	private bool stoppedOnAnimation = false;
@@ -31,9 +31,17 @@ public class DefaultMovement : MonoBehaviour {
 		float horizontal = Input.GetAxis(Buttons.horizontal);
 		float vertical = Input.GetAxis(Buttons.vertical);
 		bool isIdle = true;
+
 		if(horizontal != 0 || vertical != 0){
 			isIdle = false;
 		}
+
+		if (horizontal == 0 || vertical == 0){
+			inputTotal = horizontal + vertical;
+		}else{
+			inputTotal = (horizontal + vertical)/2;
+		}
+
 
 		float x = horizontal * movementSpeed;
 		float y = 0f;
@@ -157,6 +165,9 @@ public class DefaultMovement : MonoBehaviour {
 			valueX = 0;
 			valueZ = 0;
 		}
+
+		valueX *= inputTotal;
+		valueZ *= inputTotal;
 		
 		//valueX = Mathf.Round(valueX * 100f)/100;
 		//valueZ = Mathf.Round(valueZ * 100f)/100;
