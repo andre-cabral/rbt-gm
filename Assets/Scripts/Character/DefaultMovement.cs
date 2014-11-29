@@ -37,9 +37,9 @@ public class DefaultMovement : MonoBehaviour {
 		}
 
 		if (horizontal == 0 || vertical == 0){
-			inputTotal = horizontal + vertical;
+			inputTotal = Mathf.Abs(horizontal) + Mathf.Abs(vertical);
 		}else{
-			inputTotal = (horizontal + vertical)/2;
+			inputTotal = (Mathf.Abs(horizontal) + Mathf.Abs(vertical))/2;
 		}
 
 

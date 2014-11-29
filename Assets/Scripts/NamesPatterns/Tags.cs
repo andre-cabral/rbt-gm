@@ -5,4 +5,6 @@ public class Tags : MonoBehaviour {
 
 	public const string characterClass = "CharacterClass";
 	public const string characterClassesContainer = "CharacterClassesContainer";
+	public const string enemy = "Enemy";
+	public const string gameController = "GameController";
 }
