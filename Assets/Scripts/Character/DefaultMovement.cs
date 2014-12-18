@@ -27,8 +27,10 @@ public class DefaultMovement : MonoBehaviour {
 	}
 
 	void Update () {
-		Debug.Log(!animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClass));
-		if(changingClass && !animator.IsInTransition(0) && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClass)){
+		Debug.Log(!animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassStealth));
+		if(changingClass && !animator.IsInTransition(0) 
+		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassStealth)
+		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassPower)){
 			finishClassChange();
 		}
 
@@ -63,8 +65,7 @@ public class DefaultMovement : MonoBehaviour {
 	}
 
 
-	//###########################################
-	//MOVEMENT START
+	//########MOVEMENT START
 	//###########################################
 	void Walking(){
 		float horizontal = Input.GetAxis(Buttons.horizontal);
@@ -210,20 +211,27 @@ public class DefaultMovement : MonoBehaviour {
 		animator.SetFloat(hash.valueX, valueX);
 		animator.SetFloat(hash.valueZ, valueZ);
 	}
-	//###########################################
-	//MOVEMENT END
+	//########MOVEMENT END
 	//###########################################
 
 
-	//###########################################
-	//CHANGE CLASS START
+	//########CHANGE CLASS START
 	//###########################################
 	void startClassChange(int goToClass){
 		stoppedOnAnimation = true;
 		changingClass = true;
 		animator.SetBool(hash.changeClass, true);
 		this.goToClass = goToClass;
-		//animator.SetBool(hash.changeClass, false);
+
+		if(goToClass == 0){
+			animator.SetInteger(hash.classToGo, ClassAnimationNumber(changeClassScript.class0));
+		}
+		if(goToClass == 1){
+			animator.SetInteger(hash.classToGo, ClassAnimationNumber(changeClassScript.class1));
+		}
+		if(goToClass == 2){
+			animator.SetInteger(hash.classToGo, ClassAnimationNumber(changeClassScript.class2));
+		}
 	}
 
 	void finishClassChange(){
@@ -233,21 +241,37 @@ public class DefaultMovement : MonoBehaviour {
 
 		if(goToClass == 0){
 			changeClassScript.ActivateClass(changeClassScript.class0);
+			animator.SetInteger(hash.classToGo, 99);
 		}
 		if(goToClass == 1){
 			changeClassScript.ActivateClass(changeClassScript.class1);
+			animator.SetInteger(hash.classToGo, 99);		
 		}
 		if(goToClass == 2){
 			changeClassScript.ActivateClass(changeClassScript.class2);
+			animator.SetInteger(hash.classToGo, 99);
 		}
 	}
-	//###########################################
-	//CHANGE CLASS END
+
+	int ClassAnimationNumber(GameObject classToGo){
+		if(classToGo.name == ClassesObjectsNames.stealth){
+			return 0;
+		}
+		if(classToGo.name == ClassesObjectsNames.power){
+			return 1;
+		}
+		/*
+		if(classToGo.name == ClassesObjectsNames.ranged){
+			return 2;
+		}
+		*/
+		return 99;
+	}
+	//########CHANGE CLASS END
 	//###########################################
 
 
-	//###########################################
-	//UTILITIES START
+	//########UTILITIES START
 	//###########################################
 	public float toRadians(float degrees){
 		return (degrees * Mathf.PI)/180;
@@ -264,7 +288,6 @@ public class DefaultMovement : MonoBehaviour {
 	public void setStoppedOnAnimation(bool stopped){
 		stoppedOnAnimation = stopped;
 	}
-	//###########################################
-	//UTILITIES END
+	//########UTILITIES END
 	//###########################################
 }
