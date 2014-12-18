@@ -1,0 +1,48 @@
+- O objeto deve ser o modelo 3d
+- Deve ser filho do CharacterClassesContainer
+- O nome padrão no momento é Robert_NOMEDACLASSEEMLETRASMAIUSCULAS
+
+- Colocar a classe em uma das posições do script ChangeClass no inspector do CharacterClassesContainer
+
+- Adicionar o nome da animação de mudança para essa classe no script AnimationsNames
+- Adicionar o nome do gameobject en ClassesObjectsNames
+
+- No Update do script DefaultMovement, adicionar no if que verifica se terminou de trocar a classe:
+&& !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassNewClassName))
+
+- Ainda no DefaultMovement, na função int ClassAnimationNumber(GameObject classToGo), colocar:
+if(classToGo.name == ClassesObjectsNames.newClassName){
+	return numeroParaUsarNoAnimator;
+}
+
+- No animator de todas as classes, incluir um novo ChangeClassNomeDaClasseNova.
+- Ele será usado quando o ChangeClass for true e quando o ClassToGo tiver o valor definido no DefaultMovement na função ClassAnimationNumber
+
+
+#######################################
+#####Se for colocar mais que 3 classes:
+#######################################
+- Adicionar um public GameObject classN; no script ChangeClass
+- Adicionar um novo botão de input nas opções de projeto. Nomear ele de PowerN
+- No script Buttons, adicionar public static string powerN = "PowerN";
+
+
+- No script DefaultMovement, nos ifs que pegam inputs, adicionar o novo botão:
+if( Input.GetButtonDown(Buttons.classN) 
+&& !changeClassScript.classN.Equals(changeClassScript.GetActiveClass()) ){
+	startClassChange(N);
+}
+
+
+- Ainda no DefaultMovement, na função void startClassChange(int goToClass), adicionar a classe nova:
+if(goToClass == N){
+	animator.SetInteger(hash.classToGo, ClassAnimationNumber(changeClassScript.classN));
+}
+
+
+- No DefaultMovement, na função void finishClassChange(), adicionar a classe nova:
+if(goToClass == N){
+	changeClassScript.ActivateClass(changeClassScript.classN);
+	animator.SetInteger(hash.classToGo, 99);
+}
+

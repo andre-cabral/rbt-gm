@@ -27,7 +27,6 @@ public class DefaultMovement : MonoBehaviour {
 	}
 
 	void Update () {
-		Debug.Log(!animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassStealth));
 		if(changingClass && !animator.IsInTransition(0) 
 		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassStealth)
 		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassPower)){
