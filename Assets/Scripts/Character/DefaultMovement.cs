@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(HashAnimatorDefaultMovement))]
+
 public class DefaultMovement : MonoBehaviour {
 	public float movementSpeed;
 	public float turnSpeed = 20f;
@@ -8,11 +10,44 @@ public class DefaultMovement : MonoBehaviour {
 	private float inputTotal = 0f;
 	private Animator animator;
 	private HashAnimatorDefaultMovement hash;
+
+	private GameObject classContainer;
+	private ChangeClass changeClassScript;
+	private bool changingClass = false;
+	private int goToClass;
+
 	private bool stoppedOnAnimation = false;
-	
+
 	void Awake(){
 		animator = GetComponent<Animator>();
 		hash = GetComponent<HashAnimatorDefaultMovement>();
+
+		classContainer = GameObject.FindGameObjectWithTag(Tags.characterClassesContainer);
+		changeClassScript = classContainer.GetComponent<ChangeClass>();
+	}
+
+	void Update () {
+		Debug.Log(!animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClass));
+		if(changingClass && !animator.IsInTransition(0) && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClass)){
+			finishClassChange();
+		}
+
+		if(!changeClassScript.GetChangingClass() && !stoppedOnAnimation && !changingClass){
+
+			if( Input.GetButtonDown(Buttons.class0) && !changeClassScript.class0.Equals(changeClassScript.GetActiveClass()) ){
+				startClassChange(0);
+			}
+			
+			if( Input.GetButtonDown(Buttons.class1) && !changeClassScript.class1.Equals(changeClassScript.GetActiveClass()) ){
+				startClassChange(1);
+			}
+			
+			if( Input.GetButtonDown(Buttons.class2) && !changeClassScript.class0.Equals(changeClassScript.GetActiveClass()) ){
+				startClassChange(2);
+			}
+
+		}
+
 	}
 	
 	void FixedUpdate(){
@@ -26,7 +61,11 @@ public class DefaultMovement : MonoBehaviour {
 		}
 		
 	}
-	
+
+
+	//###########################################
+	//MOVEMENT START
+	//###########################################
 	void Walking(){
 		float horizontal = Input.GetAxis(Buttons.horizontal);
 		float vertical = Input.GetAxis(Buttons.vertical);
@@ -83,10 +122,6 @@ public class DefaultMovement : MonoBehaviour {
 			
 			//transform.localPosition = new Vector3(0f,transform.localPosition.y,0f);
 		}
-	}
-	
-	public HashAnimatorDefaultMovement getHash(){
-		return hash;
 	}
 
 	private void walkingAnimation(float movementAngle, float sign, bool isIdle){
@@ -175,9 +210,51 @@ public class DefaultMovement : MonoBehaviour {
 		animator.SetFloat(hash.valueX, valueX);
 		animator.SetFloat(hash.valueZ, valueZ);
 	}
+	//###########################################
+	//MOVEMENT END
+	//###########################################
 
+
+	//###########################################
+	//CHANGE CLASS START
+	//###########################################
+	void startClassChange(int goToClass){
+		stoppedOnAnimation = true;
+		changingClass = true;
+		animator.SetBool(hash.changeClass, true);
+		this.goToClass = goToClass;
+		//animator.SetBool(hash.changeClass, false);
+	}
+
+	void finishClassChange(){
+		stoppedOnAnimation = false;
+		changingClass = false;
+		animator.SetBool(hash.changeClass, false);
+
+		if(goToClass == 0){
+			changeClassScript.ActivateClass(changeClassScript.class0);
+		}
+		if(goToClass == 1){
+			changeClassScript.ActivateClass(changeClassScript.class1);
+		}
+		if(goToClass == 2){
+			changeClassScript.ActivateClass(changeClassScript.class2);
+		}
+	}
+	//###########################################
+	//CHANGE CLASS END
+	//###########################################
+
+
+	//###########################################
+	//UTILITIES START
+	//###########################################
 	public float toRadians(float degrees){
 		return (degrees * Mathf.PI)/180;
+	}
+	
+	public HashAnimatorDefaultMovement getHash(){
+		return hash;
 	}
 	
 	public bool getStoppedOnAnimation(){
@@ -187,5 +264,7 @@ public class DefaultMovement : MonoBehaviour {
 	public void setStoppedOnAnimation(bool stopped){
 		stoppedOnAnimation = stopped;
 	}
-	
+	//###########################################
+	//UTILITIES END
+	//###########################################
 }

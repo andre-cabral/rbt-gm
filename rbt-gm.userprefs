@@ -1,11 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NamesPatterns\Tags.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\DefaultMovement.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\StalkerMovementArea.cs" Line="53" Column="4" />
-      <File FileName="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\StartStalkingArea.cs" Line="9" Column="59" />
-      <File FileName="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\StopStalkingArea.cs" Line="10" Column="59" />
-      <File FileName="Assets\Scripts\NamesPatterns\Tags.cs" Line="8" Column="27" />
+      <File FileName="Assets\Scripts\Character\DefaultMovement.cs" Line="31" Column="49" />
+      <File FileName="Assets\Scripts\NamesPatterns\HashAnimatorDefaultMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\ChangeClass.cs" Line="22" Column="3" />
+      <File FileName="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\StalkerMovementArea.cs" Line="52" Column="38" />
+      <File FileName="Assets\Scripts\NamesPatterns\Tags.cs" Line="6" Column="2" />
+      <File FileName="Assets\Scripts\NamesPatterns\Buttons.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NamesPatterns\AnimationsNames.cs" Line="6" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

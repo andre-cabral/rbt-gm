@@ -6,6 +6,8 @@ public class StalkerMovementArea : MonoBehaviour {
 	public bool MoveYAxis = false;
 	public float velocity = 0.15f;
 	public float timeIdleAfterHitPlayer = 1f;
+	private GameObject classContainer;
+	private ChangeClass changeClassScript;
 	private GameObject stalkedPlayerObject;
 	private bool isStalking = false;
 	private bool playerHit = false;
@@ -14,8 +16,19 @@ public class StalkerMovementArea : MonoBehaviour {
 	
 	// Use this for initialization
 	void Awake () {
-		stalkedPlayerObject = GameObject.FindGameObjectWithTag(Tags.characterClass);
+		classContainer = GameObject.FindGameObjectWithTag(Tags.characterClassesContainer);
+		changeClassScript = classContainer.GetComponent<ChangeClass>();
 		//enemyCollisions = gameObject.GetComponent<EnemyCollisions>();
+	}
+
+	void Start(){
+		stalkedPlayerObject = changeClassScript.GetActiveClass();
+	}
+
+	void Update(){
+		if( !stalkedPlayerObject.Equals(changeClassScript.GetActiveClass()) ){
+			stalkedPlayerObject = changeClassScript.GetActiveClass();
+		}
 	}
 	
 	

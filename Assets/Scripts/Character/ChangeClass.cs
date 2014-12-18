@@ -4,6 +4,7 @@ using System.Collections;
 public class ChangeClass : MonoBehaviour {
 
 	private bool changingClass = false;
+	private GameObject activeClass;
 	public GameObject class0;
 	public GameObject class1;
 	public GameObject class2;
@@ -13,23 +14,14 @@ public class ChangeClass : MonoBehaviour {
 		classesObjects.Add(class0);
 		classesObjects.Add(class1);
 		classesObjects.Add(class2);
-	}
-	
-	void Update () {
-
-		if( Input.GetButtonDown(Buttons.class0) && !changingClass ){
-			ActivateClass(class0);
+		foreach(GameObject classObject in classesObjects){
+			if(classObject.activeSelf){
+				activeClass = classObject;
+			}
 		}
-		if( Input.GetButtonDown(Buttons.class1) && !changingClass  ){
-			ActivateClass(class1);
-		}
-		if( Input.GetButtonDown(Buttons.class2) && !changingClass  ){
-			ActivateClass(class2);
-		}
-
 	}
 
-	void ActivateClass(GameObject classSelected){
+	public void ActivateClass(GameObject classSelected){
 		changingClass = true;
 
 		foreach(GameObject classObject in classesObjects){
@@ -45,10 +37,20 @@ public class ChangeClass : MonoBehaviour {
 		classSelected.SetActive(true);
 
 		changingClass = false;
+
+		activeClass = classSelected;
 	}
 
 	public ArrayList GetClassesObjects(){
 		return classesObjects;
+	}
+
+	public bool GetChangingClass(){
+		return changingClass;
+	}
+
+	public GameObject GetActiveClass(){
+		return activeClass;
 	}
 
 }
