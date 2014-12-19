@@ -7,7 +7,7 @@
 - Adicionar o nome da animação de mudança para essa classe no script AnimationsNames
 - Adicionar o nome do gameobject en ClassesObjectsNames
 
-- No Update do script DefaultMovement, adicionar no if que verifica se terminou de trocar a classe:
+- Na função classChangeCheck do script DefaultMovement, adicionar no if que verifica se terminou de trocar a classe:
 && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassNewClassName))
 
 - Ainda no DefaultMovement, na função int ClassAnimationNumber(GameObject classToGo), colocar:
@@ -17,6 +17,12 @@ if(classToGo.name == ClassesObjectsNames.newClassName){
 
 - No animator de todas as classes, incluir um novo ChangeClassNomeDaClasseNova.
 - Ele será usado quando o ChangeClass for true e quando o ClassToGo tiver o valor definido no DefaultMovement na função ClassAnimationNumber
+
+- Criar point light com a cor da classe como filho do gameobject
+
+- Criar CheckGroundA como filho do gameobject
+
+- Colocar no inspector do default movement o checkground e escolher a layer floor
 
 
 #######################################
@@ -42,7 +48,7 @@ if(goToClass == N){
 
 - No DefaultMovement, na função void finishClassChange(), adicionar a classe nova:
 if(goToClass == N){
-	changeClassScript.ActivateClass(changeClassScript.classN);
 	animator.SetInteger(hash.classToGo, 99);
+	changeClassScript.ActivateClass(changeClassScript.classN);
 }
 

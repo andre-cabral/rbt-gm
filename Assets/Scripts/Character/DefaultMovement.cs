@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(HashAnimatorDefaultMovement))]
 
 public class DefaultMovement : MonoBehaviour {
-	public float movementSpeed;
+	public float movementSpeed = 0.1f;
 	public float turnSpeed = 20f;
 
 	private float inputTotal = 0f;
@@ -15,6 +15,12 @@ public class DefaultMovement : MonoBehaviour {
 	private ChangeClass changeClassScript;
 	private bool changingClass = false;
 	private int goToClass;
+
+	private bool grounded = false;
+	public float jumpHeight = 300f;
+	public GameObject groundedPositionObject;
+	public float groundedObjectRadius = 0.05f;
+	public LayerMask layerFloor;
 
 	private bool stoppedOnAnimation = false;
 
@@ -27,28 +33,8 @@ public class DefaultMovement : MonoBehaviour {
 	}
 
 	void Update () {
-		if(changingClass && !animator.IsInTransition(0) 
-		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassStealth)
-		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassPower)){
-			finishClassChange();
-		}
-
-		if(!changeClassScript.GetChangingClass() && !stoppedOnAnimation && !changingClass){
-
-			if( Input.GetButtonDown(Buttons.class0) && !changeClassScript.class0.Equals(changeClassScript.GetActiveClass()) ){
-				startClassChange(0);
-			}
-			
-			if( Input.GetButtonDown(Buttons.class1) && !changeClassScript.class1.Equals(changeClassScript.GetActiveClass()) ){
-				startClassChange(1);
-			}
-			
-			if( Input.GetButtonDown(Buttons.class2) && !changeClassScript.class0.Equals(changeClassScript.GetActiveClass()) ){
-				startClassChange(2);
-			}
-
-		}
-
+		classChangeCheck();
+		jump();
 	}
 	
 	void FixedUpdate(){
@@ -117,7 +103,8 @@ public class DefaultMovement : MonoBehaviour {
 		//the out keyword makes a parameter that is not returned to be changed
 		if(intersectPlane.Raycast(rayFromTheCamera, out distanceRayCameraToPlane)){
 			Quaternion rotationToLookAt = Quaternion.LookRotation(rayFromTheCamera.GetPoint(distanceRayCameraToPlane) - transform.position);
-			
+
+			//transform.rotation = rotationToLookAt;
 			transform.rotation = Quaternion.Slerp(transform.rotation, rotationToLookAt, turnSpeed * Time.deltaTime);
 			
 			//transform.localPosition = new Vector3(0f,transform.localPosition.y,0f);
@@ -216,6 +203,30 @@ public class DefaultMovement : MonoBehaviour {
 
 	//########CHANGE CLASS START
 	//###########################################
+	void classChangeCheck(){
+		if(changingClass && !animator.IsInTransition(0) 
+		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassStealth)
+		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassPower)){
+			finishClassChange();
+		}
+		
+		if(!changeClassScript.GetChangingClass() && !stoppedOnAnimation && !changingClass){
+			
+			if( Input.GetButtonDown(Buttons.class0) && !changeClassScript.class0.Equals(changeClassScript.GetActiveClass()) ){
+				startClassChange(0);
+			}
+			
+			if( Input.GetButtonDown(Buttons.class1) && !changeClassScript.class1.Equals(changeClassScript.GetActiveClass()) ){
+				startClassChange(1);
+			}
+			
+			if( Input.GetButtonDown(Buttons.class2) && !changeClassScript.class0.Equals(changeClassScript.GetActiveClass()) ){
+				startClassChange(2);
+			}
+			
+		}
+	}
+
 	void startClassChange(int goToClass){
 		stoppedOnAnimation = true;
 		changingClass = true;
@@ -239,16 +250,17 @@ public class DefaultMovement : MonoBehaviour {
 		animator.SetBool(hash.changeClass, false);
 
 		if(goToClass == 0){
-			changeClassScript.ActivateClass(changeClassScript.class0);
 			animator.SetInteger(hash.classToGo, 99);
+			changeClassScript.ActivateClass(changeClassScript.class0);
 		}
 		if(goToClass == 1){
+			animator.SetInteger(hash.classToGo, 99);
 			changeClassScript.ActivateClass(changeClassScript.class1);
-			animator.SetInteger(hash.classToGo, 99);		
+
 		}
 		if(goToClass == 2){
-			changeClassScript.ActivateClass(changeClassScript.class2);
 			animator.SetInteger(hash.classToGo, 99);
+			changeClassScript.ActivateClass(changeClassScript.class2);
 		}
 	}
 
@@ -267,6 +279,21 @@ public class DefaultMovement : MonoBehaviour {
 		return 99;
 	}
 	//########CHANGE CLASS END
+	//###########################################
+
+
+	//########JUMP START
+	//###########################################
+	void jump(){
+		grounded = Physics.OverlapSphere(groundedPositionObject.transform.position,groundedObjectRadius, layerFloor).Length > 0;
+		animator.SetBool(hash.grounded, !grounded);
+		if(Input.GetButtonDown(Buttons.jump) && grounded){
+			rigidbody.AddForce(Vector3.up * jumpHeight);
+		}
+
+		animator.SetFloat(hash.verticalSpeed, rigidbody.velocity.y);
+	}
+	//########JUMP END
 	//###########################################
 
 

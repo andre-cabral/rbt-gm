@@ -11,4 +11,7 @@ public class Buttons : MonoBehaviour {
 	public static string jump = "Jump";
 	public static string power0 = "Power0";
 	public static string power1 = "Power1";
+	public static string zoom = "Zoom";
+	public static string zoomIn = "ZoomIn";
+	public static string zoomOut = "ZoomOut";
 }
