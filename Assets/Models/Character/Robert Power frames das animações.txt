@@ -1,0 +1,16 @@
+T-Pose		0
+Idle		1-50
+walk fwd	51-81
+Punch		82-112
+Run		113-137
+Walk right	138-168
+Walk left	169-199
+Walk back	200-230
+Transform	231-261
+Jump		262-273
+Fall/Land	274-282 (freezar 275 ou 276 para queda longa)
+Sobe		283-292
+Block idle	293
+Block hit	294
+Interact	295-306
+Take damage	307-342
