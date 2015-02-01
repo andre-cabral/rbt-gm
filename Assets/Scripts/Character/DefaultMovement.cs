@@ -210,7 +210,7 @@ public class DefaultMovement : MonoBehaviour {
 			finishClassChange();
 		}
 		
-		if(!changeClassScript.GetChangingClass() && !stoppedOnAnimation && !changingClass){
+		if(!changeClassScript.GetChangingClass() && !stoppedOnAnimation && !changingClass && grounded){
 			
 			if( Input.GetButtonDown(Buttons.class0) && !changeClassScript.class0.Equals(changeClassScript.GetActiveClass()) ){
 				startClassChange(0);
@@ -286,12 +286,16 @@ public class DefaultMovement : MonoBehaviour {
 	//###########################################
 	void jump(){
 		grounded = Physics.OverlapSphere(groundedPositionObject.transform.position,groundedObjectRadius, layerFloor).Length > 0;
-		animator.SetBool(hash.grounded, !grounded);
+		//grounded = Physics.OverlapSphere(groundedPositionObject.transform.position,groundedObjectRadius).Length > 0;
+		//grounded = Mathf.Round(rigidbody.velocity.y*1000f)/1000f == 0;
+		//Debug.Log(Mathf.Round(rigidbody.velocity.y*1000f)/1000f);
+		animator.SetBool(hash.grounded, grounded);
 		if(Input.GetButtonDown(Buttons.jump) && grounded){
 			rigidbody.AddForce(Vector3.up * jumpHeight);
+			Debug.Log("yey");
 		}
 
-		animator.SetFloat(hash.verticalSpeed, rigidbody.velocity.y);
+		animator.SetFloat(hash.verticalSpeed, Mathf.Round(rigidbody.velocity.y*100)/100);
 	}
 	//########JUMP END
 	//###########################################
