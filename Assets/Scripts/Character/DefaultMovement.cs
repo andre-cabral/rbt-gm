@@ -17,6 +17,7 @@ public class DefaultMovement : MonoBehaviour {
 	private int goToClass;
 
 	private bool grounded = false;
+	private bool jumpStart = false;
 	public float jumpHeight = 300f;
 	public GameObject groundedPositionObject;
 	public float groundedObjectRadius = 0.05f;
@@ -285,16 +286,35 @@ public class DefaultMovement : MonoBehaviour {
 	//########JUMP START
 	//###########################################
 	void jump(){
+
+		if(Input.GetButtonDown(Buttons.jump) && !jumpStart && !stoppedOnAnimation && grounded){
+			jumpStart = true;
+			stoppedOnAnimation = true;
+			animator.SetBool(hash.jumpStart, jumpStart);
+		}
+
+		if(jumpStart && !animator.IsInTransition(0) 
+		   && animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.jump)){
+			jumpStart = false;
+			animator.SetBool(hash.jumpStart, jumpStart);
+			jumpAddForce();
+		}
+
+		jumpGroundCheck();
+	}
+
+	void jumpAddForce(){
+		stoppedOnAnimation = false;
+		rigidbody.AddForce(Vector3.up * jumpHeight);
+	}
+
+	void jumpGroundCheck(){
 		grounded = Physics.OverlapSphere(groundedPositionObject.transform.position,groundedObjectRadius, layerFloor).Length > 0;
 		//grounded = Physics.OverlapSphere(groundedPositionObject.transform.position,groundedObjectRadius).Length > 0;
 		//grounded = Mathf.Round(rigidbody.velocity.y*1000f)/1000f == 0;
 		//Debug.Log(Mathf.Round(rigidbody.velocity.y*1000f)/1000f);
 		animator.SetBool(hash.grounded, grounded);
-		if(Input.GetButtonDown(Buttons.jump) && grounded){
-			rigidbody.AddForce(Vector3.up * jumpHeight);
-			Debug.Log("yey");
-		}
-
+		
 		animator.SetFloat(hash.verticalSpeed, Mathf.Round(rigidbody.velocity.y*100)/100);
 	}
 	//########JUMP END
