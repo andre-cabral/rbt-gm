@@ -293,14 +293,13 @@ public class DefaultMovement : MonoBehaviour {
 			animator.SetBool(hash.jumpStart, jumpStart);
 		}
 
-		if(jumpStart && !animator.IsInTransition(0) 
-		   && animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.jump)){
-			jumpStart = false;
-			animator.SetBool(hash.jumpStart, jumpStart);
-			jumpAddForce();
-		}
-
 		jumpGroundCheck();
+	}
+
+	void JumpStartFinishedAnimationEvent(){
+		jumpStart = false;
+		animator.SetBool(hash.jumpStart, jumpStart);
+		jumpAddForce();
 	}
 
 	void jumpAddForce(){
