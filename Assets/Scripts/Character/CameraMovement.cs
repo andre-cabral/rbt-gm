@@ -5,6 +5,7 @@ public class CameraMovement : MonoBehaviour {
 	public GameObject characterClassesContainer;
 	//public float height = 15.5f;
 	public float distance = 10f;
+	public float yAdjust = 0.1f;
 	public float minZoomDistance = 6f;
 	public float maxZoomDistance = 15f;
 	public float zoomSpeed = 1f;
@@ -33,7 +34,7 @@ public class CameraMovement : MonoBehaviour {
 				//transform.LookAt(classObject.transform.position);
 				//Vector3 targetPosition = new Vector3(classObject.transform.position.x, height, classObject.transform.position.z-distance);
 
-				Vector3 targetPosition = new Vector3(classObject.transform.position.x, distance, classObject.transform.position.z-distance);
+				Vector3 targetPosition = new Vector3(classObject.transform.position.x, distance + (yAdjust * distance), classObject.transform.position.z-distance);
 				transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, Time.deltaTime * smoothVelocity);
 			}
 		}
