@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\CameraMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\StalkerNavMesh.cs">
     <Files>
-      <File FileName="Assets\Scripts\Character\CameraMovement.cs" Line="37" Column="98" />
+      <File FileName="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\StalkerNavMesh.cs" Line="30" Column="99" />
+      <File FileName="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StalkerMovementArea.cs" Line="58" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
