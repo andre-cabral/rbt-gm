@@ -1,11 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\Desktop\aula_rede\unity_network\Assets\Scripts\Network\CreateServerObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\DefaultMovement.cs">
     <Files>
-      <File FileName="..\..\..\..\Desktop\aula_rede\unity_network\Assets\Scripts\Network\CreateClientObject.cs" Line="1" Column="1" />
-      <File FileName="..\..\..\..\Desktop\aula_rede\unity_network\Assets\Scripts\Players\SimpleMovementTest.cs" Line="17" Column="81" />
-      <File FileName="..\..\..\..\Desktop\aula_rede\unity_network\Assets\Scripts\Players\AutoMovementTest.cs" Line="6" Column="2" />
-      <File FileName="..\..\..\..\Desktop\aula_rede\unity_network\Assets\Scripts\Network\CreateServerObject.cs" Line="32" Column="12" />
+      <File FileName="Assets\Scripts\Character\DefaultMovement.cs" Line="48" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
