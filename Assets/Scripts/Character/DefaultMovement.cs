@@ -45,7 +45,7 @@ public class DefaultMovement : MonoBehaviour {
 		}
 		
 		if(Input.GetKey("e")){
-			rigidbody.AddForce(0f,150f,0f);
+			GetComponent<Rigidbody>().AddForce(0f,150f,0f);
 		}
 		
 	}
@@ -304,7 +304,7 @@ public class DefaultMovement : MonoBehaviour {
 
 	void jumpAddForce(){
 		stoppedOnAnimation = false;
-		rigidbody.AddForce(Vector3.up * jumpHeight);
+		GetComponent<Rigidbody>().AddForce(Vector3.up * jumpHeight);
 	}
 
 	void jumpGroundCheck(){
@@ -314,7 +314,7 @@ public class DefaultMovement : MonoBehaviour {
 		//Debug.Log(Mathf.Round(rigidbody.velocity.y*1000f)/1000f);
 		animator.SetBool(hash.grounded, grounded);
 		
-		animator.SetFloat(hash.verticalSpeed, Mathf.Round(rigidbody.velocity.y*100)/100);
+		animator.SetFloat(hash.verticalSpeed, Mathf.Round(GetComponent<Rigidbody>().velocity.y*100)/100);
 	}
 	//########JUMP END
 	//###########################################

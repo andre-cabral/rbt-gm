@@ -22,7 +22,7 @@ public class DefaultMovement8Directions : MonoBehaviour {
 		}
 		
 		if(Input.GetKey("e")){
-			rigidbody.AddForce(0f,150f,0f);
+			GetComponent<Rigidbody>().AddForce(0f,150f,0f);
 		}
 		
 	}

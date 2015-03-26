@@ -17,7 +17,7 @@ public class AlternativeMovement : MonoBehaviour {
 		RotateToMouse();
 
 		if(Input.GetKey("space")){
-			rigidbody.AddForce(0f,25f,0f);
+			GetComponent<Rigidbody>().AddForce(0f,25f,0f);
 		}
 	}
 
