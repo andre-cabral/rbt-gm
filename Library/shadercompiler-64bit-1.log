@@ -1,5 +1,5 @@
-Base path: C:/Program Files/Unity5/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-7328
+Base path: C:/Program Files/Unity/Editor/Data
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-7796
 Cmd: getPlatforms
 Cmd: compileSnippet
   api=4 type=0 insize=541 outsize=3517 kw=SHADOWS_DEPTH ok=1
@@ -62,6 +62,10 @@ Cmd: compileSnippet
 Cmd: compileSnippet
   api=4 type=1 insize=3755 outsize=1932 kw=POINT ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=3569 outsize=2737 kw=POINT ok=1
+  api=4 type=0 insize=982 outsize=4321 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=3569 outsize=1932 kw=POINT ok=1
+  api=4 type=1 insize=982 outsize=10797 kw=DIRECTIONAL SHADOWS_SCREEN LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=938 outsize=4711 kw=POINT SHADOWS_OFF ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=938 outsize=5889 kw=POINT SHADOWS_OFF ok=1
