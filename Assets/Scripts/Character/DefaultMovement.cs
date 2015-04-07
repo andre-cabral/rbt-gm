@@ -25,21 +25,37 @@ public class DefaultMovement : MonoBehaviour {
 
 	private bool stoppedOnAnimation = false;
 
+	public bool isDead = false;
+	private bool deathRagDollActive = false;
+	private Collider playerCollider;
+	private Rigidbody playerRigidbody;
+
 	void Awake(){
 		animator = GetComponent<Animator>();
 		hash = GetComponent<HashAnimatorDefaultMovement>();
 
 		classContainer = GameObject.FindGameObjectWithTag(Tags.characterClassesContainer);
 		changeClassScript = classContainer.GetComponent<ChangeClass>();
+
+		playerCollider = GetComponent<Collider>();
+		playerRigidbody = GetComponent<Rigidbody>();
 	}
 
 	void Update () {
-		classChangeCheck();
-		jump();
+		if(!isDead && !stoppedOnAnimation){
+			classChangeCheck();
+			jump();
+		}else if(changingClass){
+			classChangeCheck();
+		}
 	}
 	
 	void FixedUpdate(){
-		if(!stoppedOnAnimation){
+		if(isDead && !deathRagDollActive){
+			StartDeathRagDoll();
+		}
+
+		if(!isDead && !stoppedOnAnimation){
 			Walking();
 			RotateToMouse();
 		}
@@ -51,8 +67,8 @@ public class DefaultMovement : MonoBehaviour {
 	}
 
 
-	//########MOVEMENT START
-	//###########################################
+//########MOVEMENT START
+//###########################################
 	void Walking(){
 		float horizontal = Input.GetAxis(Buttons.horizontal);
 		float vertical = Input.GetAxis(Buttons.vertical);
@@ -198,12 +214,12 @@ public class DefaultMovement : MonoBehaviour {
 		animator.SetFloat(hash.valueX, valueX);
 		animator.SetFloat(hash.valueZ, valueZ);
 	}
-	//########MOVEMENT END
-	//###########################################
+//########MOVEMENT END
+//###########################################
 
 
-	//########CHANGE CLASS START
-	//###########################################
+//########CHANGE CLASS START
+//###########################################
 	void classChangeCheck(){
 		if(changingClass && !animator.IsInTransition(0) 
 		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassStealth)
@@ -279,12 +295,12 @@ public class DefaultMovement : MonoBehaviour {
 		*/
 		return 99;
 	}
-	//########CHANGE CLASS END
-	//###########################################
+//########CHANGE CLASS END
+//###########################################
 
 
-	//########JUMP START
-	//###########################################
+//########JUMP START
+//###########################################
 	void jump(){
 
 		if(Input.GetButtonDown(Buttons.jump) && !jumpStart && !stoppedOnAnimation && grounded){
@@ -316,12 +332,23 @@ public class DefaultMovement : MonoBehaviour {
 		
 		animator.SetFloat(hash.verticalSpeed, Mathf.Round(GetComponent<Rigidbody>().velocity.y*100)/100);
 	}
-	//########JUMP END
-	//###########################################
+//########JUMP END
+//###########################################
 
+//########DEATH START
+//###########################################
+	void StartDeathRagDoll(){
+		animator.enabled = false;
+		playerCollider.enabled = false;
+		playerRigidbody.isKinematic = true;
+		
+		deathRagDollActive = true;
+	}
+//########DEATH END
+//###########################################
 
-	//########UTILITIES START
-	//###########################################
+//########UTILITIES START
+//###########################################
 	public float toRadians(float degrees){
 		return (degrees * Mathf.PI)/180;
 	}
@@ -329,7 +356,11 @@ public class DefaultMovement : MonoBehaviour {
 	public HashAnimatorDefaultMovement getHash(){
 		return hash;
 	}
-	
+
+	public bool getGrounded(){
+		return grounded;
+	}
+
 	public bool getStoppedOnAnimation(){
 		return stoppedOnAnimation;
 	}
@@ -337,6 +368,14 @@ public class DefaultMovement : MonoBehaviour {
 	public void setStoppedOnAnimation(bool stopped){
 		stoppedOnAnimation = stopped;
 	}
-	//########UTILITIES END
-	//###########################################
+
+	public bool getIsDead(){
+		return isDead;
+	}
+
+	public void setIsDead(bool isDead){
+		this.isDead = isDead;
+	}
+//########UTILITIES END
+//###########################################
 }

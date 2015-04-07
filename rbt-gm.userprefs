@@ -1,8 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\DefaultMovement.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\PowerClassMovement.cs">
     <Files>
-      <File FileName="Assets\Scripts\Character\DefaultMovement.cs" Line="48" Column="22" />
+      <File FileName="Assets\Scripts\NamesPatterns\Tags.cs" Line="10" Column="40" />
+      <File FileName="Assets\Scripts\Character\PowerClassMovement.cs" Line="39" Column="34" />
+      <File FileName="Assets\Scripts\Character\SpecificClassMovementTemplate.cs" Line="17" Column="3" />
+      <File FileName="Assets\Scripts\NamesPatterns\HashAnimatorDefaultMovement.cs" Line="6" Column="1" />
+      <File FileName="Assets\Scripts\NamesPatterns\HashAnimatorPowerClassMovement.cs" Line="10" Column="3" />
+      <File FileName="Assets\Scripts\Character\DefaultMovement.cs" Line="49" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: ee60b976a139f2f4288d3674cf72d852
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 18
   fileIDToRecycleName:
     100000: Exon
     100002: holo_mesh_pow
@@ -1448,7 +1448,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: .384719342
+        functionName: PunchAnimationHitStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 1a74a9ae0e86d7e47a9387e805331fca,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: .973293781
+        functionName: PunchAnimationEnd
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 1a74a9ae0e86d7e47a9387e805331fca,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -2999,11 +3015,13 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
+    keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
@@ -3828,3 +3846,5 @@ ModelImporter:
   animationType: 3
   additionalBone: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
