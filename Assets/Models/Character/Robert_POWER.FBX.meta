@@ -1429,7 +1429,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Punch_Power
       takeName: Take 001
-      firstFrame: 82
+      firstFrame: 94
       lastFrame: 112
       wrapMode: 0
       orientationOffsetY: 0
@@ -1449,7 +1449,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: .384719342
+      - time: .0761421323
         functionName: PunchAnimationHitStart
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 1a74a9ae0e86d7e47a9387e805331fca,
@@ -1457,7 +1457,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: .973293781
+      - time: .41745621
         functionName: PunchAnimationEnd
         data: 
         objectReferenceParameter: {fileID: 11500000, guid: 1a74a9ae0e86d7e47a9387e805331fca,
