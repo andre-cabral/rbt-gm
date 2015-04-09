@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: 7ca45577bcd5e7a4da4bb95e498a49ff
+timeCreated: 1428547465
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Almofada_q
+    100002: Armario1
+    100004: Canto
+    100006: Canto_e_me
+    100008: Chao
+    100010: Duto
+    100012: Escada
+    100014: Janela1
+    100016: Luz
+    100018: Luz0
+    100020: Luz001
+    100022: Luz1
+    100024: //RootNode
+    100026: Meia_pare0
+    100028: Meia_pare1
+    100030: Meia_pared
+    100032: Meia_quina
+    100034: Object001
+    100036: parede1
+    100038: parede_ser
+    100040: Porta_esc0
+    100042: Porta_esca
+    100044: Quina
+    100046: Tampa_mei0
+    100048: Tampa_meia
+    400000: Almofada_q
+    400002: Armario1
+    400004: Canto
+    400006: Canto_e_me
+    400008: Chao
+    400010: Duto
+    400012: Escada
+    400014: Janela1
+    400016: Luz
+    400018: Luz0
+    400020: Luz001
+    400022: Luz1
+    400024: //RootNode
+    400026: Meia_pare0
+    400028: Meia_pare1
+    400030: Meia_pared
+    400032: Meia_quina
+    400034: Object001
+    400036: parede1
+    400038: parede_ser
+    400040: Porta_esc0
+    400042: Porta_esca
+    400044: Quina
+    400046: Tampa_mei0
+    400048: Tampa_meia
+    2300000: Almofada_q
+    2300002: Armario1
+    2300004: Canto
+    2300006: Canto_e_me
+    2300008: Chao
+    2300010: Duto
+    2300012: Escada
+    2300014: Janela1
+    2300016: Luz
+    2300018: Luz0
+    2300020: Luz001
+    2300022: Luz1
+    2300024: Meia_pare0
+    2300026: Meia_pare1
+    2300028: Meia_pared
+    2300030: Meia_quina
+    2300032: Object001
+    2300034: parede1
+    2300036: parede_ser
+    2300038: Porta_esc0
+    2300040: Porta_esca
+    2300042: Quina
+    2300044: Tampa_mei0
+    2300046: Tampa_meia
+    3300000: Almofada_q
+    3300002: Armario1
+    3300004: Canto
+    3300006: Canto_e_me
+    3300008: Chao
+    3300010: Duto
+    3300012: Escada
+    3300014: Janela1
+    3300016: Luz
+    3300018: Luz0
+    3300020: Luz001
+    3300022: Luz1
+    3300024: Meia_pare0
+    3300026: Meia_pare1
+    3300028: Meia_pared
+    3300030: Meia_quina
+    3300032: Object001
+    3300034: parede1
+    3300036: parede_ser
+    3300038: Porta_esc0
+    3300040: Porta_esca
+    3300042: Quina
+    3300044: Tampa_mei0
+    3300046: Tampa_meia
+    4300000: Janela1
+    4300002: Object001
+    4300004: Armario1
+    4300006: Chao
+    4300008: Escada
+    4300010: Porta_esca
+    4300012: Canto
+    4300014: parede1
+    4300016: Porta_esc0
+    4300018: Canto_e_me
+    4300020: Meia_pared
+    4300022: Meia_quina
+    4300024: Quina
+    4300026: Tampa_meia
+    4300028: Tampa_mei0
+    4300030: Luz
+    4300032: Duto
+    4300034: Meia_pare0
+    4300036: Almofada_q
+    4300038: parede_ser
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
