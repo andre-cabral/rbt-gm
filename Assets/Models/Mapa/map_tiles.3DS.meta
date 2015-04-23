@@ -30,6 +30,8 @@ ModelImporter:
     100044: Quina
     100046: Tampa_mei0
     100048: Tampa_meia
+    100050: parede003
+    100052: meio-ch_o
     400000: Almofada_q
     400002: Armario1
     400004: Canto
@@ -55,6 +57,8 @@ ModelImporter:
     400044: Quina
     400046: Tampa_mei0
     400048: Tampa_meia
+    400050: parede003
+    400052: meio-ch_o
     2300000: Almofada_q
     2300002: Armario1
     2300004: Canto
@@ -79,6 +83,8 @@ ModelImporter:
     2300042: Quina
     2300044: Tampa_mei0
     2300046: Tampa_meia
+    2300048: parede003
+    2300050: meio-ch_o
     3300000: Almofada_q
     3300002: Armario1
     3300004: Canto
@@ -103,6 +109,8 @@ ModelImporter:
     3300042: Quina
     3300044: Tampa_mei0
     3300046: Tampa_meia
+    3300048: parede003
+    3300050: meio-ch_o
     4300000: Janela1
     4300002: Object001
     4300004: Armario1
@@ -123,8 +131,9 @@ ModelImporter:
     4300034: Meia_pare0
     4300036: Almofada_q
     4300038: parede_ser
+    4300040: meio-ch_o
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
