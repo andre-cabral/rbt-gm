@@ -1,0 +1,11 @@
+T-Pose		0
+
+idle		1-50
+
+Walk fwd	51-111
+
+Walk side	112-142
+Walk bwd	143-203
+tranform	204-253
+Dodge		254-270
+attack		271-290

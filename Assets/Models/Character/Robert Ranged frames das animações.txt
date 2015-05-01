@@ -1,0 +1,11 @@
+T-Pose		0
+
+Shoot arrow	1-30
+ (frame 20 é o momento do disparo)
+idle		31-70
+
+Walk fwd	71-101
+
+Walk back	102-132
+Walk side	133-163
+Jetpack fly	164-174
