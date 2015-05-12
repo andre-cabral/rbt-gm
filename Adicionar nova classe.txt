@@ -1,11 +1,16 @@
 - O objeto deve ser o modelo 3d
 - Deve ser filho do CharacterClassesContainer
-- O nome padrão no momento é Robert_NOMEDACLASSEEMLETRASMAIUSCULAS
+- O nome padrão no momento é Robert_NOMEDACLASSECOMLETRASMAIUSCULAS
 
 - Colocar a classe em uma das posições do script ChangeClass no inspector do CharacterClassesContainer
 
 - Adicionar o nome da animação de mudança para essa classe no script AnimationsNames
-- Adicionar o nome do gameobject en ClassesObjectsNames
+- Adicionar o nome do gameobject em ClassesObjectsNames
+
+- Adicionar a tag CharacterClass no novo objeto
+
+- Colocar o objeto na layer "Player capsule", mas apenas o objeto PAI, quando perguntar se os filhos devem ir pra layer, colocar NO.
+(Isso é pro sistema de ragdoll funcionar legal. depois precisa colocar os colliders nos pontos do ragdoll. os colliders do ragdoll ficam para o modelista 3d colocar.)
 
 - Na função classChangeCheck do script DefaultMovement, adicionar no if que verifica se terminou de trocar a classe:
 && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassNewClassName))
@@ -18,9 +23,15 @@ if(classToGo.name == ClassesObjectsNames.newClassName){
 - No animator de todas as classes, incluir um novo ChangeClassNomeDaClasseNova.
 - Ele será usado quando o ChangeClass for true e quando o ClassToGo tiver o valor definido no DefaultMovement na função ClassAnimationNumber
 
+
+- Criar e adicionar um script HashAnimatorNomeDaClasseNovaMovement para os hashes das animações exclusivas da classe nova.
+
 - Criar point light com a cor da classe como filho do gameobject
+(os point lights ficam para o modelista 3d colocar nos lugares em que dão um visual melhor pro personagem.)
 
 - Criar CheckGroundA como filho do gameobject
+
+- adicionar rigid body, capsule collider, default movement e hash animator default movement
 
 - Colocar no inspector do default movement o checkground e escolher a layer floor
 

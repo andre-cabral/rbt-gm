@@ -16,7 +16,7 @@ public class DefaultMovement : MonoBehaviour {
 	private bool changingClass = false;
 	private int goToClass;
 
-	private bool grounded = false;
+	public bool grounded = false;
 	private bool jumpStart = false;
 	public float jumpHeight = 300f;
 	public GameObject groundedPositionObject;
@@ -223,7 +223,8 @@ public class DefaultMovement : MonoBehaviour {
 	void classChangeCheck(){
 		if(changingClass && !animator.IsInTransition(0) 
 		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassStealth)
-		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassPower)){
+		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassPower)
+		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassRanged)){
 			finishClassChange();
 		}
 		
@@ -237,14 +238,14 @@ public class DefaultMovement : MonoBehaviour {
 				startClassChange(1);
 			}
 			
-			if( Input.GetButtonDown(Buttons.class2) && !changeClassScript.class0.Equals(changeClassScript.GetActiveClass()) ){
+			if( Input.GetButtonDown(Buttons.class2) && !changeClassScript.class2.Equals(changeClassScript.GetActiveClass()) ){
 				startClassChange(2);
 			}
 			
 		}
 	}
 
-	void startClassChange(int goToClass){
+	void startClassChange(int goToClass){	
 		stoppedOnAnimation = true;
 		changingClass = true;
 		animator.SetBool(hash.changeClass, true);
@@ -288,11 +289,11 @@ public class DefaultMovement : MonoBehaviour {
 		if(classToGo.name == ClassesObjectsNames.power){
 			return 1;
 		}
-		/*
+
 		if(classToGo.name == ClassesObjectsNames.ranged){
 			return 2;
 		}
-		*/
+
 		return 99;
 	}
 //########CHANGE CLASS END

@@ -11,4 +11,5 @@ public class AnimationsNames : MonoBehaviour {
 	public const string changeClass = "ChangeClass";
 	public const string changeClassStealth = "ChangeClassStealth";
 	public const string changeClassPower = "ChangeClassPower";
+	public const string changeClassRanged = "ChangeClassRanged";
 }

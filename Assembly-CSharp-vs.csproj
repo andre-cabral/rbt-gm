@@ -67,6 +67,8 @@
      <Compile Include="Assets\Scripts\NamesPatterns\Layers.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\Tags.cs" />
      <None Include="Assets\Models\Character\Robert Power frames das animações.txt" />
+     <None Include="Assets\Models\Character\Robert Stealth frames das animações.txt" />
+     <None Include="Assets\Models\Character\Robert Ranged frames das animações.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

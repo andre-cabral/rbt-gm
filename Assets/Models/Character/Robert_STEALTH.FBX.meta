@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 70db39f006543da44a602c14e5a30d5a
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 18
   fileIDToRecycleName:
     100000: Exon
     100002: holo_mesh_stealth
@@ -123,6 +123,9 @@ ModelImporter:
     100234: Player_spine4_bone
     100236: Player_spinebase_ctrl
     100238: //RootNode
+    100240: Machado
+    100242: mask
+    100244: VRayLight001
     400000: Exon
     400002: holo_mesh_stealth
     400004: Player_COM_ctrl
@@ -243,6 +246,9 @@ ModelImporter:
     400234: Player_spine4_bone
     400236: Player_spinebase_ctrl
     400238: //RootNode
+    400240: Machado
+    400242: mask
+    400244: VRayLight001
     2300000: Player_L_clavicle_ctrl
     2300002: Player_L_elbow_FK_ctrl
     2300004: Player_L_foot_ctrl
@@ -261,6 +267,8 @@ ModelImporter:
     2300030: Player_R_pinky_ctrl
     2300032: Player_R_shoulder_FK_ctrl
     2300034: Player_R_thumb_ctrl
+    2300036: Machado
+    2300038: mask
     3300000: Player_L_clavicle_ctrl
     3300002: Player_L_elbow_FK_ctrl
     3300004: Player_L_foot_ctrl
@@ -279,6 +287,8 @@ ModelImporter:
     3300030: Player_R_pinky_ctrl
     3300032: Player_R_shoulder_FK_ctrl
     3300034: Player_R_thumb_ctrl
+    3300036: Machado
+    3300038: mask
     4300000: holo_mesh_stealth
     4300002: Exon
     4300004: Player_L_foot_ctrl
@@ -299,6 +309,8 @@ ModelImporter:
     4300034: Player_R_clavicle_ctrl
     4300036: Player_L_hand_IK_ctrl
     4300038: Player_R_hand_IK_ctrl
+    4300040: mask
+    4300042: Machado
     7400000: Walk_fwd_Stealth
     7400002: Walk_L_Stealth
     7400004: Walk_R_Stealth
@@ -1799,11 +1811,13 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
+    keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
@@ -2668,3 +2682,5 @@ ModelImporter:
   animationType: 3
   additionalBone: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
