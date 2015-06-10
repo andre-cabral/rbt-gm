@@ -59,10 +59,12 @@
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StalkerMovementArea.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StartStalkingArea.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StopStalkingArea.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\MenuTransitions.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\AnimationsNames.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\Buttons.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\ClassesObjectsNames.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorDefaultMovement.cs" />
+     <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorMainMenu.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorPowerClassMovement.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\Layers.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\Tags.cs" />

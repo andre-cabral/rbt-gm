@@ -1,15 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\CameraMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MainMenu\MenuTransitions.cs">
     <Files>
-      <File FileName="..\..\..\UnityUtilities\Assets\Persistence\Scripts\GameController\PlayerPrefsScript.cs" Line="12" Column="22" />
-      <File FileName="Assets\Scripts\Character\DefaultMovement.cs" Line="231" Column="98" />
-      <File FileName="Assets\Scripts\Character\ChangeClass.cs" Line="13" Column="15" />
-      <File FileName="Assets\Scripts\NamesPatterns\ClassesObjectsNames.cs" Line="9" Column="2" />
-      <File FileName="Assets\Scripts\NamesPatterns\AnimationsNames.cs" Line="16" Column="1" />
-      <File FileName="Assets\Scripts\NamesPatterns\HashAnimatorPowerClassMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NamesPatterns\Buttons.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\CameraMovement.cs" Line="18" Column="17" />
+      <File FileName="Assets\Scripts\MainMenu\MenuTransitions.cs" Line="19" Column="55" />
+      <File FileName="Assets\Scripts\NamesPatterns\HashAnimatorDefaultMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NamesPatterns\HashAnimatorMainMenu.cs" Line="11" Column="55" />
+      <File FileName="Assets\Scripts\Character\DefaultMovement.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
