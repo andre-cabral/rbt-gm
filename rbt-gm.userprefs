@@ -1,11 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MainMenu\MenuTransitions.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\CameraMovement.cs">
     <Files>
-      <File FileName="Assets\Scripts\MainMenu\MenuTransitions.cs" Line="19" Column="55" />
-      <File FileName="Assets\Scripts\NamesPatterns\HashAnimatorDefaultMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NamesPatterns\HashAnimatorMainMenu.cs" Line="11" Column="55" />
-      <File FileName="Assets\Scripts\Character\DefaultMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\DefaultMovement.cs" Line="373" Column="39" />
+      <File FileName="Assets\Scripts\GameController\LifeManager.cs" Line="14" Column="37" />
+      <File FileName="Assets\Scripts\Character\PowerClassMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NamesPatterns\Tags.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy\EnemyAttackCollider.cs" Line="5" Column="1" />
+      <File FileName="Assets\Scripts\Character\FlickerWhenDamaged.cs" Line="41" Column="21" />
+      <File FileName="Assets\Scripts\Character\CameraMovement.cs" Line="32" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
