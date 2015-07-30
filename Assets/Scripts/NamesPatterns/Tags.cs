@@ -8,4 +8,5 @@ public class Tags : MonoBehaviour {
 	public const string enemy = "Enemy";
 	public const string gameController = "GameController";
 	public const string powerPunchCollider = "PowerPunchCollider";
+	public const string enemyAttackCollider = "EnemyAttackCollider";
 }

@@ -2,6 +2,7 @@
 using System.Collections;
 
 [RequireComponent(typeof(HashAnimatorDefaultMovement))]
+[RequireComponent(typeof(FlickerWhenDamaged))]
 
 public class DefaultMovement : MonoBehaviour {
 	public float movementSpeed = 0.1f;
@@ -30,6 +31,11 @@ public class DefaultMovement : MonoBehaviour {
 	private Collider playerCollider;
 	private Rigidbody playerRigidbody;
 
+	private GameObject gameController;
+	private LifeManager lifeManager;
+	private bool isGettingHit = false;
+	private FlickerWhenDamaged flickerWhenDamaged;
+
 	void Awake(){
 		animator = GetComponent<Animator>();
 		hash = GetComponent<HashAnimatorDefaultMovement>();
@@ -39,6 +45,10 @@ public class DefaultMovement : MonoBehaviour {
 
 		playerCollider = GetComponent<Collider>();
 		playerRigidbody = GetComponent<Rigidbody>();
+
+		gameController = GameObject.FindGameObjectWithTag(Tags.gameController);
+		lifeManager = gameController.GetComponent<LifeManager>();
+		flickerWhenDamaged = GetComponent<FlickerWhenDamaged>();
 	}
 
 	void Update () {
@@ -61,7 +71,7 @@ public class DefaultMovement : MonoBehaviour {
 		}
 		
 		if(Input.GetKey("e")){
-			GetComponent<Rigidbody>().AddForce(0f,150f,0f);
+			playerRigidbody.AddForce(0f,150f,0f);
 		}
 		
 	}
@@ -218,6 +228,21 @@ public class DefaultMovement : MonoBehaviour {
 //###########################################
 
 
+//########Collisions START
+//###########################################
+	void OnTriggerEnter(Collider collider) {
+		if( !flickerWhenDamaged.getFlicker() ){
+			GameObject collidedObject = collider.gameObject;
+			if(collidedObject.tag == Tags.enemyAttackCollider){
+				EnemyAttackCollider enemyAttackColliderScript = collidedObject.GetComponent<EnemyAttackCollider>();
+				LifeLoss(enemyAttackColliderScript.damage);
+			}
+		}
+	}
+//########Collisions END
+//###########################################
+
+
 //########CHANGE CLASS START
 //###########################################
 	void classChangeCheck(){
@@ -321,7 +346,7 @@ public class DefaultMovement : MonoBehaviour {
 
 	void jumpAddForce(){
 		stoppedOnAnimation = false;
-		GetComponent<Rigidbody>().AddForce(Vector3.up * jumpHeight);
+		playerRigidbody.AddForce(Vector3.up * jumpHeight);
 	}
 
 	void jumpGroundCheck(){
@@ -331,9 +356,31 @@ public class DefaultMovement : MonoBehaviour {
 		//Debug.Log(Mathf.Round(rigidbody.velocity.y*1000f)/1000f);
 		animator.SetBool(hash.grounded, grounded);
 		
-		animator.SetFloat(hash.verticalSpeed, Mathf.Round(GetComponent<Rigidbody>().velocity.y*100)/100);
+		animator.SetFloat(hash.verticalSpeed, Mathf.Round(playerRigidbody.velocity.y*100)/100);
 	}
 //########JUMP END
+//###########################################
+
+//########Life Manager START
+//###########################################
+	public void LifeGain(int gainedLife){
+		lifeManager.LifeGain(gainedLife);
+	}
+
+	public void LifeLoss (int lifeToLose){
+		//only flicker if the damage dont kill the player
+		if( lifeToLose < lifeManager.GetLife() ){
+			flickerWhenDamaged.startFlickering();
+		}
+
+		lifeManager.LifeLoss(lifeToLose);
+
+		if(lifeManager.GetLife() <= 0){
+			setIsDead(true);
+		}
+	}
+
+//########Life Manager END
 //###########################################
 
 //########DEATH START

@@ -51,14 +51,17 @@
      <Compile Include="Assets\Scripts\Character\ChangeClass.cs" />
      <Compile Include="Assets\Scripts\Character\DefaultMovement.cs" />
      <Compile Include="Assets\Scripts\Character\DefaultMovement8Directions.cs" />
+     <Compile Include="Assets\Scripts\Character\FlickerWhenDamaged.cs" />
      <Compile Include="Assets\Scripts\Character\PowerClassMovement.cs" />
      <Compile Include="Assets\Scripts\Character\SpecificClassMovementTemplate.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyAttackCollider.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyCollisions.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Points\RelativePointsMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\StalkerNavMesh.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StalkerMovementArea.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StartStalkingArea.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StopStalkingArea.cs" />
+     <Compile Include="Assets\Scripts\GameController\LifeManager.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MenuTransitions.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\AnimationsNames.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\Buttons.cs" />
