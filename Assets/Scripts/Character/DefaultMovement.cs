@@ -24,6 +24,7 @@ public class DefaultMovement : MonoBehaviour {
 	public float groundedObjectRadius = 0.05f;
 	public LayerMask layerFloor;
 
+	private bool canWalk = true;
 	private bool stoppedOnAnimation = false;
 
 	public bool isDead = false;
@@ -33,7 +34,6 @@ public class DefaultMovement : MonoBehaviour {
 
 	private GameObject gameController;
 	private LifeManager lifeManager;
-	private bool isGettingHit = false;
 	private FlickerWhenDamaged flickerWhenDamaged;
 
 	void Awake(){
@@ -65,8 +65,11 @@ public class DefaultMovement : MonoBehaviour {
 			StartDeathRagDoll();
 		}
 
-		if(!isDead && !stoppedOnAnimation){
+		if(!isDead && !stoppedOnAnimation && canWalk){
 			Walking();
+		}
+
+		if(!isDead && !stoppedOnAnimation){
 			RotateToMouse();
 		}
 		
@@ -231,15 +234,26 @@ public class DefaultMovement : MonoBehaviour {
 //########Collisions START
 //###########################################
 	void OnTriggerEnter(Collider collider) {
-		if( !flickerWhenDamaged.getFlicker() ){
-			GameObject collidedObject = collider.gameObject;
-			if(collidedObject.tag == Tags.enemyAttackCollider){
-				EnemyAttackCollider enemyAttackColliderScript = collidedObject.GetComponent<EnemyAttackCollider>();
-				LifeLoss(enemyAttackColliderScript.damage);
-			}
+		GameObject collidedObject = collider.gameObject;
+
+		if( !flickerWhenDamaged.getFlicker() && collidedObject.tag == Tags.enemyAttackCollider){
+			TakeDamage(collidedObject);
 		}
+
 	}
 //########Collisions END
+//###########################################
+
+
+//########Damage START
+//###########################################
+	void TakeDamage(GameObject collidedObject){
+		EnemyAttackCollider enemyAttackColliderScript = collidedObject.GetComponent<EnemyAttackCollider>();
+		if(enemyAttackColliderScript.DamageDealt() > 0){
+			LifeLoss(enemyAttackColliderScript.DamageDealt());
+		}
+	}
+//########Damage END
 //###########################################
 
 
@@ -413,8 +427,16 @@ public class DefaultMovement : MonoBehaviour {
 		return stoppedOnAnimation;
 	}
 	
-	public void setStoppedOnAnimation(bool stopped){
-		stoppedOnAnimation = stopped;
+	public void setStoppedOnAnimation(bool stoppedOnAnimation){
+		this.stoppedOnAnimation = stoppedOnAnimation;
+	}
+
+	public bool getCanWalk(){
+		return canWalk;
+	}
+	
+	public void setCanWalk(bool canWalk){
+		this.canWalk = canWalk;
 	}
 
 	public bool getIsDead(){

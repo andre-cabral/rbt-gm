@@ -5,6 +5,8 @@ public class PowerClassMovement : MonoBehaviour {
 
 	public DefaultMovement defaultMovementScript;
 	public GameObject punchCollider;
+	public GameObject blockingCollider;
+	private bool isBlocking = false;
 	private Animator animator;
 	private HashAnimatorPowerClassMovement hashPower;
 
@@ -19,11 +21,16 @@ public class PowerClassMovement : MonoBehaviour {
 				Punch();
 			}
 			if(Input.GetButtonDown(Buttons.power1) ){
-				
+				BlockingStart();
+			}
+			if(Input.GetButtonUp(Buttons.power1) ){
+				BlockingEnd();
 			}
 		}
 	}
 
+//########Punch START
+//###########################################
 	void Punch(){
 		if(defaultMovementScript.getGrounded()){
 			defaultMovementScript.setStoppedOnAnimation(true);
@@ -39,5 +46,22 @@ public class PowerClassMovement : MonoBehaviour {
 		punchCollider.SetActive(false);
 		defaultMovementScript.setStoppedOnAnimation(false);
 	}
+//########Punch END
+//###########################################
 
+
+//########Blocking START
+//###########################################
+	void BlockingStart(){
+		blockingCollider.SetActive(true);
+		animator.SetBool(hashPower.blocking, true);
+		defaultMovementScript.setCanWalk(false);
+	}
+	void BlockingEnd(){
+		blockingCollider.SetActive(false);
+		animator.SetBool(hashPower.blocking, false);
+		defaultMovementScript.setCanWalk(true);
+	}
+//########Blocking END
+//###########################################
 }
