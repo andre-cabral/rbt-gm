@@ -25,6 +25,7 @@ public class DefaultMovement : MonoBehaviour {
 	public LayerMask layerFloor;
 
 	private bool canWalk = true;
+	private bool canJump = true;
 	private bool stoppedOnAnimation = false;
 
 	public bool isDead = false;
@@ -343,7 +344,7 @@ public class DefaultMovement : MonoBehaviour {
 //###########################################
 	void jump(){
 
-		if(Input.GetButtonDown(Buttons.jump) && !jumpStart && !stoppedOnAnimation && grounded){
+		if(Input.GetButtonDown(Buttons.jump) && !jumpStart && !stoppedOnAnimation && grounded && canJump){
 			jumpStart = true;
 			stoppedOnAnimation = true;
 			animator.SetBool(hash.jumpStart, jumpStart);
@@ -437,6 +438,14 @@ public class DefaultMovement : MonoBehaviour {
 	
 	public void setCanWalk(bool canWalk){
 		this.canWalk = canWalk;
+	}
+
+	public bool getCanJump(){
+		return canJump;
+	}
+	
+	public void setCanJump(bool canJump){
+		this.canJump = canJump;
 	}
 
 	public bool getIsDead(){

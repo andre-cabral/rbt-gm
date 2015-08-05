@@ -32,19 +32,20 @@ public class PowerClassMovement : MonoBehaviour {
 //########Punch START
 //###########################################
 	void Punch(){
-		if(defaultMovementScript.getGrounded()){
-			defaultMovementScript.setStoppedOnAnimation(true);
+		//if(defaultMovementScript.getGrounded()){
+			//defaultMovementScript.setCanJump(false);
 			animator.SetBool(hashPower.punch, true);
-		}
+		//}
 	}
 
 	void PunchAnimationHitStart(){
 		punchCollider.SetActive(true);
+
 	}
 
 	void PunchAnimationEnd(){
 		punchCollider.SetActive(false);
-		defaultMovementScript.setStoppedOnAnimation(false);
+		//defaultMovementScript.setCanJump(true);
 	}
 //########Punch END
 //###########################################
