@@ -367,6 +367,7 @@ ModelImporter:
     7400004: Walk_R_Ranged
     7400006: Walk_bwd_Ranged
     7400008: Idle_Ranged
+    7400010: Shooting_Ranged
     9500000: //RootNode
     13700000: Bow
     13700002: Exon
@@ -380,6 +381,26 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: "MuscleClip 'Robert_Ranged' conversion warning: Bone
+      length is different in avatar and animation\n\n     'Bow_String_puller' : position
+      error = 81.843704 mm\n\nMuscleClip 'Robert_Ranged' conversion warning: 'Player_COM_ctrl/Player_pelvis_bone'
+      is between humanoid transforms and has rotation animation. This might lower
+      retargeting quality.\n\nMuscleClip 'Robert_Ranged' conversion warning: 'Player_COM_ctrl/Player_spine1_bone'
+      is between humanoid transforms and has rotation animation. This might lower
+      retargeting quality.\n\nMuscleClip 'Robert_Ranged' conversion warning: 'Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone'
+      is between humanoid transforms and has rotation animation. This might lower
+      retargeting quality.\n\nMuscleClip 'Robert_Ranged' conversion warning: 'Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_neck1_bone/Player_neck2_bone'
+      is between humanoid transforms and has rotation animation. This might lower
+      retargeting quality.\n\nMuscleClip 'Robert_Ranged' conversion warning: 'Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone'
+      is between humanoid transforms and has rotation animation. This might lower
+      retargeting quality.\n\nMuscleClip 'Robert_Ranged'conversion warning: 'Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Bow_handler/Main/Bow_String_puller'
+      has translation animation. It is not supported.\n\nMuscleClip 'Robert_Ranged'
+      conversion warning: 'Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone'
+      is between humanoid transforms and has rotation animation. This might lower
+      retargeting quality.\n\n"
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 3
     animationRotationError: .5
     animationPositionError: .5
@@ -1984,6 +2005,212 @@ ModelImporter:
       - path: Player_R_toe_IKgoal
         weight: 0
       - path: Player_spinebase_ctrl
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Shooting_Ranged
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 1
+        functionName: ShootingAnimationEnd
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 579a798f818e071478237fa7bfbb1b51,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: .655421674
+        functionName: ShootingLaunchArrowAnimationStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 579a798f818e071478237fa7bfbb1b51,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bow
+        weight: 0
+      - path: Exon
+        weight: 0
+      - path: holo_mesh_stealth
+        weight: 0
+      - path: Player_COM_ctrl
+        weight: 1
+      - path: Player_COM_ctrl/Player_pelvis_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_pelvis_bone/Player_L_tigh_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_pelvis_bone/Player_L_tigh_bone/Player_L_calf_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_pelvis_bone/Player_L_tigh_bone/Player_L_calf_bone/Player_L_foot_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_pelvis_bone/Player_L_tigh_bone/Player_L_calf_bone/Player_L_foot_bone/Player_L_toes_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_pelvis_bone/Player_L_tigh_bone/Player_L_calf_bone/Player_L_foot_bone/Player_L_toes_bone/Player_L_toe-nub_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_pelvis_bone/Player_pelvis-nub_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_pelvis_bone/Player_R_tigh_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_pelvis_bone/Player_R_tigh_bone/Player_R_calf_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_pelvis_bone/Player_R_tigh_bone/Player_R_calf_bone/Player_R_foot_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_pelvis_bone/Player_R_tigh_bone/Player_R_calf_bone/Player_R_foot_bone/Player_R_toes_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_pelvis_bone/Player_R_tigh_bone/Player_R_calf_bone/Player_R_foot_bone/Player_R_toes_bone/Player_R_toe-nub_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Bow_handler
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Bow_handler/Main
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Bow_handler/Main/Bone001
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Bow_handler/Main/Bone001/Bone002
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Bow_handler/Main/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Bow_handler/Main/Bone001/Bone002/Bone003/Bone004
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Bow_handler/Main/Bone001/Bone002/Bone003/Bone004/Bone005
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Bow_handler/Main/Bone007
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Bow_handler/Main/Bone007/Bone008
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Bow_handler/Main/Bone007/Bone008/Bone009
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Bow_handler/Main/Bone007/Bone008/Bone009/Bone010
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Bow_handler/Main/Bone007/Bone008/Bone009/Bone010/Bone011
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Bow_handler/Main/Bow_String_puller
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Bow_handler/Main/Bow_String_puller/arrow
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_hand-nub_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_index_ctrl
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_index_ctrl/Player_L_index1_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_index_ctrl/Player_L_index1_bone/Player_L_index2_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_index_ctrl/Player_L_index1_bone/Player_L_index2_bone/Player_L_index3_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_index_ctrl/Player_L_index1_bone/Player_L_index2_bone/Player_L_index3_bone/Player_L_index-nub_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_pinky_ctrl
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_pinky_ctrl/Player_L_pinky1_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_pinky_ctrl/Player_L_pinky1_bone/Player_L_pinky2_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_pinky_ctrl/Player_L_pinky1_bone/Player_L_pinky2_bone/Player_L_pinky3_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_pinky_ctrl/Player_L_pinky1_bone/Player_L_pinky2_bone/Player_L_pinky3_bone/Player_L_pinky-nub_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_thumb_ctrl
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_thumb_ctrl/Player_L_thumb1_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_thumb_ctrl/Player_L_thumb1_bone/Player_L_thumb2_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_thumb_ctrl/Player_L_thumb1_bone/Player_L_thumb2_bone/Player_L_thumb3_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_L_clavicle_bone/Player_L_shoulder_bone/Player_L_forearm_bone/Player_L_wrist_bone/Player_L_hand_bone/Player_L_thumb_ctrl/Player_L_thumb1_bone/Player_L_thumb2_bone/Player_L_thumb3_bone/Player_L_thumb-nub_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_neck1_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_neck1_bone/Player_neck2_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_neck1_bone/Player_neck2_bone/Player_head_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_neck1_bone/Player_neck2_bone/Player_head_bone/aim
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_neck1_bone/Player_neck2_bone/Player_head_bone/Player_head-nub_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_hand-nub_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_index_ctrl
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_index_ctrl/Player_R_index1_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_index_ctrl/Player_R_index1_bone/Player_R_index2_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_index_ctrl/Player_R_index1_bone/Player_R_index2_bone/Player_R_index3_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_index_ctrl/Player_R_index1_bone/Player_R_index2_bone/Player_R_index3_bone/Player_R_index-nub_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_pinky_ctrl
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_pinky_ctrl/Player_R_pinky1_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_pinky_ctrl/Player_R_pinky1_bone/Player_R_pinky2_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_pinky_ctrl/Player_R_pinky1_bone/Player_R_pinky2_bone/Player_R_pinky3_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_pinky_ctrl/Player_R_pinky1_bone/Player_R_pinky2_bone/Player_R_pinky3_bone/Player_R_pinky-nub_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_thumb_ctrl
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_thumb_ctrl/Player_R_thumb1_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_thumb_ctrl/Player_R_thumb1_bone/Player_R_thumb2_bone
+        weight: 1
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_thumb_ctrl/Player_R_thumb1_bone/Player_R_thumb2_bone/Player_R_thumb3_bone
+        weight: 0
+      - path: Player_COM_ctrl/Player_spine1_bone/Player_spine2_bone/Player_spine3_bone/Player_spine4_bone/Player_R_clavicle_bone/Player_R_shoulder_bone/Player_R_forearm_bone/Player_R_wrist_bone/Player_R_hand_bone/Player_R_thumb_ctrl/Player_R_thumb1_bone/Player_R_thumb2_bone/Player_R_thumb3_bone/Player_R_thumb-nub_bone
         weight: 0
       maskType: 0
       maskSource: {instanceID: 0}
