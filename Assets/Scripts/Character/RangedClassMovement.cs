@@ -33,15 +33,17 @@ public class RangedClassMovement : MonoBehaviour {
 			Debug.DrawRay(origin, destiny);
 		}
 
+		if(!isArrowFollowingPositionObject && !isShooting){
+			NewArrow();
+		}
+
 		if(!defaultMovementScript.getIsDead() && !defaultMovementScript.getStoppedOnAnimation()){
 			if(Input.GetButtonDown(Buttons.power0) && !isShooting){
 				Shooting();
 			}
 		}
 
-		if(!isArrowFollowingPositionObject && !isShooting){
-			NewArrow();
-		}
+
 
 		if(isArrowFollowingPositionObject){
 			//ArrowPosition();
