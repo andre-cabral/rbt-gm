@@ -26,7 +26,11 @@ public class RangedClassMovement : MonoBehaviour {
 	void Update () {
 
 		if(latestArrow != null){
-			Debug.DrawRay(latestArrow.transform.position,latestArrow.transform.forward*50);
+
+			Vector3 origin = latestArrow.transform.position;
+			Vector3 destiny = transform.forward*50;
+
+			Debug.DrawRay(origin, destiny);
 		}
 
 		if(!defaultMovementScript.getIsDead() && !defaultMovementScript.getStoppedOnAnimation()){
@@ -53,9 +57,17 @@ public class RangedClassMovement : MonoBehaviour {
 
 	void ShootingLaunchArrowAnimationStart(){
 		isArrowFollowingPositionObject = false;
-		arrowPositionObject.transform.DetachChildren();
+
+		//latestArrow.transform.localPosition = new Vector3(transform.localPosition.x, latestArrow.transform.localPosition.y, latestArrow.transform.localPosition.z);
+		//Debug.Log(new Vector3(transform.localPosition.x, latestArrow.transform.localPosition.y, latestArrow.transform.localPosition.z));
+		latestArrow.transform.rotation = transform.rotation;
+		//latestArrowRigidBody.angularVelocity = Vector3.zero;
 		latestArrowRigidBody.isKinematic = false;
-		latestArrowRigidBody.AddForce( arrowForce * latestArrow.transform.forward );
+
+		arrowPositionObject.transform.DetachChildren();
+
+		latestArrowRigidBody.AddForce( arrowForce * /*latestArrow.*/transform.forward );
+		latestArrow.GetComponent<Collider>().enabled = true;
 	}
 
 	void ShootingAnimationEnd(){
@@ -69,19 +81,6 @@ public class RangedClassMovement : MonoBehaviour {
 		latestArrow.transform.SetParent(arrowPositionObject.transform);
 		latestArrow.transform.localPosition = new Vector3(0f,0f,0f);
 		latestArrow.transform.localRotation = Quaternion.Euler(new Vector3 (0f,0f,0f));
-
-		//ArrowPosition();
-	}
-	void ArrowPosition(){
-		latestArrow.transform.position = arrowPositionObject.transform.position;
-		//latestArrow.transform.position = new Vector3( arrowPositionObject.transform.position.x,arrowPositionObject.transform.position.y,arrowPositionObject.transform.position.z);
-
-		latestArrow.transform.rotation = arrowPositionObject.transform.rotation;
-		//latestArrow.transform.rotation = new Vector3(90f,0f,0f).;
-		
-		//latestArrowRigidBody.velocity = new Vector3(0f,0f,0f);
-		//latestArrowRigidBody.angularVelocity = new Vector3(0f,0f,0f);
-		//latestArrow.transform
 	}
 	//########Shooting END
 	//###########################################

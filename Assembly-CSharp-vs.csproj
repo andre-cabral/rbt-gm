@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Character\FlickerWhenDamaged.cs" />
      <Compile Include="Assets\Scripts\Character\PlayerAttackCollider.cs" />
      <Compile Include="Assets\Scripts\Character\PowerClassMovement.cs" />
+     <Compile Include="Assets\Scripts\Character\RangedArrowCollisions.cs" />
      <Compile Include="Assets\Scripts\Character\RangedClassMovement.cs" />
      <Compile Include="Assets\Scripts\Character\SpecificClassMovementTemplate.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttackCollider.cs" />
