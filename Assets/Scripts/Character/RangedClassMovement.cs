@@ -26,11 +26,8 @@ public class RangedClassMovement : MonoBehaviour {
 	void Update () {
 
 		if(latestArrow != null){
-
 			Vector3 origin = latestArrow.transform.position;
 			Vector3 destiny = transform.forward*50;
-
-			Debug.DrawRay(origin, destiny);
 		}
 
 		if(!isArrowFollowingPositionObject && !isShooting){
@@ -41,12 +38,6 @@ public class RangedClassMovement : MonoBehaviour {
 			if(Input.GetButtonDown(Buttons.power0) && !isShooting){
 				Shooting();
 			}
-		}
-
-
-
-		if(isArrowFollowingPositionObject){
-			//ArrowPosition();
 		}
 	}
 	
@@ -60,15 +51,12 @@ public class RangedClassMovement : MonoBehaviour {
 	void ShootingLaunchArrowAnimationStart(){
 		isArrowFollowingPositionObject = false;
 
-		//latestArrow.transform.localPosition = new Vector3(transform.localPosition.x, latestArrow.transform.localPosition.y, latestArrow.transform.localPosition.z);
-		//Debug.Log(new Vector3(transform.localPosition.x, latestArrow.transform.localPosition.y, latestArrow.transform.localPosition.z));
 		latestArrow.transform.rotation = transform.rotation;
-		//latestArrowRigidBody.angularVelocity = Vector3.zero;
 		latestArrowRigidBody.isKinematic = false;
 
 		arrowPositionObject.transform.DetachChildren();
 
-		latestArrowRigidBody.AddForce( arrowForce * /*latestArrow.*/transform.forward );
+		latestArrowRigidBody.AddForce( arrowForce * transform.forward );
 		latestArrow.GetComponent<Collider>().enabled = true;
 	}
 

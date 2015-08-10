@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+[RequireComponent(typeof(BlockingCollider))]
 
 public class PowerClassMovement : MonoBehaviour {
 
@@ -12,11 +13,14 @@ public class PowerClassMovement : MonoBehaviour {
 	private DefaultMovement defaultMovementScript;
 	private Animator animator;
 	private HashAnimatorPowerClassMovement hashPower;
+	private BlockingCollider blockingColliderScript;
 
 	void Awake(){
 		defaultMovementScript = GetComponent<DefaultMovement>();
 		animator = GetComponent<Animator>();
 		hashPower = GetComponent<HashAnimatorPowerClassMovement>();
+
+		blockingColliderScript = blockingCollider.GetComponent<BlockingCollider>();
 	}
 
 	void Update () {
@@ -24,15 +28,14 @@ public class PowerClassMovement : MonoBehaviour {
 			if(Input.GetButtonDown(Buttons.power0) && !isPunching){
 				Punch();
 			}
-			if(Input.GetButtonDown(Buttons.power1) ){
+
+			if(Input.GetButton(Buttons.power1) && !isBlocking && !isPunching && defaultMovementScript.getGrounded() ){
 				BlockingStart();
 			}
-			if(Input.GetButton(Buttons.power1) && !isBlocking && !isPunching){
-				BlockingStart();
-			}
-			if(Input.GetButtonUp(Buttons.power1) ){
-				BlockingEnd();
-			}
+		}
+		if(!defaultMovementScript.getIsDead() && isBlocking
+		   && (!Input.GetButton(Buttons.power1) || defaultMovementScript.getStoppedOnAnimation() || isPunching || !defaultMovementScript.getGrounded() ) ){
+			BlockingEnd();
 		}
 	}
 
@@ -79,4 +82,9 @@ public class PowerClassMovement : MonoBehaviour {
 	}
 //########Blocking END
 //###########################################
+
+	public bool getIsBlocking(){
+		return isBlocking;
+	}
+
 }

@@ -53,11 +53,18 @@ public class DefaultMovement : MonoBehaviour {
 	}
 
 	void Update () {
-		if(!isDead && !stoppedOnAnimation){
-			classChangeCheck();
-			jump();
-		}else if(changingClass){
-			classChangeCheck();
+		if(!isDead){
+			if(Input.GetButtonDown(Buttons.jump) && !jumpStart && !stoppedOnAnimation && grounded && canJump){
+				jump();
+			}
+			jumpGroundCheck();
+			
+
+			if(!isDead && !stoppedOnAnimation){
+				classChangeCheck();
+			}else if(!isDead && changingClass){
+				classChangeCheck();
+			}
 		}
 	}
 	
@@ -234,7 +241,7 @@ public class DefaultMovement : MonoBehaviour {
 
 //########Collisions START
 //###########################################
-	void OnTriggerEnter(Collider collider) {
+	void OnTriggerStay(Collider collider) {
 		GameObject collidedObject = collider.gameObject;
 
 		if( !flickerWhenDamaged.getFlicker() && collidedObject.tag == Tags.enemyAttackCollider){
@@ -343,14 +350,9 @@ public class DefaultMovement : MonoBehaviour {
 //########JUMP START
 //###########################################
 	void jump(){
-
-		if(Input.GetButtonDown(Buttons.jump) && !jumpStart && !stoppedOnAnimation && grounded && canJump){
-			jumpStart = true;
-			stoppedOnAnimation = true;
-			animator.SetBool(hash.jumpStart, jumpStart);
-		}
-
-		jumpGroundCheck();
+		jumpStart = true;
+		stoppedOnAnimation = true;
+		animator.SetBool(hash.jumpStart, jumpStart);
 	}
 
 	void JumpStartFinishedAnimationEvent(){

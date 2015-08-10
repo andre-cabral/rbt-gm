@@ -1,16 +1,22 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\RangedClassMovement.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Models\Character\Robert Stealth frames das animações.txt">
     <Files>
-      <File FileName="Assets\Scripts\Character\RangedClassMovement.cs" Line="38" Column="4" />
-      <File FileName="Assets\Scripts\Character\PowerClassMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Models\Character\Robert Ranged frames das animações.txt" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NamesPatterns\Tags.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemy\EnemyCollisions.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\PlayerAttackCollider.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\StealthClassMovement.cs" Line="55" Column="19" />
+      <File FileName="Assets\Scripts\Enemy\EnemyAttackCollider.cs" Line="37" Column="1" />
+      <File FileName="Assets\Scripts\Character\ChangeClass.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\DefaultMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\NamesPatterns\Layers.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Character\RangedArrowCollisions.cs" Line="14" Column="3" />
+      <File FileName="Assets\Scripts\Enemy\EnemyCollisions.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\PowerClassMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\DodgingCollider.cs" Line="11" Column="2" />
+      <File FileName="Assets\Scripts\Character\BlockingCollider.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\RangedArrowCollisions.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\RangedClassMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Character\PlayerAttackCollider.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NamesPatterns\HashAnimatorPowerClassMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NamesPatterns\HashAnimatorStealthClassMovement.cs" Line="9" Column="43" />
+      <File FileName="Assets\Models\Character\Robert Stealth frames das animações.txt" Line="10" Column="15" />
+      <File FileName="Assets\Scripts\NamesPatterns\Tags.cs" Line="13" Column="52" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

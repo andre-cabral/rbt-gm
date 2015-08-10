@@ -52,12 +52,14 @@
      <Compile Include="Assets\Scripts\Character\ChangeClass.cs" />
      <Compile Include="Assets\Scripts\Character\DefaultMovement.cs" />
      <Compile Include="Assets\Scripts\Character\DefaultMovement8Directions.cs" />
+     <Compile Include="Assets\Scripts\Character\DodgingCollider.cs" />
      <Compile Include="Assets\Scripts\Character\FlickerWhenDamaged.cs" />
      <Compile Include="Assets\Scripts\Character\PlayerAttackCollider.cs" />
      <Compile Include="Assets\Scripts\Character\PowerClassMovement.cs" />
      <Compile Include="Assets\Scripts\Character\RangedArrowCollisions.cs" />
      <Compile Include="Assets\Scripts\Character\RangedClassMovement.cs" />
      <Compile Include="Assets\Scripts\Character\SpecificClassMovementTemplate.cs" />
+     <Compile Include="Assets\Scripts\Character\StealthClassMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttackCollider.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyCollisions.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Points\RelativePointsMovement.cs" />
@@ -74,6 +76,7 @@
      <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorMainMenu.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorPowerClassMovement.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorRangedClassMovement.cs" />
+     <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorStealthClassMovement.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\Layers.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\Tags.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
