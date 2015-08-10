@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-[RequireComponent(typeof(BlockingCollider))]
+[RequireComponent(typeof(DodgingCollider))]
 
 public class StealthClassMovement : MonoBehaviour {
 
@@ -13,6 +13,10 @@ public class StealthClassMovement : MonoBehaviour {
 	private HashAnimatorStealthClassMovement hashStealth;
 	private DodgingCollider dodgingColliderScript;
 
+	public float dodgeDelayTime = 0.5f;
+	private float dodgeDelayTimePassed = 0f;
+	private bool onDelayTime = false;
+
 	void Awake(){
 		defaultMovementScript = GetComponent<DefaultMovement>();
 		animator = GetComponent<Animator>();
@@ -23,14 +27,24 @@ public class StealthClassMovement : MonoBehaviour {
 
 	void Update () {
 		if(!defaultMovementScript.getIsDead() && !defaultMovementScript.getStoppedOnAnimation()){
-
-			if(Input.GetButton(Buttons.power1) && !isDodging && defaultMovementScript.getGrounded() ){
+			if(Input.GetButtonDown(Buttons.power1) && !isDodging && defaultMovementScript.getGrounded() && !onDelayTime ){
 				DodgingStart();
 			}
 		}
+		/*
 		if(!defaultMovementScript.getIsDead() && isDodging
 		   && (!Input.GetButton(Buttons.power1) || defaultMovementScript.getStoppedOnAnimation() || !defaultMovementScript.getGrounded() ) ){
 			DodgingEnd();
+		}
+		*/
+
+		if(onDelayTime){
+			dodgeDelayTimePassed += Time.deltaTime;
+
+			if(dodgeDelayTimePassed >= dodgeDelayTime){
+				dodgeDelayTimePassed = 0f;
+				onDelayTime = false;
+			}
 		}
 	}
 
@@ -47,6 +61,8 @@ public class StealthClassMovement : MonoBehaviour {
 		animator.SetBool(hashStealth.dodging, false);
 		defaultMovementScript.setCanWalk(true);
 		isDodging = false;
+
+		onDelayTime = true;
 	}
 //########Dodging END
 //###########################################
