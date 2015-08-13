@@ -5,14 +5,30 @@ public class RangedArrowCollisions : MonoBehaviour {
 
 	Rigidbody arrowRigidBody;
 	Collider arrowCollider;
+	public float timeToDestroy = 0.2f;
+	private float timePassedToDestroy = 0f;
+	private bool startCountingToDestroy = false;
 
 	void Awake(){
 		arrowRigidBody = GetComponent<Rigidbody>();
 		arrowCollider = GetComponent<Collider>();
 	}
 
+	void Update(){
+		if(startCountingToDestroy){
+			if(timePassedToDestroy < timeToDestroy){
+				timePassedToDestroy += Time.deltaTime;
+			}else{
+				Destroy(gameObject);
+			}
+		}
+	}
+
 	void OnTriggerEnter(Collider collider){
-		Destroy(gameObject);
+		if(collider.tag == Tags.enemy || collider.tag == Tags.wall){
+			ArrowStopOnTarget(collider);
+			startCountingToDestroy = true;
+		}
 	}
 
 	//method that stops the arrow on the target and make it stick to the target.

@@ -8,10 +8,12 @@ public class EnemyLife : MonoBehaviour {
 	bool isDead = false;
 
 	private FlickerMeshWhenDamaged flickerWhenDamage;
+	private StalkerNavMesh stalkerNavMeshScript;
 	
 	void Awake () {
 		life = startingLife;
 		flickerWhenDamage = GetComponent<FlickerMeshWhenDamaged>();
+		stalkerNavMeshScript = GetComponent<StalkerNavMesh>();
 	}
 
 	void Update(){
@@ -22,8 +24,11 @@ public class EnemyLife : MonoBehaviour {
 		GameObject collidedObject = collider.gameObject;
 		if( collidedObject.tag == Tags.playerAttackCollider && !flickerWhenDamage.getFlicker() ){
 			int damage = collidedObject.GetComponent<PlayerAttackCollider>().damage;
-			life -= damage;
-			flickerWhenDamage.startFlickering();
+			if(damage > 0){
+				life -= damage;
+				flickerWhenDamage.startFlickering();
+				stalkerNavMeshScript.SeePlayer();
+			}
 		}
 	}
 

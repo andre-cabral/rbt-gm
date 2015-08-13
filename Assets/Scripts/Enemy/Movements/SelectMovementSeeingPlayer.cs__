@@ -8,14 +8,17 @@ public class SelectMovementSeeingPlayer : MonoBehaviour {
 
 	WorldPointsMovement worldPointsMovementScript;
 	StalkerNavMesh stalkerNavMeshScript;
+	NavMeshAgent navMeshAgentComponent;
 
 	void Awake () {
 		worldPointsMovementScript = GetComponent<WorldPointsMovement>();
 		stalkerNavMeshScript = GetComponent<StalkerNavMesh>();
+		navMeshAgentComponent = GetComponent<NavMeshAgent>();
 	}
 
 	public void SelectPointsMovement(){
 		stalkerNavMeshScript.enabled = false;
+		navMeshAgentComponent.enabled = false;
 		worldPointsMovementScript.enabled = true;
 
 		navMeshMovementActive = false;
@@ -24,6 +27,7 @@ public class SelectMovementSeeingPlayer : MonoBehaviour {
 
 	public void SelectNavMeshMovement(){
 		worldPointsMovementScript.enabled = false;
+		navMeshAgentComponent.enabled = true;
 		stalkerNavMeshScript.enabled = true;
 
 		pointsMovementActive = false;

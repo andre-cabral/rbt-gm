@@ -3,15 +3,20 @@ using System.Collections;
 
 public class PlayerSeeingArea : MonoBehaviour {
 
-	public SelectMovementSeeingPlayer selectMovementScript;
+	public StalkerNavMesh stalkerNavMeshScript;
 	public bool canSeeStealthPlayer = false;
 
 	void OnTriggerStay(Collider collider) {
 		GameObject collidedObject = collider.gameObject;
 		if(collidedObject.tag == Tags.characterClass){
 			if( (canSeeStealthPlayer || collidedObject.name != ClassesObjectsNames.stealth) 
-			   && !selectMovementScript.getNavMeshMovementActive() ){
-				selectMovementScript.SelectNavMeshMovement();
+			   && stalkerNavMeshScript.getLastPlayerSeen() != collidedObject.transform.position){
+
+				stalkerNavMeshScript.setLastPlayerSeen(collidedObject.transform.position);
+				if(!stalkerNavMeshScript.getIsSeeingPlayer() ){
+					stalkerNavMeshScript.setIsSeeingPlayer(true);
+				}
+
 			}
 		}
 	}
@@ -19,9 +24,7 @@ public class PlayerSeeingArea : MonoBehaviour {
 	void OnTriggerExit(Collider collider) {
 		GameObject collidedObject = collider.gameObject;
 		if(collidedObject.tag == Tags.characterClass){
-			if( !selectMovementScript.getPointsMovementActive() ){
-				selectMovementScript.SelectPointsMovement();
-			}
+			stalkerNavMeshScript.setIsSeeingPlayer(false);
 		}
 	}
 

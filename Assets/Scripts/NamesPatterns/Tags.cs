@@ -11,4 +11,5 @@ public class Tags : MonoBehaviour {
 	public const string enemyAttackCollider = "EnemyAttackCollider";
 	public const string blockingCollider = "BlockingCollider";
 	public const string dodgeCollider = "DodgeCollider";
+	public const string wall = "Wall";
 }
