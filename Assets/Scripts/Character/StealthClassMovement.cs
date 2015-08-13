@@ -11,7 +11,6 @@ public class StealthClassMovement : MonoBehaviour {
 	private DefaultMovement defaultMovementScript;
 	private Animator animator;
 	private HashAnimatorStealthClassMovement hashStealth;
-	private DodgingCollider dodgingColliderScript;
 
 	public float dodgeDelayTime = 0.5f;
 	private float dodgeDelayTimePassed = 0f;
@@ -21,8 +20,6 @@ public class StealthClassMovement : MonoBehaviour {
 		defaultMovementScript = GetComponent<DefaultMovement>();
 		animator = GetComponent<Animator>();
 		hashStealth = GetComponent<HashAnimatorStealthClassMovement>();
-
-		dodgingColliderScript = dodgingCollider.GetComponent<DodgingCollider>();
 	}
 
 	void Update () {

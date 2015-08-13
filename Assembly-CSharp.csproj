@@ -62,7 +62,12 @@
      <Compile Include="Assets\Scripts\Character\StealthClassMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttackCollider.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyCollisions.cs" />
+     <Compile Include="Assets\Scripts\Enemy\EnemyLife.cs" />
+     <Compile Include="Assets\Scripts\Enemy\FlickerMeshWhenDamaged.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Movements\PlayerSeeingArea.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Points\RelativePointsMovement.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Movements\Points\WorldPointsMovement.cs" />
+     <Compile Include="Assets\Scripts\Enemy\Movements\SelectMovementSeeingPlayer.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\StalkerNavMesh.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StalkerMovementArea.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StartStalkingArea.cs" />
@@ -76,6 +81,7 @@
      <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorMainMenu.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorPowerClassMovement.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorRangedClassMovement.cs" />
+     <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorStalkerEnemy.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorStealthClassMovement.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\Layers.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\Tags.cs" />

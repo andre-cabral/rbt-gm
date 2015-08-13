@@ -24,12 +24,6 @@ public class RangedClassMovement : MonoBehaviour {
 	}
 	
 	void Update () {
-
-		if(latestArrow != null){
-			Vector3 origin = latestArrow.transform.position;
-			Vector3 destiny = transform.forward*50;
-		}
-
 		if(!isArrowFollowingPositionObject && !isShooting){
 			NewArrow();
 		}

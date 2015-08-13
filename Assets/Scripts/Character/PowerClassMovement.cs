@@ -13,14 +13,11 @@ public class PowerClassMovement : MonoBehaviour {
 	private DefaultMovement defaultMovementScript;
 	private Animator animator;
 	private HashAnimatorPowerClassMovement hashPower;
-	private BlockingCollider blockingColliderScript;
 
 	void Awake(){
 		defaultMovementScript = GetComponent<DefaultMovement>();
 		animator = GetComponent<Animator>();
 		hashPower = GetComponent<HashAnimatorPowerClassMovement>();
-
-		blockingColliderScript = blockingCollider.GetComponent<BlockingCollider>();
 	}
 
 	void Update () {

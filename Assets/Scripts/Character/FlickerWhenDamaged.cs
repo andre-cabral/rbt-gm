@@ -6,7 +6,7 @@ public class FlickerWhenDamaged : MonoBehaviour {
 	public GameObject[] objectsToFlicker;
 	public float timeToDisappear = .2f;
 	public float timeToAppear = .5f;
-	public float timeToFlicker = 5f;
+	public float timeToFlicker = 1f;
 	private float actualTime = 0f;
 	public float totalTimeFlicker = 0f;
 	private bool areTheObjectsOn = true;
