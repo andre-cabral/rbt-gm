@@ -104,7 +104,6 @@ public class StalkerNavMesh : MonoBehaviour {
 			destination = new Vector3(lastPlayerSeen.x,lastPlayerSeen.y,lastPlayerSeen.z);
 		}
 		if(Vector3.Distance(transform.position, destination) > agent.stoppingDistance){
-			Debug.Log(agent.destination);
 			if(agent.destination != destination){
 				agent.SetDestination(destination);
 			}

@@ -24,6 +24,7 @@ public class RangedClassMovement : MonoBehaviour {
 	}
 	
 	void Update () {
+		Debug.Log(arrowPositionObject.transform.position);
 		if(!isArrowFollowingPositionObject && !isShooting){
 			NewArrow();
 		}
@@ -46,10 +47,10 @@ public class RangedClassMovement : MonoBehaviour {
 		isArrowFollowingPositionObject = false;
 
 		latestArrow.transform.rotation = transform.rotation;
-		latestArrowRigidBody.isKinematic = false;
 
 		arrowPositionObject.transform.DetachChildren();
 
+		latestArrowRigidBody.isKinematic = false;
 		latestArrowRigidBody.AddForce( arrowForce * transform.forward );
 		latestArrow.GetComponent<Collider>().enabled = true;
 	}
@@ -60,6 +61,7 @@ public class RangedClassMovement : MonoBehaviour {
 
 	void NewArrow(){
 		isArrowFollowingPositionObject = true;
+		latestArrow = new GameObject();
 		latestArrow = Instantiate(arrowPrefab);
 		latestArrowRigidBody = latestArrow.GetComponent<Rigidbody>();
 		latestArrow.transform.SetParent(arrowPositionObject.transform);

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(HashAnimatorDefaultMovement))]
 [RequireComponent(typeof(FlickerWhenDamaged))]
@@ -30,6 +31,7 @@ public class DefaultMovement : MonoBehaviour {
 
 	public bool isDead = false;
 	private bool deathRagDollActive = false;
+	private List<Rigidbody> ragDollRigidbodies = new List<Rigidbody>();
 	private Collider playerCollider;
 	private Rigidbody playerRigidbody;
 
@@ -50,7 +52,20 @@ public class DefaultMovement : MonoBehaviour {
 		gameController = GameObject.FindGameObjectWithTag(Tags.gameController);
 		lifeManager = gameController.GetComponent<LifeManager>();
 		flickerWhenDamaged = GetComponent<FlickerWhenDamaged>();
+
+		List<GameObject> ragDollObjects = GetObjectsInLayer( gameObject, LayerMask.NameToLayer(Layers.collidersRagdoll) );
+		ragDollObjects = GetObjectsWithRigidbody(ragDollObjects);
+		ragDollRigidbodies = GetRigidbodiesFromObjects(ragDollObjects);
+
+		/*
+		foreach(Rigidbody rig in ragDollRigidbodies){
+			if(!rig.isKinematic || rig.useGravity)
+				Debug.Log("xabu =(");
+		}
+		*/
 	}
+
+
 
 	void Update () {
 		if(!isDead){
@@ -406,6 +421,11 @@ public class DefaultMovement : MonoBehaviour {
 		animator.enabled = false;
 		playerCollider.enabled = false;
 		playerRigidbody.isKinematic = true;
+
+		foreach(Rigidbody ragDollRigidbody in ragDollRigidbodies){
+			ragDollRigidbody.isKinematic = false;
+			ragDollRigidbody.useGravity = true;
+		}
 		
 		deathRagDollActive = true;
 	}
@@ -456,6 +476,43 @@ public class DefaultMovement : MonoBehaviour {
 
 	public void setIsDead(bool isDead){
 		this.isDead = isDead;
+	}
+
+	List<GameObject> GetObjectsInLayer(GameObject root, int layer){
+		List<GameObject> ret = new List<GameObject>();
+		foreach (Transform t in root.transform.GetComponentsInChildren(typeof(Transform), true))
+		{
+			if (t.gameObject.layer == layer)
+			{
+				ret.Add (t.gameObject);
+			}
+		}
+		
+		return ret;        
+	}
+	
+	List<GameObject> GetObjectsWithRigidbody(List<GameObject> objects){
+		List<GameObject> ret = new List<GameObject>();
+		foreach (GameObject t in objects)
+		{
+			if (t.GetComponents(typeof(Rigidbody)).Length != 0 )
+			{
+				ret.Add (t.gameObject);
+			}
+		}
+		return ret;
+	}
+	
+	List<Rigidbody> GetRigidbodiesFromObjects(List<GameObject> objects){
+		List<Rigidbody> ret = new List<Rigidbody>();
+		foreach (GameObject t in objects)
+		{
+			if (t.GetComponents(typeof(Rigidbody)).Length != 0 )
+			{
+				ret.Add (t.gameObject.GetComponent<Rigidbody>());
+			}
+		}
+		return ret;
 	}
 //########UTILITIES END
 //###########################################
