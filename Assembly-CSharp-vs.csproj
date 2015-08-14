@@ -70,7 +70,10 @@
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StalkerMovementArea.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StartStalkingArea.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StopStalkingArea.cs" />
+     <Compile Include="Assets\Scripts\GameController\InventoryManager.cs" />
      <Compile Include="Assets\Scripts\GameController\LifeManager.cs" />
+     <Compile Include="Assets\Scripts\GameController\ScreenMessageManager.cs" />
+     <Compile Include="Assets\Scripts\Item\GetGreenKey.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MenuTransitions.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\AnimationsNames.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\Buttons.cs" />
@@ -83,6 +86,8 @@
      <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorStealthClassMovement.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\Layers.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\Tags.cs" />
+     <Compile Include="Assets\Scripts\Stage\ExitManager.cs" />
+     <Compile Include="Assets\Scripts\UI\ScreenMessageChangeOnTrigger.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

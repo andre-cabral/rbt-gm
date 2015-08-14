@@ -24,7 +24,6 @@ public class RangedClassMovement : MonoBehaviour {
 	}
 	
 	void Update () {
-		Debug.Log(arrowPositionObject.transform.position);
 		if(!isArrowFollowingPositionObject && !isShooting){
 			NewArrow();
 		}

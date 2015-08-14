@@ -6,28 +6,16 @@ public class RangedArrowCollisions : MonoBehaviour {
 	Rigidbody arrowRigidBody;
 	Collider arrowCollider;
 	public float timeToDestroy = 0.2f;
-	private float timePassedToDestroy = 0f;
-	private bool startCountingToDestroy = false;
 
 	void Awake(){
 		arrowRigidBody = GetComponent<Rigidbody>();
 		arrowCollider = GetComponent<Collider>();
 	}
 
-	void Update(){
-		if(startCountingToDestroy){
-			if(timePassedToDestroy < timeToDestroy){
-				timePassedToDestroy += Time.deltaTime;
-			}else{
-				Destroy(gameObject);
-			}
-		}
-	}
-
 	void OnTriggerEnter(Collider collider){
 		if(collider.tag == Tags.enemy || collider.tag == Tags.wall){
 			ArrowStopOnTarget(collider);
-			startCountingToDestroy = true;
+			Destroy(this.gameObject, timeToDestroy);
 		}
 	}
 
@@ -40,8 +28,7 @@ public class RangedArrowCollisions : MonoBehaviour {
 		arrowRigidBody.angularVelocity = Vector3.zero;
 		arrowRigidBody.isKinematic = true;
 		arrowCollider.isTrigger = false;
-		//arrowRigidBody.useGravity = true;
-		
+
 		transform.SetParent(collidedTarget.gameObject.transform);
 	}
 }
