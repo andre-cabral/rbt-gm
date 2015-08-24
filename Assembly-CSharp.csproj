@@ -72,6 +72,7 @@
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StartStalkingArea.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StopStalkingArea.cs" />
      <Compile Include="Assets\Scripts\Enemy\PatrolAndStalkMovement.cs" />
+     <Compile Include="Assets\Scripts\Enemy\PatrolAndStalkMovementAnt.cs" />
      <Compile Include="Assets\Scripts\Enemy\PlayerSeeingArea.cs" />
      <Compile Include="Assets\Scripts\Enemy\SlowDownPlayer.cs" />
      <Compile Include="Assets\Scripts\Enemy\SpiderWebAttack.cs" />

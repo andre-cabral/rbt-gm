@@ -31,7 +31,7 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 	
 	public float lookAtPlayerSpeed = 3f;
 	
-	void Awake () {
+	public virtual void Awake () {
 		agent = gameObject.GetComponent<NavMeshAgent>();
 		
 		//Patrol instance START
@@ -57,7 +57,8 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 		hashAnimator = GetComponent<HashAnimatorStalkerEnemy>();
 	}
 	
-	void Update () {
+	public virtual void Update () {
+		Debug.Log("update parent");
 		if(!enemyLifeScript.getIsDead() && lastPlayerSeen == lastPlayerSeenResetPosition && !attacking){
 			Patrol();
 		}
@@ -98,7 +99,6 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 	//########Stalk Movement START
 	//###########################################
 	void Stalk(){
-
 		stalking = true;
 		patrolling = false;
 
@@ -155,6 +155,10 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 	
 	public void resetLastPlayerSeen(){
 		lastPlayerSeen = lastPlayerSeenResetPosition;
+	}
+
+	public Vector3 getLastPlayerSeenResetPosition(){
+		return lastPlayerSeenResetPosition;
 	}
 	
 	public bool getIsSeeingPlayer(){
