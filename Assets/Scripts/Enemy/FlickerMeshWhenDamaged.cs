@@ -5,9 +5,10 @@ public class FlickerMeshWhenDamaged : MonoBehaviour {
 
 	
 	public MeshRenderer[] meshRenderersToFlicker;
-	public float timeToDisappear = .2f;
-	public float timeToAppear = .5f;
-	public float timeToFlicker = 5f;
+	public GameObject[] gameObjectsToFlicker;
+	public float timeToDisappear = 0.05f;
+	public float timeToAppear = 0.05f;
+	public float timeToFlicker = 1f;
 	private float actualTime = 0f;
 	public float totalTimeFlicker = 0f;
 	private bool areTheObjectsOn = true;
@@ -46,14 +47,26 @@ public class FlickerMeshWhenDamaged : MonoBehaviour {
 	}
 	
 	void TurnObjectsOn(){
-		foreach(MeshRenderer objectToTurnOn in meshRenderersToFlicker){
-			objectToTurnOn.enabled = true;
+		if(meshRenderersToFlicker.Length>0){
+			foreach(MeshRenderer objectToTurnOn in meshRenderersToFlicker){
+				objectToTurnOn.enabled = true;
+			}
+		}else{
+			foreach(GameObject objectToTurnOn in gameObjectsToFlicker){
+				objectToTurnOn.SetActive(true);
+			}
 		}
 		areTheObjectsOn = true;
 	}
 	void TurnObjectsOff(){
-		foreach(MeshRenderer objectToTurnOn in meshRenderersToFlicker){
-			objectToTurnOn.enabled = false;
+		if(meshRenderersToFlicker.Length>0){
+			foreach(MeshRenderer objectToTurnOn in meshRenderersToFlicker){
+				objectToTurnOn.enabled = false;
+			}
+		}else{
+			foreach(GameObject objectToTurnOn in gameObjectsToFlicker){
+				objectToTurnOn.SetActive(false);
+			}
 		}
 		areTheObjectsOn = false;
 	}

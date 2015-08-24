@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>H:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>H:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -60,16 +60,21 @@
      <Compile Include="Assets\Scripts\Character\RangedClassMovement.cs" />
      <Compile Include="Assets\Scripts\Character\SpecificClassMovementTemplate.cs" />
      <Compile Include="Assets\Scripts\Character\StealthClassMovement.cs" />
+     <Compile Include="Assets\Scripts\Enemy\BasicAttackEnemy.cs" />
+     <Compile Include="Assets\Scripts\Enemy\ChangePlayerSpeed.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyAttackCollider.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyCollisions.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyLife.cs" />
      <Compile Include="Assets\Scripts\Enemy\FlickerMeshWhenDamaged.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Movements\PlayerSeeingArea.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Points\RelativePointsMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\StalkerNavMesh.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StalkerMovementArea.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StartStalkingArea.cs" />
      <Compile Include="Assets\Scripts\Enemy\Movements\Stalker\AreaStalker\WithoutNavMesh\StopStalkingArea.cs" />
+     <Compile Include="Assets\Scripts\Enemy\PatrolAndStalkMovement.cs" />
+     <Compile Include="Assets\Scripts\Enemy\PlayerSeeingArea.cs" />
+     <Compile Include="Assets\Scripts\Enemy\SlowDownPlayer.cs" />
+     <Compile Include="Assets\Scripts\Enemy\SpiderWebAttack.cs" />
      <Compile Include="Assets\Scripts\GameController\InventoryManager.cs" />
      <Compile Include="Assets\Scripts\GameController\LifeManager.cs" />
      <Compile Include="Assets\Scripts\GameController\ScreenMessageManager.cs" />
@@ -82,6 +87,7 @@
      <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorMainMenu.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorPowerClassMovement.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorRangedClassMovement.cs" />
+     <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorSpiderEnemy.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorStalkerEnemy.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\HashAnimatorStealthClassMovement.cs" />
      <Compile Include="Assets\Scripts\NamesPatterns\Layers.cs" />
@@ -168,16 +174,16 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>H:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>H:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
- <HintPath>H:/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
- <HintPath>H:/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

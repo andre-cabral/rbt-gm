@@ -1,0 +1,25 @@
+Coloque na scene o modelo 3d.
+
+Adicionar RigidBody Kinematic
+Adicionar um collider
+
+Criar e adicionar um animator usando as hashes de HashAnimatorStalkerEnemy. (USAR O TEMPLATE DE ANIMATOR MAS TIRAR AS ANIMS DA ARANHA)
+Adicionar um HashAnimatorStalkerEnemy no object.
+Adicionar PatrolAndStalkMovement
+Adicionar BasicAttackEnemy
+adicionar EnemyLife
+Adicionar navmeshagent
+Adicionar flickermeshwhendamaged ---->>> ###CASO USE GAMEOBJECT, COLOCAR como 0 o size do mesh renderer e usar a array de gameobjects ao invés disso. ###
+
+Adicionar um objeto (pra fazer a hitbox) com a tag enemyattackcollider como filho da parte do modelo3d que atacará. (ex.: mao, garra, dentes, pata, etcs)
+Adicionar nesse objeto um collider, um rigidbody kinematic e um enemyattackcollider(script)
+###ESSE OBJETO DEVE COMEÇAR DESATIVADO!!!###
+Jogar esse objeto da hitbox no basic attack.
+
+Adicionar os PlayerSeeingArea como filho inicial do objeto do inimigo.
+Normalmente serão 4: o PlayerSeeingArea, PlayerSeeingAreaLOS, PlayerSeeingAreaWithStealh e PlayerSeeingAreaWithStealhLOS. (pode copiar de algum inimigo que já existe e editar pra não ter tanto trabalho).
+Elas devem ter um collider trigger e um rigidbody kinematic.
+Adicionar o script PlayerSeeingArea em cada um desses PlayerSeeingArea. 
+Colocar nas variaveis publicas desse script o transform e navmesh do objeto pai.
+
+Para novos ataques, pode usar o BasicAttackEnemy script como exemplo, e criar mais um hashAnimatorNomeDoInimigo pra usar animações diferentes pra outros tipos de ataque.

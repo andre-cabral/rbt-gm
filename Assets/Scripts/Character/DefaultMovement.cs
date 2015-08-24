@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 public class DefaultMovement : MonoBehaviour {
 	public float movementSpeed = 0.1f;
+	private float startSpeed;
 	public float turnSpeed = 20f;
 
 	private float inputTotal = 0f;
@@ -40,6 +41,8 @@ public class DefaultMovement : MonoBehaviour {
 	private FlickerWhenDamaged flickerWhenDamaged;
 
 	void Awake(){
+		InitializeStartSpeed();
+
 		animator = GetComponent<Animator>();
 		hash = GetComponent<HashAnimatorDefaultMovement>();
 
@@ -56,13 +59,6 @@ public class DefaultMovement : MonoBehaviour {
 		List<GameObject> ragDollObjects = GetObjectsInLayer( gameObject, LayerMask.NameToLayer(Layers.collidersRagdoll) );
 		ragDollObjects = GetObjectsWithRigidbody(ragDollObjects);
 		ragDollRigidbodies = GetRigidbodiesFromObjects(ragDollObjects);
-
-		/*
-		foreach(Rigidbody rig in ragDollRigidbodies){
-			if(!rig.isKinematic || rig.useGravity)
-				Debug.Log("xabu =(");
-		}
-		*/
 	}
 
 
@@ -277,6 +273,54 @@ public class DefaultMovement : MonoBehaviour {
 		}
 	}
 //########Damage END
+//###########################################
+
+//########Speed change START
+//###########################################
+	public void SpeedChange(float newSpeed){
+		InitializeStartSpeed();
+
+		movementSpeed = newSpeed;
+	}
+
+	public void SpeedAdd(float speedToAdd){
+		InitializeStartSpeed();
+
+		movementSpeed += speedToAdd;
+	}
+
+	public void SpeedReduce(float speedToReduce){
+		InitializeStartSpeed();
+
+		if(movementSpeed > speedToReduce){
+			movementSpeed -= speedToReduce;
+		}else{
+			movementSpeed = 0f;
+		}
+	}
+
+	public void SpeedReduceOnce(float speedToReduce){
+		InitializeStartSpeed();
+
+		if(movementSpeed > startSpeed-speedToReduce){
+			if(startSpeed > speedToReduce){
+				movementSpeed = startSpeed-speedToReduce;
+			}else{
+				movementSpeed = 0f;
+			}
+		}
+	}
+
+	void InitializeStartSpeed(){
+		if(startSpeed == 0f){
+			startSpeed = movementSpeed;
+		}
+	}
+
+	public void SpeedReset(){
+		movementSpeed = startSpeed;
+	}
+//########Speed change END
 //###########################################
 
 

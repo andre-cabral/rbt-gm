@@ -8,12 +8,12 @@ public class EnemyLife : MonoBehaviour {
 	bool isDead = false;
 
 	private FlickerMeshWhenDamaged flickerWhenDamage;
-	private StalkerNavMesh stalkerNavMeshScript;
+	private PatrolAndStalkMovement stalkerNavMeshScript;
 	
 	void Awake () {
 		life = startingLife;
 		flickerWhenDamage = GetComponent<FlickerMeshWhenDamaged>();
-		stalkerNavMeshScript = GetComponent<StalkerNavMesh>();
+		stalkerNavMeshScript = GetComponent<PatrolAndStalkMovement>();
 	}
 
 	void Update(){

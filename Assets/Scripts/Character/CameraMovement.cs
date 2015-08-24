@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CameraMovement : MonoBehaviour {
 	public GameObject characterClassesContainer;
@@ -12,7 +13,7 @@ public class CameraMovement : MonoBehaviour {
 	public float zoomSpeedMouseScrollZoomAxis = 100f;
 	public float smoothVelocity = 7f;
 
-	private ArrayList classesObjects;
+	private List<GameObject> classesObjects;
 
 	void Awake(){
 		classesObjects = characterClassesContainer.GetComponent<ChangeClass>().GetClassesObjects();

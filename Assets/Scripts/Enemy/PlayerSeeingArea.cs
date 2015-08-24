@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerSeeingArea : MonoBehaviour {
 
 	public Transform enemyTransform;
-	public StalkerNavMesh stalkerNavMeshScript;
+	public PatrolAndStalkMovement stalkerNavMeshScript;
 	public bool canSeeStealthPlayer = false;
 	public bool needLineOfSightToGetPlayer = false;
 

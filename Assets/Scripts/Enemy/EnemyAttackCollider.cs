@@ -50,19 +50,6 @@ public class EnemyAttackCollider : MonoBehaviour {
 		}		
 	}
 
-	void OnTriggerExit(Collider collider) {
-		GameObject collidedObject = collider.gameObject;
-		
-		if(collidedObject.tag == Tags.blockingCollider){
-			BlockEnd();
-		}
-		
-		if(collidedObject.tag == Tags.dodgeCollider){
-			DodgeEnd();
-		}
-		
-	}
-
 	void BlockStart(GameObject collidedObject){
 		isBlocked = true;
 		damageReduction = collidedObject.GetComponent<BlockingCollider>().getDamageReduction();
@@ -77,6 +64,10 @@ public class EnemyAttackCollider : MonoBehaviour {
 	}
 	void DodgeEnd(){
 		isDodged = false;
+		damageReduction = 0;
+	}
+
+	public void ResetDamageReduction(){
 		damageReduction = 0;
 	}
 

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ChangeClass : MonoBehaviour {
 
@@ -8,7 +9,7 @@ public class ChangeClass : MonoBehaviour {
 	public GameObject class0;
 	public GameObject class1;
 	public GameObject class2;
-	private ArrayList classesObjects = new ArrayList();
+	private List<GameObject> classesObjects = new List<GameObject>();
 
 	void Awake(){
 		classesObjects.Add(class0);
@@ -41,7 +42,7 @@ public class ChangeClass : MonoBehaviour {
 		activeClass = classSelected;
 	}
 
-	public ArrayList GetClassesObjects(){
+	public List<GameObject> GetClassesObjects(){
 		return classesObjects;
 	}
 
