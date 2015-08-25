@@ -36,6 +36,7 @@ ModelImporter:
     100056: SpiderRLeg43
     100058: SpiderRtooth
     100060: spidon
+    100062: SpiderLLeg1Platform
     400000: spholo
     400002: //RootNode
     400004: Spiderbutt
@@ -67,6 +68,7 @@ ModelImporter:
     400056: SpiderRLeg43
     400058: SpiderRtooth
     400060: spidon
+    400062: SpiderLLeg1Platform
     4300000: spholo
     4300002: spidon
     7400000: Walk_Spider
