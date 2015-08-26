@@ -117,13 +117,13 @@ public class DefaultMovement : MonoBehaviour {
 		}
 
 
-		float x = horizontal * movementSpeed;
+		float x = horizontal;
 		float y = 0f;
-		float z = vertical * movementSpeed;
+		float z = vertical;
 		
 		float movementAngle = 0f;
 		
-		Vector3 targetTranslation = new Vector3( x ,y, z);
+		Vector3 targetTranslation = new Vector3( x ,y, z).normalized * movementSpeed;
 		
 		transform.Translate(targetTranslation, Space.World);
 		

@@ -1,13 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy\PatrolAndStalkMovementAnt.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Character\DefaultMovement.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enemy\BasicAttackEnemy.cs" Line="68" Column="33" />
+      <File FileName="Assets\Scripts\Character\DefaultMovement.cs" Line="122" Column="21" />
+      <File FileName="Assets\Scripts\Enemy\BasicAttackEnemy.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemy\SpiderWebAttack.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemy\SlowDownPlayer.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\NamesPatterns\HashAnimatorSpiderEnemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemy\PatrolAndStalkMovement.cs" Line="34" Column="32" />
-      <File FileName="Assets\Scripts\Character\DefaultMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy\PatrolAndStalkMovement.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\RangedClassMovement.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Character\BlockingCollider.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemy\EnemyAttackCollider.cs" Line="1" Column="1" />
