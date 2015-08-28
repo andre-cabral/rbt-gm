@@ -1,32 +1,32 @@
-﻿using UnityEngine;
+﻿﻿using UnityEngine;
 using System.Collections;
 
 public class BasicAttackEnemy : MonoBehaviour {
-
+	
 	public float attackDelay = 1f;
 	public GameObject[] attackHitBoxObjects;
 	private EnemyAttackCollider[] enemyAttackCollidersScripts;
 	private Animator enemyAnimator;
 	private HashAnimatorStalkerEnemy hashAnimator;
-
+	
 	private bool attackingDelayCount = false;
 	private float attackingDelayPassed = 0f;
 	NavMeshAgent agent;
 	private PatrolAndStalkMovement patrolAndStalkMovementScript;
-
+	
 	void Awake(){
 		agent = gameObject.GetComponent<NavMeshAgent>();
 		patrolAndStalkMovementScript = GetComponent<PatrolAndStalkMovement>();
-
+		
 		enemyAnimator = GetComponent<Animator>();
 		hashAnimator = GetComponent<HashAnimatorStalkerEnemy>();
-
+		
 		enemyAttackCollidersScripts = new EnemyAttackCollider[attackHitBoxObjects.Length];
 		for (int i=0; i<attackHitBoxObjects.Length; i++){
 			enemyAttackCollidersScripts[i] = attackHitBoxObjects[i].GetComponent<EnemyAttackCollider>();
 		}
 	}
-
+	
 	void Update () {
 		Vector3 destination = patrolAndStalkMovementScript.getDestination();
 		if( !(Vector3.Distance(transform.position, destination) > agent.stoppingDistance) && patrolAndStalkMovementScript.getStalking() ){ 
@@ -38,22 +38,22 @@ public class BasicAttackEnemy : MonoBehaviour {
 				patrolAndStalkMovementScript.FlipWithSpeed(new Vector3(destination.x, transform.position.y, destination.z), patrolAndStalkMovementScript.lookAtPlayerSpeed);
 			}
 		}
-
+		
 		if(attackingDelayCount){
 			AttackDelayCounter ();
 		}
 	}
-
+	
 	//########Attacking START
 	//###########################################
 	void AttackStart(){
 		patrolAndStalkMovementScript.setAttacking(true);
-
+		
 		enemyAnimator.SetBool(hashAnimator.attacking, true);
-
+		
 		agent.SetDestination(transform.position);
 	}
-
+	
 	//function called with an event in the attack animation, when the hitbox should start to cause damage
 	public void AttackHitBoxStart(){
 		foreach (GameObject attackHitBoxObject in attackHitBoxObjects){

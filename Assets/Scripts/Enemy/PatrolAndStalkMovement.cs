@@ -3,7 +3,7 @@ using System.Collections;
 
 [RequireComponent(typeof(HashAnimatorStalkerEnemy))]
 public class PatrolAndStalkMovement : MonoBehaviour {
-
+	
 	public bool moveYAxis = false;
 	
 	public GameObject[] patrolWaypoints;
@@ -20,7 +20,7 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 	
 	private Animator enemyAnimator;
 	private HashAnimatorStalkerEnemy hashAnimator;
-
+	
 	NavMeshAgent agent;
 	
 	private EnemyLife enemyLifeScript;
@@ -58,7 +58,6 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 	}
 	
 	public virtual void Update () {
-		Debug.Log("update parent");
 		if(!enemyLifeScript.getIsDead() && lastPlayerSeen == lastPlayerSeenResetPosition && !attacking){
 			Patrol();
 		}
@@ -72,7 +71,7 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 	void Patrol(){
 		patrolling = true;
 		stalking = false;
-
+		
 		if(!moveYAxis){
 			destination = new Vector3(points[vectorIndex].x,transform.position.y,points[vectorIndex].z);
 		}else{
@@ -101,7 +100,7 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 	void Stalk(){
 		stalking = true;
 		patrolling = false;
-
+		
 		if(!moveYAxis){
 			destination = new Vector3(lastPlayerSeen.x,transform.position.y,lastPlayerSeen.z);
 		}else{
@@ -128,23 +127,23 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 	}
 	//########Stalk Movement END
 	//###########################################
-
-
+	
+	
 	public bool getPatrolling(){
 		return patrolling;
 	}
-
+	
 	public bool getStalking(){
 		return stalking;
 	}
-
+	
 	public bool getAttacking(){
 		return attacking;
 	}
 	public void setAttacking(bool attacking){
 		this.attacking = attacking;
 	}
-
+	
 	public Vector3 getLastPlayerSeen(){
 		return lastPlayerSeen;
 	}
@@ -156,7 +155,7 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 	public void resetLastPlayerSeen(){
 		lastPlayerSeen = lastPlayerSeenResetPosition;
 	}
-
+	
 	public Vector3 getLastPlayerSeenResetPosition(){
 		return lastPlayerSeenResetPosition;
 	}
@@ -168,7 +167,7 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 	public void setIsSeeingPlayer(bool isSeeingPlayer){
 		this.isSeeingPlayer = isSeeingPlayer;
 	}
-
+	
 	public Vector3 getDestination(){
 		return destination;
 	}

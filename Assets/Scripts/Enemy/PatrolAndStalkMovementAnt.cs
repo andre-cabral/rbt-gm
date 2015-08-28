@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿﻿using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(HashAnimatorStalkerEnemy))]
@@ -8,12 +8,12 @@ public class PatrolAndStalkMovementAnt : PatrolAndStalkMovement {
 	static int totalAnts = 0;
 	static int antsSeeingPlayer = 0;
 	bool addedThisSeeingPlayer = false;
-
+	
 	public override void Awake(){
 		base.Awake();
 		totalAnts++;
 	}
-
+	
 	public override void Update(){
 		base.Update();
 		if(!addedThisSeeingPlayer && getIsSeeingPlayer()){
@@ -34,7 +34,7 @@ public class PatrolAndStalkMovementAnt : PatrolAndStalkMovement {
 			}
 		}
 	}
-
+	
 	void OnDestroy() {
 		totalAnts --;
 		if(getIsSeeingPlayer()){
