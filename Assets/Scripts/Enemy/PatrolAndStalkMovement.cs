@@ -8,6 +8,8 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 	
 	public GameObject[] patrolWaypoints;
 	public float distanceToChangeWaypoint = 0.5f;
+	public float timeOnWaypoint = 0f;
+	float timePassedOnWaypoint = 0f;
 	private Vector3[] points;
 	private int vectorIndex = 1;
 	
@@ -84,10 +86,15 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 				enemyAnimator.SetFloat(hashAnimator.velocity, agent.desiredVelocity.magnitude);
 			}
 		}else{
-			if(vectorIndex < points.Length-1){
-				vectorIndex++;
+			if(timePassedOnWaypoint >= timeOnWaypoint){
+				timePassedOnWaypoint = 0f;
+				if(vectorIndex < points.Length-1){
+					vectorIndex++;
+				}else{
+					vectorIndex = 0;
+				}
 			}else{
-				vectorIndex = 0;
+				timePassedOnWaypoint += Time.deltaTime;
 			}
 		}
 		
@@ -100,7 +107,9 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 	void Stalk(){
 		stalking = true;
 		patrolling = false;
-		
+
+		timePassedOnWaypoint = 0f;
+
 		if(!moveYAxis){
 			destination = new Vector3(lastPlayerSeen.x,transform.position.y,lastPlayerSeen.z);
 		}else{
