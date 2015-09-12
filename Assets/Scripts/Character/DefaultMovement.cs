@@ -19,7 +19,9 @@ public class DefaultMovement : MonoBehaviour {
 	private bool changingClass = false;
 	private int goToClass;
 
-	public bool grounded = false;
+	//#####JUMP REMOVED
+	//the grounded started as false with the jump
+	public bool grounded = true;
 	private bool jumpStart = false;
 	public float jumpHeight = 300f;
 	public GameObject groundedPositionObject;
@@ -65,11 +67,17 @@ public class DefaultMovement : MonoBehaviour {
 
 	void Update () {
 		if(!isDead){
+
+			//#####JUMP REMOVED
+			/*
 			if(Input.GetButtonDown(Buttons.jump) && !jumpStart && !stoppedOnAnimation && grounded && canJump){
 				jump();
 			}
 			jumpGroundCheck();
-			
+			*/
+			if(!grounded){
+				grounded = true;
+			}
 
 			if(!isDead && !stoppedOnAnimation){
 				classChangeCheck();
@@ -405,9 +413,10 @@ public class DefaultMovement : MonoBehaviour {
 //########CHANGE CLASS END
 //###########################################
 
-
+//#####JUMP REMOVED
 //########JUMP START
 //###########################################
+/*
 	void jump(){
 		jumpStart = true;
 		stoppedOnAnimation = true;
@@ -434,6 +443,7 @@ public class DefaultMovement : MonoBehaviour {
 		
 		animator.SetFloat(hash.verticalSpeed, Mathf.Round(playerRigidbody.velocity.y*100)/100);
 	}
+*/
 //########JUMP END
 //###########################################
 
