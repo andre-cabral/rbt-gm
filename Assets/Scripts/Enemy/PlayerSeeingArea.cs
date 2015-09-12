@@ -7,7 +7,17 @@ public class PlayerSeeingArea : MonoBehaviour {
 	public PatrolAndStalkMovement stalkerNavMeshScript;
 	public bool canSeeStealthPlayer = false;
 	public bool needLineOfSightToGetPlayer = false;
-	
+	Bell lastBellHeard;
+
+	void Update(){
+		if(lastBellHeard != null){
+			if(!lastBellHeard.getRinging()){
+				lastBellHeard = null;
+				stalkerNavMeshScript.setIsSeeingPlayer(false);
+			}
+		}
+	}
+
 	void OnTriggerStay(Collider collider) {
 		GameObject collidedObject = collider.gameObject;
 		if(collidedObject.tag == Tags.characterClass){
@@ -26,6 +36,15 @@ public class PlayerSeeingArea : MonoBehaviour {
 					}
 				}
 				
+			}
+		}
+		if(collidedObject.tag == Tags.bellRinging){
+			if(stalkerNavMeshScript.getLastPlayerSeen() == stalkerNavMeshScript.getLastPlayerSeenResetPosition()){
+				lastBellHeard = collidedObject.GetComponent<Bell>();
+				stalkerNavMeshScript.setLastPlayerSeen(collidedObject.transform.position);
+				if(!stalkerNavMeshScript.getIsSeeingPlayer() ){
+					stalkerNavMeshScript.setIsSeeingPlayer(true);
+				}
 			}
 		}
 	}

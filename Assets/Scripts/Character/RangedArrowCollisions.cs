@@ -13,7 +13,7 @@ public class RangedArrowCollisions : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider collider){
-		if(collider.tag == Tags.enemy || collider.tag == Tags.wall){
+		if(collider.tag == Tags.enemy || collider.tag == Tags.wall || collider.tag == Tags.bell){
 			ArrowStopOnTarget(collider);
 			Destroy(this.gameObject, timeToDestroy);
 		}
