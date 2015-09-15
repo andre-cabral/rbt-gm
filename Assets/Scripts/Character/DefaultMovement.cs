@@ -335,10 +335,10 @@ public class DefaultMovement : MonoBehaviour {
 //########CHANGE CLASS START
 //###########################################
 	void classChangeCheck(){
-		if(changingClass && !animator.IsInTransition(0) 
-		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassStealth)
-		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassPower)
-		   && !animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationsNames.changeClassRanged)){
+		if(changingClass && !animator.IsInTransition(1) 
+		   && !animator.GetCurrentAnimatorStateInfo(1).IsName(AnimationsNames.changeClassStealth)
+		   && !animator.GetCurrentAnimatorStateInfo(1).IsName(AnimationsNames.changeClassPower)
+		   && !animator.GetCurrentAnimatorStateInfo(1).IsName(AnimationsNames.changeClassRanged)){
 			finishClassChange();
 		}
 		
@@ -360,7 +360,7 @@ public class DefaultMovement : MonoBehaviour {
 	}
 
 	void startClassChange(int goToClass){	
-		stoppedOnAnimation = true;
+		//stoppedOnAnimation = true;
 		changingClass = true;
 		animator.SetBool(hash.changeClass, true);
 		this.goToClass = goToClass;
@@ -377,7 +377,7 @@ public class DefaultMovement : MonoBehaviour {
 	}
 
 	void finishClassChange(){
-		stoppedOnAnimation = false;
+		//stoppedOnAnimation = false;
 		changingClass = false;
 		animator.SetBool(hash.changeClass, false);
 
