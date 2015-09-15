@@ -18,6 +18,7 @@ public class DefaultMovement : MonoBehaviour {
 	private ChangeClass changeClassScript;
 	private bool changingClass = false;
 	private int goToClass;
+	ClassMarkerUI classMarkerUIScript;
 
 	//#####JUMP REMOVED
 	//the grounded started as false with the jump
@@ -50,6 +51,7 @@ public class DefaultMovement : MonoBehaviour {
 
 		classContainer = GameObject.FindGameObjectWithTag(Tags.characterClassesContainer);
 		changeClassScript = classContainer.GetComponent<ChangeClass>();
+		classMarkerUIScript = GameObject.FindGameObjectWithTag(Tags.classMarkerUI).GetComponent<ClassMarkerUI>();
 
 		playerCollider = GetComponent<Collider>();
 		playerRigidbody = GetComponent<Rigidbody>();
@@ -361,6 +363,7 @@ public class DefaultMovement : MonoBehaviour {
 
 	void startClassChange(int goToClass){	
 		//stoppedOnAnimation = true;
+		classMarkerUIScript.changingClassStart(goToClass);
 		changingClass = true;
 		animator.SetBool(hash.changeClass, true);
 		this.goToClass = goToClass;
@@ -378,6 +381,7 @@ public class DefaultMovement : MonoBehaviour {
 
 	void finishClassChange(){
 		//stoppedOnAnimation = false;
+		classMarkerUIScript.changingClassEnd();
 		changingClass = false;
 		animator.SetBool(hash.changeClass, false);
 

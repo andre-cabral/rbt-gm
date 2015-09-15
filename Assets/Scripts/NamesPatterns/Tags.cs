@@ -14,4 +14,6 @@ public class Tags : MonoBehaviour {
 	public const string wall = "Wall";
 	public const string bell = "Bell";
 	public const string bellRinging = "BellRinging";
+	public const string healthBar = "HealthBar";
+	public const string classMarkerUI = "ClassMarkerUI";
 }
