@@ -66,7 +66,6 @@ public class DefaultMovement : MonoBehaviour {
 	}
 
 
-
 	void Update () {
 		if(!isDead){
 
@@ -381,7 +380,7 @@ public class DefaultMovement : MonoBehaviour {
 
 	void finishClassChange(){
 		//stoppedOnAnimation = false;
-		classMarkerUIScript.changingClassEnd();
+		//classMarkerUIScript.changingClassEnd();
 		changingClass = false;
 		animator.SetBool(hash.changeClass, false);
 
