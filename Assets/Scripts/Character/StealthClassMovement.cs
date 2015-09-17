@@ -6,6 +6,10 @@ public class StealthClassMovement : MonoBehaviour {
 
 	public GameObject dodgingCollider;
 
+	public float runningSpeed = 0.075f;
+	public float walkingSpeed = 0.025f;
+	bool running = false;
+
 	private bool isDodging = false;
 
 	private DefaultMovement defaultMovementScript;
@@ -26,6 +30,12 @@ public class StealthClassMovement : MonoBehaviour {
 		if(!defaultMovementScript.getIsDead() && !defaultMovementScript.getStoppedOnAnimation()){
 			if(Input.GetButtonDown(Buttons.power1) && !isDodging && defaultMovementScript.getGrounded() && !onDelayTime ){
 				DodgingStart();
+			}
+
+			if(Input.GetButton(Buttons.power0)){
+				StartRunning();
+			}else{
+				EndRunning();
 			}
 		}
 		/*
@@ -63,6 +73,31 @@ public class StealthClassMovement : MonoBehaviour {
 	}
 //########Dodging END
 //###########################################
+
+
+//########Running START
+//###########################################
+	void StartRunning(){
+		if(!running){
+			gameObject.name = ClassesObjectsNames.stealthRunning;
+			defaultMovementScript.setMovementSpeed(runningSpeed);
+			animator.SetBool(hashStealth.run, true);
+			running = true;
+		}
+	}
+
+	void EndRunning(){
+		if(running){
+			gameObject.name = ClassesObjectsNames.stealth;
+			defaultMovementScript.setMovementSpeed(walkingSpeed);
+			animator.SetBool(hashStealth.run, false);
+			running = false;
+		}
+	}
+//########Running END
+//###########################################
+
+
 
 	public bool getIsDodging(){
 		return isDodging;

@@ -500,6 +500,14 @@ public class DefaultMovement : MonoBehaviour {
 		return hash;
 	}
 
+	public void setMovementSpeed(float movementSpeed){
+		this.movementSpeed = movementSpeed;
+	}
+
+	public float getMovementSpeed(){
+		return movementSpeed;
+	}
+
 	public bool getGrounded(){
 		return grounded;
 	}
