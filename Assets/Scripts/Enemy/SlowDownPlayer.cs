@@ -56,18 +56,19 @@ public class SlowDownPlayer : MonoBehaviour {
 		if(collider.tag == Tags.characterClass && !collidedWithPlayer){
 			ObjectStopOnPlayer(collider);
 			SlowDownEffect();
-			StartFollowingPlayer();
+			//StartFollowingPlayer();
 		}
 	}
 
 //########Follow Player START
 //###########################################
+	/*
 	void StartFollowingPlayer(){
 		positionFromPlayer = changeClassScript.GetActiveClass().transform.position - transform.position;
 	}
-
+	*/
 	void FollowPlayer(){
-		transform.position = changeClassScript.GetActiveClass().transform.position - positionFromPlayer;
+		transform.position = changeClassScript.GetActiveClass().transform.position /*- positionFromPlayer*/;
 	}
 
 	void ObjectStopOnPlayer(Collider collidedTarget){
