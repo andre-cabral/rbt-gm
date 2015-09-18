@@ -1,0 +1,232 @@
+fileFormatVersion: 2
+guid: 55b0ea1d1ba569c4eb5080464b10178e
+timeCreated: 1442540256
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Abelha
+    100002: //RootNode
+    100004: CATRigBee_torax
+    100006: CATRigBee_toraxBone001
+    100008: CATRigBee_toraxBone002
+    100010: CATRigBee_toraxBone003
+    100012: CATRigBee_toraxBone004
+    100014: CATRigHub002
+    100016: CATRigLArm1
+    100018: CATRigLArm1 1
+    100020: CATRigLArm11
+    100022: CATRigLArm1Collarbone
+    100024: CATRigLArm1Palm
+    100026: CATRigLArmCollarbone
+    100028: CATRigLArmCollarbone 1
+    100030: CATRigLArmPalm
+    100032: CATRigLArmPalm 1
+    100034: CATRigRArm1
+    100036: CATRigRArm1 1
+    100038: CATRigRArm1 2
+    100040: CATRigRArmCollarbone
+    100042: CATRigRArmCollarbone 1
+    100044: CATRigRArmCollarbone 2
+    100046: CATRigRArmPalm
+    100048: CATRigRArmPalm 1
+    100050: CATRigRArmPalm 2
+    100052: CATRigSpine
+    100054: CATRigTail1
+    100056: CATRigTail2
+    100058: CATRigTail3
+    100060: CATRigTail4
+    100062: holo
+    400000: Abelha
+    400002: //RootNode
+    400004: CATRigBee_torax
+    400006: CATRigBee_toraxBone001
+    400008: CATRigBee_toraxBone002
+    400010: CATRigBee_toraxBone003
+    400012: CATRigBee_toraxBone004
+    400014: CATRigHub002
+    400016: CATRigLArm1
+    400018: CATRigLArm1 1
+    400020: CATRigLArm11
+    400022: CATRigLArm1Collarbone
+    400024: CATRigLArm1Palm
+    400026: CATRigLArmCollarbone
+    400028: CATRigLArmCollarbone 1
+    400030: CATRigLArmPalm
+    400032: CATRigLArmPalm 1
+    400034: CATRigRArm1
+    400036: CATRigRArm1 1
+    400038: CATRigRArm1 2
+    400040: CATRigRArmCollarbone
+    400042: CATRigRArmCollarbone 1
+    400044: CATRigRArmCollarbone 2
+    400046: CATRigRArmPalm
+    400048: CATRigRArmPalm 1
+    400050: CATRigRArmPalm 2
+    400052: CATRigSpine
+    400054: CATRigTail1
+    400056: CATRigTail2
+    400058: CATRigTail3
+    400060: CATRigTail4
+    400062: holo
+    4300000: Abelha
+    4300002: holo
+    7400000: Fly
+    9500000: //RootNode
+    13700000: Abelha
+    13700002: holo
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Fly
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Abelha
+        weight: 1
+      - path: Abelha/holo
+        weight: 1
+      - path: CATRigBee_torax
+        weight: 1
+      - path: CATRigBee_torax/CATRigBee_toraxBone001
+        weight: 1
+      - path: CATRigBee_torax/CATRigBee_toraxBone002
+        weight: 1
+      - path: CATRigBee_torax/CATRigBee_toraxBone003
+        weight: 1
+      - path: CATRigBee_torax/CATRigBee_toraxBone004
+        weight: 1
+      - path: CATRigBee_torax/CATRigLArm1Collarbone
+        weight: 1
+      - path: CATRigBee_torax/CATRigLArm1Collarbone/CATRigLArm11
+        weight: 1
+      - path: CATRigBee_torax/CATRigLArm1Collarbone/CATRigLArm11/CATRigLArm1Palm
+        weight: 1
+      - path: CATRigBee_torax/CATRigLArmCollarbone
+        weight: 1
+      - path: CATRigBee_torax/CATRigLArmCollarbone/CATRigLArm1
+        weight: 1
+      - path: CATRigBee_torax/CATRigLArmCollarbone/CATRigLArm1/CATRigLArmPalm
+        weight: 1
+      - path: CATRigBee_torax/CATRigLArmCollarbone 1
+        weight: 1
+      - path: CATRigBee_torax/CATRigLArmCollarbone 1/CATRigLArm1 1
+        weight: 1
+      - path: CATRigBee_torax/CATRigLArmCollarbone 1/CATRigLArm1 1/CATRigLArmPalm
+          1
+        weight: 1
+      - path: CATRigBee_torax/CATRigRArmCollarbone
+        weight: 1
+      - path: CATRigBee_torax/CATRigRArmCollarbone/CATRigRArm1
+        weight: 1
+      - path: CATRigBee_torax/CATRigRArmCollarbone/CATRigRArm1/CATRigRArmPalm
+        weight: 1
+      - path: CATRigBee_torax/CATRigRArmCollarbone 1
+        weight: 1
+      - path: CATRigBee_torax/CATRigRArmCollarbone 1/CATRigRArm1 1
+        weight: 1
+      - path: CATRigBee_torax/CATRigRArmCollarbone 1/CATRigRArm1 1/CATRigRArmPalm
+          1
+        weight: 1
+      - path: CATRigBee_torax/CATRigRArmCollarbone 2
+        weight: 1
+      - path: CATRigBee_torax/CATRigRArmCollarbone 2/CATRigRArm1 2
+        weight: 1
+      - path: CATRigBee_torax/CATRigRArmCollarbone 2/CATRigRArm1 2/CATRigRArmPalm
+          2
+        weight: 1
+      - path: CATRigBee_torax/CATRigSpine
+        weight: 1
+      - path: CATRigBee_torax/CATRigSpine/CATRigHub002
+        weight: 1
+      - path: CATRigBee_torax/CATRigTail1
+        weight: 1
+      - path: CATRigBee_torax/CATRigTail1/CATRigTail2
+        weight: 1
+      - path: CATRigBee_torax/CATRigTail1/CATRigTail2/CATRigTail3
+        weight: 1
+      - path: CATRigBee_torax/CATRigTail1/CATRigTail2/CATRigTail3/CATRigTail4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 300
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
