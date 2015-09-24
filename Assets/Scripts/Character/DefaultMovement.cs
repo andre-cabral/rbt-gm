@@ -9,6 +9,7 @@ public class DefaultMovement : MonoBehaviour {
 	public float movementSpeed = 0.1f;
 	private float startSpeed;
 	public float turnSpeed = 20f;
+	public float lookAtHeight = 2f;
 
 	private float inputTotal = 0f;
 	private Animator animator;
@@ -150,7 +151,7 @@ public class DefaultMovement : MonoBehaviour {
 	
 	void RotateToMouse(){
 		//plane that intersect with the raycast from the camera to find the point which the player should look at
-		Plane intersectPlane = new Plane(Vector3.up, transform.position);
+		Plane intersectPlane = new Plane(Vector3.up, new Vector3(transform.position.x,transform.position.y + lookAtHeight,transform.position.z));
 		
 		//ray that comes from the camera
 		Ray rayFromTheCamera = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -160,7 +161,10 @@ public class DefaultMovement : MonoBehaviour {
 		//this if changes the distanceRayCameraToPlane to the correct value. 
 		//the out keyword makes a parameter that is not returned to be changed
 		if(intersectPlane.Raycast(rayFromTheCamera, out distanceRayCameraToPlane)){
-			Quaternion rotationToLookAt = Quaternion.LookRotation(rayFromTheCamera.GetPoint(distanceRayCameraToPlane) - transform.position);
+			Vector3 rayFromTheCameraPoint = rayFromTheCamera.GetPoint(distanceRayCameraToPlane);
+			Vector3 positionTolook = new Vector3(rayFromTheCameraPoint.x, transform.position.y, rayFromTheCameraPoint.z);
+
+			Quaternion rotationToLookAt = Quaternion.LookRotation(positionTolook - transform.position);
 
 			//transform.rotation = rotationToLookAt;
 			transform.rotation = Quaternion.Slerp(transform.rotation, rotationToLookAt, turnSpeed * Time.deltaTime);

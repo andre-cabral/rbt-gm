@@ -4,6 +4,7 @@ using System.Collections;
 public class EnemyLife : MonoBehaviour {
 
 	public int startingLife = 2;
+	public GameObject[] dropWhenDead;
 	int life = 999;
 	bool isDead = false;
 
@@ -32,9 +33,18 @@ public class EnemyLife : MonoBehaviour {
 		}
 	}
 
+	public void setLife(int life){
+		this.life = life;
+	}
+
 	void CheckDeath(){
 		if(life <= 0){
 			isDead = true;
+			if(dropWhenDead.Length >0){
+				for(int i=0; i<dropWhenDead.Length; i++){
+					GameObject objectInstatiated = (GameObject)Instantiate(dropWhenDead[i], transform.position, transform.rotation);
+				}
+			}
 			Destroy(gameObject);
 		}
 	}
