@@ -28,7 +28,7 @@ public class RangedClassMovement : MonoBehaviour {
 			NewArrow();
 		}
 
-		if(!defaultMovementScript.getIsDead() && !defaultMovementScript.getStoppedOnAnimation()){
+		if(!defaultMovementScript.getIsDead() && !DefaultMovement.isPaused && !defaultMovementScript.getStoppedOnAnimation()){
 			if(Input.GetButtonDown(Buttons.power0) && !isShooting){
 				Shooting();
 			}

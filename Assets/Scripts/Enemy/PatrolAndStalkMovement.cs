@@ -83,6 +83,8 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 		if( Vector3.Distance(transform.position, destination) > distanceToChangeWaypoint ){
 			if(agent.destination != destination){
 				agent.SetDestination(destination);
+			}
+			if(enemyAnimator.GetFloat(hashAnimator.velocity) != agent.desiredVelocity.magnitude){
 				enemyAnimator.SetFloat(hashAnimator.velocity, agent.desiredVelocity.magnitude);
 			}
 		}else{
@@ -118,6 +120,8 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 		if(Vector3.Distance(transform.position, destination) > agent.stoppingDistance){
 			if(agent.destination != destination){
 				agent.SetDestination(destination);
+			}
+			if(enemyAnimator.GetFloat(hashAnimator.velocity) != agent.desiredVelocity.magnitude){
 				enemyAnimator.SetFloat(hashAnimator.velocity, agent.desiredVelocity.magnitude);
 			}
 		}else if(!isSeeingPlayer){

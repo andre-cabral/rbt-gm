@@ -1,44 +1,37 @@
-﻿﻿using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(HashAnimatorStalkerEnemy))]
 public class PatrolAndStalkMovementAnt : PatrolAndStalkMovement {
+	public static float distanceToCallAnts = 20f;
 	public static Vector3 lastPlayerSeenAnt = new Vector3(9999f,9999f,9999f);
 	public static bool anyAntCanSeePlayer = false;
-	static int totalAnts = 0;
-	static int antsSeeingPlayer = 0;
-	bool addedThisSeeingPlayer = false;
+	public static Transform lastAntWhoSeenPlayer = null;
 	
 	public override void Awake(){
 		base.Awake();
-		totalAnts++;
 	}
 	
 	public override void Update(){
 		base.Update();
-		if(!addedThisSeeingPlayer && getIsSeeingPlayer()){
-			antsSeeingPlayer++;
-			addedThisSeeingPlayer = true;
+		if(lastAntWhoSeenPlayer == transform && !getIsSeeingPlayer()){
+			lastAntWhoSeenPlayer = null;
 		}
-		if(addedThisSeeingPlayer && !getIsSeeingPlayer()){
-			antsSeeingPlayer--;
-			addedThisSeeingPlayer = false;
-		}
-		if(antsSeeingPlayer == 0){
+		if(lastAntWhoSeenPlayer == null){
 			lastPlayerSeenAnt = getLastPlayerSeenResetPosition();
+			if(getIsSeeingPlayer()){
+				lastPlayerSeenAnt = getLastPlayerSeen();
+				lastAntWhoSeenPlayer = transform;
+			}
 		}else{
 			if(getIsSeeingPlayer()){
 				lastPlayerSeenAnt = getLastPlayerSeen();
+				lastAntWhoSeenPlayer = transform;
 			}else{
-				setLastPlayerSeen(lastPlayerSeenAnt);
+				if( Vector3.Distance(transform.position, lastAntWhoSeenPlayer.position) <= distanceToCallAnts ){ 
+					setLastPlayerSeen(lastPlayerSeenAnt);
+				}
 			}
-		}
-	}
-	
-	void OnDestroy() {
-		totalAnts --;
-		if(getIsSeeingPlayer()){
-			antsSeeingPlayer--;
 		}
 	}
 }

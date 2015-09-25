@@ -17,7 +17,7 @@ public class ClassMarkerUI : MonoBehaviour {
 		animator = GetComponent<Animator>();
 		hashAnimatorClassUI = GetComponent<HashAnimatorClassUI>();
 	}
-
+	/*
 	void Start(){
 		float yRotation = 0f;
 		if( changeClassScript.class0.Equals(changeClassScript.GetActiveClass()) ){
@@ -38,7 +38,7 @@ public class ClassMarkerUI : MonoBehaviour {
 		transform.localRotation = Quaternion.Euler(transform.localRotation.eulerAngles.x, yRotation, transform.localRotation.eulerAngles.z);
 		RotateTo();
 	}
-
+*/
 	void RotateTo(){
 		animator.SetInteger(hashAnimatorClassUI.classToGo, classToGo);
 	}

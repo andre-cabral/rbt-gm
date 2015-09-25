@@ -27,7 +27,7 @@ public class StealthClassMovement : MonoBehaviour {
 	}
 
 	void Update () {
-		if(!defaultMovementScript.getIsDead() && !defaultMovementScript.getStoppedOnAnimation()){
+		if(!defaultMovementScript.getIsDead() && !DefaultMovement.isPaused && !defaultMovementScript.getStoppedOnAnimation()){
 			if(Input.GetButtonDown(Buttons.power1) && !isDodging && defaultMovementScript.getGrounded() && !onDelayTime ){
 				DodgingStart();
 			}

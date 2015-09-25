@@ -4,9 +4,15 @@ using UnityEngine.UI;
 
 public class ScreenMessageManager : MonoBehaviour {
 
-	public Text textObject;
+	Text textObject;
+
+	void Awake(){
+		textObject = GameObject.FindGameObjectWithTag(Tags.screenMessageText).GetComponent<Text>();
+	}
 
 	public void NewMessage(string newMessage){
-		textObject.text = newMessage.Replace("{newline}", "\n");
+		if(textObject != null){
+			textObject.text = newMessage.Replace("{newline}", "\n");
+		}
 	}
 }

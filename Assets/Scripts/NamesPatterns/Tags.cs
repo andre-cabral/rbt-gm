@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class Tags : MonoBehaviour {
-
 	public const string characterClass = "CharacterClass";
 	public const string characterClassesContainer = "CharacterClassesContainer";
 	public const string enemy = "Enemy";
@@ -16,4 +15,7 @@ public class Tags : MonoBehaviour {
 	public const string bellRinging = "BellRinging";
 	public const string healthBar = "HealthBar";
 	public const string classMarkerUI = "ClassMarkerUI";
+	public const string pauseObject = "PauseObject";
+	public const string gameOverObject = "GameOverObject";
+	public const string screenMessageText = "ScreenMessageText";
 }

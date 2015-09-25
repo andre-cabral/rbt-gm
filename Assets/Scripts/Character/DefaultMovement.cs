@@ -39,6 +39,10 @@ public class DefaultMovement : MonoBehaviour {
 	private List<Rigidbody> ragDollRigidbodies = new List<Rigidbody>();
 	private Collider playerCollider;
 	private Rigidbody playerRigidbody;
+	public static GameObject[] gameOverObjects;
+
+	public static bool isPaused = false;
+	public static GameObject[] pauseObjects;
 
 	private GameObject gameController;
 	private LifeManager lifeManager;
@@ -64,11 +68,26 @@ public class DefaultMovement : MonoBehaviour {
 		List<GameObject> ragDollObjects = GetObjectsInLayer( gameObject, LayerMask.NameToLayer(Layers.collidersRagdoll) );
 		ragDollObjects = GetObjectsWithRigidbody(ragDollObjects);
 		ragDollRigidbodies = GetRigidbodiesFromObjects(ragDollObjects);
+
+		if(DefaultMovement.pauseObjects == null){
+			DefaultMovement.pauseObjects = GameObject.FindGameObjectsWithTag(Tags.pauseObject);
+			DefaultMovement.setPause(false);
+		}
+		if(DefaultMovement.gameOverObjects == null){
+			DefaultMovement.gameOverObjects = GameObject.FindGameObjectsWithTag(Tags.gameOverObject);
+			DefaultMovement.setGameOverObjects(false);
+		}
 	}
 
 
 	void Update () {
 		if(!isDead){
+			if(Input.GetKeyDown(KeyCode.Escape)){
+				TogglePause();
+			}
+		}
+
+		if(!isDead && !DefaultMovement.isPaused){
 
 			//#####JUMP REMOVED
 			/*
@@ -470,11 +489,13 @@ public class DefaultMovement : MonoBehaviour {
 
 		if(lifeManager.GetLife() <= 0){
 			setIsDead(true);
+			DefaultMovement.setGameOverObjects(true);
 		}
 	}
 
 //########Life Manager END
 //###########################################
+
 
 //########DEATH START
 //###########################################
@@ -490,8 +511,50 @@ public class DefaultMovement : MonoBehaviour {
 		
 		deathRagDollActive = true;
 	}
+
+	public static void setGameOverObjects(bool setObjectTo){
+		if(DefaultMovement.gameOverObjects != null){
+			foreach(GameObject gameOverObject in DefaultMovement.gameOverObjects){
+				if(gameOverObject != null){
+					gameOverObject.SetActive(setObjectTo);
+				}
+			}
+		}
+	}
 //########DEATH END
 //###########################################
+
+
+//########PAUSE START
+//###########################################
+	public static void setPause(bool pause){
+		if(pause){
+			isPaused = true;
+			Time.timeScale = 0f;
+			setPauseObjects(true);
+		}else{
+			isPaused = false;
+			Time.timeScale = 1f;
+			setPauseObjects(false);
+		}
+	}
+
+	public static void setPauseObjects(bool setObjectTo){
+		if(DefaultMovement.pauseObjects != null){
+			foreach(GameObject pauseObject in DefaultMovement.pauseObjects){
+				if(pauseObject != null){
+					pauseObject.SetActive(setObjectTo);
+				}
+			}
+		}
+	}
+
+	public void TogglePause(){
+		DefaultMovement.setPause(!DefaultMovement.isPaused);
+	}
+//########PAUSE END
+//###########################################
+
 
 //########UTILITIES START
 //###########################################
