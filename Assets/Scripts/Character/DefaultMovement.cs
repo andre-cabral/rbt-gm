@@ -69,14 +69,11 @@ public class DefaultMovement : MonoBehaviour {
 		ragDollObjects = GetObjectsWithRigidbody(ragDollObjects);
 		ragDollRigidbodies = GetRigidbodiesFromObjects(ragDollObjects);
 
-		if(DefaultMovement.pauseObjects == null){
-			DefaultMovement.pauseObjects = GameObject.FindGameObjectsWithTag(Tags.pauseObject);
-			DefaultMovement.setPause(false);
-		}
-		if(DefaultMovement.gameOverObjects == null){
-			DefaultMovement.gameOverObjects = GameObject.FindGameObjectsWithTag(Tags.gameOverObject);
-			DefaultMovement.setGameOverObjects(false);
-		}
+		DefaultMovement.pauseObjects = GameObject.FindGameObjectsWithTag(Tags.pauseObject);
+		DefaultMovement.setPause(false);
+
+		DefaultMovement.gameOverObjects = GameObject.FindGameObjectsWithTag(Tags.gameOverObject);
+		DefaultMovement.setGameOverObjects(false);
 	}
 
 
