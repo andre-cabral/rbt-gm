@@ -1,0 +1,392 @@
+fileFormatVersion: 2
+guid: 7a1abffa539c3ca43b6bd575cad5f012
+timeCreated: 1443667495
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: CATRigFormiga_abdomen_bone
+    100004: CATRigFormiga_antena_dir_bone1
+    100006: CATRigFormiga_antena_dir_bone2
+    100008: CATRigFormiga_antena_esq_bone1
+    100010: CATRigFormiga_antena_esq_bone2
+    100012: CATRigFormiga_bone_boca_dir
+    100014: CATRigFormiga_bone_boca_esq
+    100016: CATRigFormiga_bone_torax
+    100018: CATRigFormiga_cabeca_bone
+    100020: CATRigFormiga_pata_FrontDir_bone1
+    100022: CATRigFormiga_pata_FrontDir_bone2
+    100024: CATRigFormiga_pata_FrontDir_bone3
+    100026: CATRigFormiga_pata_FrontDir_bone4
+    100028: CATRigFormiga_pata_FrontDir_boneAnkle
+    100030: CATRigFormiga_pata_FrontEsq_bone1
+    100032: CATRigFormiga_pata_FrontEsq_bone2
+    100034: CATRigFormiga_pata_FrontEsq_bone3
+    100036: CATRigFormiga_pata_FrontEsq_bone4
+    100038: CATRigFormiga_pata_FrontEsq_boneAnkle
+    100040: CATRigFormiga_pata_MeioDir_bone1
+    100042: CATRigFormiga_pata_MeioDir_bone1 1
+    100044: CATRigFormiga_pata_MeioDir_bone2
+    100046: CATRigFormiga_pata_MeioDir_bone2 1
+    100048: CATRigFormiga_pata_MeioDir_bone3
+    100050: CATRigFormiga_pata_MeioDir_bone3 1
+    100052: CATRigFormiga_pata_MeioDir_bone4
+    100054: CATRigFormiga_pata_MeioDir_bone4 1
+    100056: CATRigFormiga_pata_MeioDir_boneAnkle
+    100058: CATRigFormiga_pata_MeioDir_boneAnkle 1
+    100060: CATRigFormiga_pata_TrazDir_bone1
+    100062: CATRigFormiga_pata_TrazDir_bone2
+    100064: CATRigFormiga_pata_TrazDir_bone3
+    100066: CATRigFormiga_pata_TrazDir_bone4
+    100068: CATRigFormiga_pata_TrazDir_boneAnkle
+    100070: CATRigFormiga_pata_TrazEsq_bone1
+    100072: CATRigFormiga_pata_TrazEsq_bone2
+    100074: CATRigFormiga_pata_TrazEsq_bone3
+    100076: CATRigFormiga_pata_TrazEsq_bone4
+    100078: CATRigFormiga_pata_TrazEsq_boneAnkle
+    100080: formiga1:formiga
+    100082: formiga:formiga2
+    400000: //RootNode
+    400002: CATRigFormiga_abdomen_bone
+    400004: CATRigFormiga_antena_dir_bone1
+    400006: CATRigFormiga_antena_dir_bone2
+    400008: CATRigFormiga_antena_esq_bone1
+    400010: CATRigFormiga_antena_esq_bone2
+    400012: CATRigFormiga_bone_boca_dir
+    400014: CATRigFormiga_bone_boca_esq
+    400016: CATRigFormiga_bone_torax
+    400018: CATRigFormiga_cabeca_bone
+    400020: CATRigFormiga_pata_FrontDir_bone1
+    400022: CATRigFormiga_pata_FrontDir_bone2
+    400024: CATRigFormiga_pata_FrontDir_bone3
+    400026: CATRigFormiga_pata_FrontDir_bone4
+    400028: CATRigFormiga_pata_FrontDir_boneAnkle
+    400030: CATRigFormiga_pata_FrontEsq_bone1
+    400032: CATRigFormiga_pata_FrontEsq_bone2
+    400034: CATRigFormiga_pata_FrontEsq_bone3
+    400036: CATRigFormiga_pata_FrontEsq_bone4
+    400038: CATRigFormiga_pata_FrontEsq_boneAnkle
+    400040: CATRigFormiga_pata_MeioDir_bone1
+    400042: CATRigFormiga_pata_MeioDir_bone1 1
+    400044: CATRigFormiga_pata_MeioDir_bone2
+    400046: CATRigFormiga_pata_MeioDir_bone2 1
+    400048: CATRigFormiga_pata_MeioDir_bone3
+    400050: CATRigFormiga_pata_MeioDir_bone3 1
+    400052: CATRigFormiga_pata_MeioDir_bone4
+    400054: CATRigFormiga_pata_MeioDir_bone4 1
+    400056: CATRigFormiga_pata_MeioDir_boneAnkle
+    400058: CATRigFormiga_pata_MeioDir_boneAnkle 1
+    400060: CATRigFormiga_pata_TrazDir_bone1
+    400062: CATRigFormiga_pata_TrazDir_bone2
+    400064: CATRigFormiga_pata_TrazDir_bone3
+    400066: CATRigFormiga_pata_TrazDir_bone4
+    400068: CATRigFormiga_pata_TrazDir_boneAnkle
+    400070: CATRigFormiga_pata_TrazEsq_bone1
+    400072: CATRigFormiga_pata_TrazEsq_bone2
+    400074: CATRigFormiga_pata_TrazEsq_bone3
+    400076: CATRigFormiga_pata_TrazEsq_bone4
+    400078: CATRigFormiga_pata_TrazEsq_boneAnkle
+    400080: formiga1:formiga
+    400082: formiga:formiga2
+    4300000: formiga:formiga2
+    4300002: formiga1:formiga
+    7400000: walk
+    7400002: attack
+    9500000: //RootNode
+    13700000: formiga1:formiga
+    13700002: formiga:formiga2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walk
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CATRigFormiga_bone_torax
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_abdomen_bone
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_cabeca_bone
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_cabeca_bone/CATRigFormiga_antena_dir_bone1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_cabeca_bone/CATRigFormiga_antena_dir_bone1/CATRigFormiga_antena_dir_bone2
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_cabeca_bone/CATRigFormiga_antena_esq_bone1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_cabeca_bone/CATRigFormiga_antena_esq_bone1/CATRigFormiga_antena_esq_bone2
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_cabeca_bone/CATRigFormiga_bone_boca_dir
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_cabeca_bone/CATRigFormiga_bone_boca_esq
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontDir_bone1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontDir_bone1/CATRigFormiga_pata_FrontDir_bone2
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontDir_bone1/CATRigFormiga_pata_FrontDir_bone2/CATRigFormiga_pata_FrontDir_bone3
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontDir_bone1/CATRigFormiga_pata_FrontDir_bone2/CATRigFormiga_pata_FrontDir_bone3/CATRigFormiga_pata_FrontDir_bone4
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontDir_bone1/CATRigFormiga_pata_FrontDir_bone2/CATRigFormiga_pata_FrontDir_bone3/CATRigFormiga_pata_FrontDir_bone4/CATRigFormiga_pata_FrontDir_boneAnkle
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontEsq_bone1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontEsq_bone1/CATRigFormiga_pata_FrontEsq_bone2
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontEsq_bone1/CATRigFormiga_pata_FrontEsq_bone2/CATRigFormiga_pata_FrontEsq_bone3
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontEsq_bone1/CATRigFormiga_pata_FrontEsq_bone2/CATRigFormiga_pata_FrontEsq_bone3/CATRigFormiga_pata_FrontEsq_bone4
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontEsq_bone1/CATRigFormiga_pata_FrontEsq_bone2/CATRigFormiga_pata_FrontEsq_bone3/CATRigFormiga_pata_FrontEsq_bone4/CATRigFormiga_pata_FrontEsq_boneAnkle
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1/CATRigFormiga_pata_MeioDir_bone2
+          1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1/CATRigFormiga_pata_MeioDir_bone2
+          1/CATRigFormiga_pata_MeioDir_bone3 1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1/CATRigFormiga_pata_MeioDir_bone2
+          1/CATRigFormiga_pata_MeioDir_bone3 1/CATRigFormiga_pata_MeioDir_bone4 1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1/CATRigFormiga_pata_MeioDir_bone2
+          1/CATRigFormiga_pata_MeioDir_bone3 1/CATRigFormiga_pata_MeioDir_bone4 1/CATRigFormiga_pata_MeioDir_boneAnkle
+          1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1 1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1 1/CATRigFormiga_pata_MeioDir_bone2
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1 1/CATRigFormiga_pata_MeioDir_bone2/CATRigFormiga_pata_MeioDir_bone3
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1 1/CATRigFormiga_pata_MeioDir_bone2/CATRigFormiga_pata_MeioDir_bone3/CATRigFormiga_pata_MeioDir_bone4
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1 1/CATRigFormiga_pata_MeioDir_bone2/CATRigFormiga_pata_MeioDir_bone3/CATRigFormiga_pata_MeioDir_bone4/CATRigFormiga_pata_MeioDir_boneAnkle
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazDir_bone1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazDir_bone1/CATRigFormiga_pata_TrazDir_bone2
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazDir_bone1/CATRigFormiga_pata_TrazDir_bone2/CATRigFormiga_pata_TrazDir_bone3
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazDir_bone1/CATRigFormiga_pata_TrazDir_bone2/CATRigFormiga_pata_TrazDir_bone3/CATRigFormiga_pata_TrazDir_bone4
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazDir_bone1/CATRigFormiga_pata_TrazDir_bone2/CATRigFormiga_pata_TrazDir_bone3/CATRigFormiga_pata_TrazDir_bone4/CATRigFormiga_pata_TrazDir_boneAnkle
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazEsq_bone1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazEsq_bone1/CATRigFormiga_pata_TrazEsq_bone2
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazEsq_bone1/CATRigFormiga_pata_TrazEsq_bone2/CATRigFormiga_pata_TrazEsq_bone3
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazEsq_bone1/CATRigFormiga_pata_TrazEsq_bone2/CATRigFormiga_pata_TrazEsq_bone3/CATRigFormiga_pata_TrazEsq_bone4
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazEsq_bone1/CATRigFormiga_pata_TrazEsq_bone2/CATRigFormiga_pata_TrazEsq_bone3/CATRigFormiga_pata_TrazEsq_bone4/CATRigFormiga_pata_TrazEsq_boneAnkle
+        weight: 1
+      - path: formiga1:formiga
+        weight: 1
+      - path: formiga:formiga2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: attack
+      takeName: Take 001
+      firstFrame: 15
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CATRigFormiga_bone_torax
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_abdomen_bone
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_cabeca_bone
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_cabeca_bone/CATRigFormiga_antena_dir_bone1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_cabeca_bone/CATRigFormiga_antena_dir_bone1/CATRigFormiga_antena_dir_bone2
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_cabeca_bone/CATRigFormiga_antena_esq_bone1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_cabeca_bone/CATRigFormiga_antena_esq_bone1/CATRigFormiga_antena_esq_bone2
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_cabeca_bone/CATRigFormiga_bone_boca_dir
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_cabeca_bone/CATRigFormiga_bone_boca_esq
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontDir_bone1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontDir_bone1/CATRigFormiga_pata_FrontDir_bone2
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontDir_bone1/CATRigFormiga_pata_FrontDir_bone2/CATRigFormiga_pata_FrontDir_bone3
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontDir_bone1/CATRigFormiga_pata_FrontDir_bone2/CATRigFormiga_pata_FrontDir_bone3/CATRigFormiga_pata_FrontDir_bone4
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontDir_bone1/CATRigFormiga_pata_FrontDir_bone2/CATRigFormiga_pata_FrontDir_bone3/CATRigFormiga_pata_FrontDir_bone4/CATRigFormiga_pata_FrontDir_boneAnkle
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontEsq_bone1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontEsq_bone1/CATRigFormiga_pata_FrontEsq_bone2
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontEsq_bone1/CATRigFormiga_pata_FrontEsq_bone2/CATRigFormiga_pata_FrontEsq_bone3
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontEsq_bone1/CATRigFormiga_pata_FrontEsq_bone2/CATRigFormiga_pata_FrontEsq_bone3/CATRigFormiga_pata_FrontEsq_bone4
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_FrontEsq_bone1/CATRigFormiga_pata_FrontEsq_bone2/CATRigFormiga_pata_FrontEsq_bone3/CATRigFormiga_pata_FrontEsq_bone4/CATRigFormiga_pata_FrontEsq_boneAnkle
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1/CATRigFormiga_pata_MeioDir_bone2
+          1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1/CATRigFormiga_pata_MeioDir_bone2
+          1/CATRigFormiga_pata_MeioDir_bone3 1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1/CATRigFormiga_pata_MeioDir_bone2
+          1/CATRigFormiga_pata_MeioDir_bone3 1/CATRigFormiga_pata_MeioDir_bone4 1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1/CATRigFormiga_pata_MeioDir_bone2
+          1/CATRigFormiga_pata_MeioDir_bone3 1/CATRigFormiga_pata_MeioDir_bone4 1/CATRigFormiga_pata_MeioDir_boneAnkle
+          1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1 1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1 1/CATRigFormiga_pata_MeioDir_bone2
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1 1/CATRigFormiga_pata_MeioDir_bone2/CATRigFormiga_pata_MeioDir_bone3
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1 1/CATRigFormiga_pata_MeioDir_bone2/CATRigFormiga_pata_MeioDir_bone3/CATRigFormiga_pata_MeioDir_bone4
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_MeioDir_bone1 1/CATRigFormiga_pata_MeioDir_bone2/CATRigFormiga_pata_MeioDir_bone3/CATRigFormiga_pata_MeioDir_bone4/CATRigFormiga_pata_MeioDir_boneAnkle
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazDir_bone1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazDir_bone1/CATRigFormiga_pata_TrazDir_bone2
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazDir_bone1/CATRigFormiga_pata_TrazDir_bone2/CATRigFormiga_pata_TrazDir_bone3
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazDir_bone1/CATRigFormiga_pata_TrazDir_bone2/CATRigFormiga_pata_TrazDir_bone3/CATRigFormiga_pata_TrazDir_bone4
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazDir_bone1/CATRigFormiga_pata_TrazDir_bone2/CATRigFormiga_pata_TrazDir_bone3/CATRigFormiga_pata_TrazDir_bone4/CATRigFormiga_pata_TrazDir_boneAnkle
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazEsq_bone1
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazEsq_bone1/CATRigFormiga_pata_TrazEsq_bone2
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazEsq_bone1/CATRigFormiga_pata_TrazEsq_bone2/CATRigFormiga_pata_TrazEsq_bone3
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazEsq_bone1/CATRigFormiga_pata_TrazEsq_bone2/CATRigFormiga_pata_TrazEsq_bone3/CATRigFormiga_pata_TrazEsq_bone4
+        weight: 1
+      - path: CATRigFormiga_bone_torax/CATRigFormiga_pata_TrazEsq_bone1/CATRigFormiga_pata_TrazEsq_bone2/CATRigFormiga_pata_TrazEsq_bone3/CATRigFormiga_pata_TrazEsq_bone4/CATRigFormiga_pata_TrazEsq_boneAnkle
+        weight: 1
+      - path: formiga1:formiga
+        weight: 1
+      - path: formiga:formiga2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.75
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
