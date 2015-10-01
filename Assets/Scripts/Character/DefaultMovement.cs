@@ -599,6 +599,10 @@ public class DefaultMovement : MonoBehaviour {
 		this.canJump = canJump;
 	}
 
+	public bool getIsChangingClass(){
+		return changingClass;
+	}
+
 	public bool getIsDead(){
 		return isDead;
 	}

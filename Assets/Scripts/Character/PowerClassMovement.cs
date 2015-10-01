@@ -21,7 +21,7 @@ public class PowerClassMovement : MonoBehaviour {
 	}
 
 	void Update () {
-		if(!defaultMovementScript.getIsDead() && !DefaultMovement.isPaused && !defaultMovementScript.getStoppedOnAnimation()){
+		if(!defaultMovementScript.getIsDead() && !DefaultMovement.isPaused && !defaultMovementScript.getStoppedOnAnimation() && !defaultMovementScript.getIsChangingClass()){
 			if(Input.GetButtonDown(Buttons.power0) && !isPunching){
 				Punch();
 			}
@@ -29,6 +29,9 @@ public class PowerClassMovement : MonoBehaviour {
 			if(Input.GetButton(Buttons.power1) && !isBlocking && !isPunching && defaultMovementScript.getGrounded() ){
 				BlockingStart();
 			}
+		}
+		if(isPunching && defaultMovementScript.getIsChangingClass()){
+			PunchAnimationEnd();
 		}
 		if(!defaultMovementScript.getIsDead() && !DefaultMovement.isPaused && isBlocking
 		   && (!Input.GetButton(Buttons.power1) || defaultMovementScript.getStoppedOnAnimation() || isPunching || !defaultMovementScript.getGrounded() ) ){

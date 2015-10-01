@@ -5,6 +5,7 @@ public class EnemyLife : MonoBehaviour {
 
 	public int startingLife = 2;
 	public GameObject[] dropWhenDead;
+	public EnemyLifebar enemyLifebar;
 	int life = 999;
 	bool isDead = false;
 
@@ -28,6 +29,11 @@ public class EnemyLife : MonoBehaviour {
 			if(damage > 0){
 				life -= damage;
 				flickerWhenDamage.startFlickering();
+
+				float lifeFloat = life;
+				float startingLifeFloat = startingLife;
+				enemyLifebar.changePercentage(lifeFloat/startingLifeFloat);
+
 				stalkerNavMeshScript.SeePlayer();
 			}
 		}
