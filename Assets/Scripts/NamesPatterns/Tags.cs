@@ -18,4 +18,5 @@ public class Tags : MonoBehaviour {
 	public const string pauseObject = "PauseObject";
 	public const string gameOverObject = "GameOverObject";
 	public const string screenMessageText = "ScreenMessageText";
+	public const string lowLifeObject = "LowLifeObject";
 }
