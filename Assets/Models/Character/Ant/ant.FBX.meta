@@ -91,8 +91,8 @@ ModelImporter:
     400082: formiga:formiga2
     4300000: formiga:formiga2
     4300002: formiga1:formiga
-    7400000: walk
-    7400002: attack
+    7400000: Walk_Ant
+    7400002: Attack_Ant
     9500000: //RootNode
     13700000: formiga1:formiga
     13700002: formiga:formiga2
@@ -117,7 +117,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: walk
+      name: Walk_Ant
       takeName: Take 001
       firstFrame: 0
       lastFrame: 14
@@ -232,7 +232,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: attack
+      name: Attack_Ant
       takeName: Take 001
       firstFrame: 15
       lastFrame: 24
@@ -253,7 +253,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 1
+        functionName: AttackFinish
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 506dc0fb05aa40f43827fc083b58161f,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0
+        functionName: AttackHitBoxStart
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 506dc0fb05aa40f43827fc083b58161f,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
