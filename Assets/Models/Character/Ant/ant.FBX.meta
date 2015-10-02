@@ -93,7 +93,7 @@ ModelImporter:
     4300002: formiga1:formiga
     7400000: Walk_Ant
     7400002: Attack_Ant
-    7400004: Take 001
+    7400004: Idle_Ant
     9500000: //RootNode
     13700000: formiga1:formiga
     13700002: formiga:formiga2
@@ -364,7 +364,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Take 001
+      name: Idle_Ant
       takeName: Take 001
       firstFrame: 25
       lastFrame: 45
