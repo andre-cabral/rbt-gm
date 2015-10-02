@@ -13,6 +13,7 @@ public class PlayerSeeingArea : MonoBehaviour {
 		if(lastBellHeard != null){
 			if(!lastBellHeard.getRinging()){
 				lastBellHeard = null;
+				stalkerNavMeshScript.resetLastPlayerSeen();
 				stalkerNavMeshScript.setIsSeeingPlayer(false);
 			}
 		}

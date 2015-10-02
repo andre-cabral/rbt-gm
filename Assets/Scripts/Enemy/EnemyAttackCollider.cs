@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnemyAttackCollider : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class EnemyAttackCollider : MonoBehaviour {
 
 	private GameObject characterClassesContainerObject;
 	private GameObject playerPower;
+	private ChangeClass changeClass;
 	private PowerClassMovement powerClassScript;
 	private GameObject playerStealth;
 	private StealthClassMovement stealthClassScript;
@@ -20,13 +22,22 @@ public class EnemyAttackCollider : MonoBehaviour {
 		//Used transform.Find on the active parent object "CharacterClassesContainer"
 		//because GameObject.FindGameObjectsWithTag cant find inactive Game Objects
 		characterClassesContainerObject = GameObject.FindGameObjectWithTag(Tags.characterClassesContainer);
+		changeClass = characterClassesContainerObject.GetComponent<ChangeClass>();
 
-		playerPower = characterClassesContainerObject.transform.Find(ClassesObjectsNames.power).gameObject;
-		powerClassScript = playerPower.GetComponent<PowerClassMovement>();
+	}
 
-		playerStealth = characterClassesContainerObject.transform.Find(ClassesObjectsNames.stealth).gameObject;
-		stealthClassScript = playerStealth.GetComponent<StealthClassMovement>();
-
+	void Start(){
+		List<GameObject> allClassesObjects = changeClass.GetClassesObjects();
+		foreach(GameObject characterClassToGet in allClassesObjects){
+			if(characterClassToGet.name == ClassesObjectsNames.power){
+				playerPower = characterClassToGet;
+				powerClassScript = playerPower.GetComponent<PowerClassMovement>();
+			}
+			if(characterClassToGet.name == ClassesObjectsNames.stealth){
+				playerStealth = characterClassToGet;
+				stealthClassScript = playerStealth.GetComponent<StealthClassMovement>();
+			}
+		}
 	}
 
 
