@@ -30,6 +30,8 @@ public class DefaultMovement : MonoBehaviour {
 	public float groundedObjectRadius = 0.05f;
 	public LayerMask layerFloor;
 
+	public GameObject hitIconPrefab;
+
 	private bool canWalk = true;
 	private bool canJump = true;
 	private bool stoppedOnAnimation = false;
@@ -285,7 +287,7 @@ public class DefaultMovement : MonoBehaviour {
 		GameObject collidedObject = collider.gameObject;
 
 		if( !flickerWhenDamaged.getFlicker() && collidedObject.tag == Tags.enemyAttackCollider){
-			TakeDamage(collidedObject);
+			TakeDamage(collidedObject, collider.transform.position);
 		}
 
 	}
@@ -295,9 +297,10 @@ public class DefaultMovement : MonoBehaviour {
 
 //########Damage START
 //###########################################
-	void TakeDamage(GameObject collidedObject){
+	void TakeDamage(GameObject collidedObject, Vector3 colliderPosition){
 		EnemyAttackCollider enemyAttackColliderScript = collidedObject.GetComponent<EnemyAttackCollider>();
 		if(enemyAttackColliderScript.DamageDealt() > 0){
+			Instantiate(hitIconPrefab, colliderPosition, hitIconPrefab.transform.rotation);
 			LifeLoss(enemyAttackColliderScript.DamageDealt());
 		}
 	}

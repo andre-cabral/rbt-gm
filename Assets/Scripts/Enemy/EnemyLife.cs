@@ -6,6 +6,7 @@ public class EnemyLife : MonoBehaviour {
 	public int startingLife = 2;
 	public GameObject[] dropWhenDead;
 	public EnemyLifebar enemyLifebar;
+	public GameObject hitIconPrefab;
 	int life = 999;
 	bool isDead = false;
 
@@ -33,6 +34,8 @@ public class EnemyLife : MonoBehaviour {
 				float lifeFloat = life;
 				float startingLifeFloat = startingLife;
 				enemyLifebar.changePercentage(lifeFloat/startingLifeFloat);
+
+				Instantiate(hitIconPrefab, collider.transform.position, hitIconPrefab.transform.rotation);
 
 				stalkerNavMeshScript.SeePlayer();
 			}

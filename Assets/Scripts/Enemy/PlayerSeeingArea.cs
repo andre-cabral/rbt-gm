@@ -7,6 +7,7 @@ public class PlayerSeeingArea : MonoBehaviour {
 	public PatrolAndStalkMovement stalkerNavMeshScript;
 	public bool canSeeStealthPlayer = false;
 	public bool needLineOfSightToGetPlayer = false;
+	public bool canHearPlayer = false;
 	Bell lastBellHeard;
 
 	void Update(){
@@ -33,6 +34,7 @@ public class PlayerSeeingArea : MonoBehaviour {
 				if(canSeePlayer){
 					stalkerNavMeshScript.setLastPlayerSeen(collidedObject.transform.position);
 					if(!stalkerNavMeshScript.getIsSeeingPlayer() ){
+						SetIcon();
 						stalkerNavMeshScript.setIsSeeingPlayer(true);
 					}
 				}
@@ -44,6 +46,7 @@ public class PlayerSeeingArea : MonoBehaviour {
 				lastBellHeard = collidedObject.GetComponent<Bell>();
 				stalkerNavMeshScript.setLastPlayerSeen(collidedObject.transform.position);
 				if(!stalkerNavMeshScript.getIsSeeingPlayer() ){
+					SetHearIcon();
 					stalkerNavMeshScript.setIsSeeingPlayer(true);
 				}
 			}
@@ -73,6 +76,20 @@ public class PlayerSeeingArea : MonoBehaviour {
 		}
 		
 		return hasLOS;
+	}
+
+	void SetIcon(){
+		stalkerNavMeshScript.DeactivateAllIcons();
+		if(canHearPlayer){
+			stalkerNavMeshScript.ActivatePlayerHeard();
+		}else{
+			stalkerNavMeshScript.ActivatePlayerSeen();
+		}
+	}
+
+	void SetHearIcon(){
+		stalkerNavMeshScript.DeactivateAllIcons();
+		stalkerNavMeshScript.ActivatePlayerHeard();
 	}
 	
 }

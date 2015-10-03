@@ -14,9 +14,12 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 	private int vectorIndex = 1;
 	
 	private Vector3 lastPlayerSeenResetPosition = new Vector3(9999f,9999f,9999f);
-	public Vector3 lastPlayerSeen = new Vector3(9999f,9999f,9999f);
+	private Vector3 lastPlayerSeen = new Vector3(9999f,9999f,9999f);
 	private bool isSeeingPlayer = false;
 	private Vector3 destination;
+
+	public GameObject playerSeenObject;
+	public GameObject playerHeardObject;
 	
 	private ChangeClass changeClassContainerScript;
 	
@@ -139,6 +142,24 @@ public class PatrolAndStalkMovement : MonoBehaviour {
 		lastPlayerSeen = changeClassContainerScript.GetActiveClass().transform.position;
 	}
 	//########Stalk Movement END
+	//###########################################
+
+
+	//########Icons Management START
+	//###########################################
+	public void ActivatePlayerHeard(){
+		playerHeardObject.SetActive(true);
+	}
+
+	public void ActivatePlayerSeen(){
+		playerSeenObject.SetActive(true);
+	}
+
+	public void DeactivateAllIcons(){
+		playerHeardObject.SetActive(false);
+		playerSeenObject.SetActive(false);
+	}
+	//########Icons Management END
 	//###########################################
 	
 	
