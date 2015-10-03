@@ -1,0 +1,3 @@
+- grupo de 3 formigas simplesmente desligaram ia em determinado momento. não consegui reproduzir.
+- algo bugou a velocidade de caminhada do stealth, ficou lentão. não consegui reproduzir.
+- durante a mudança de modo combate o personagem não perde vida. não consegui reproduzir.
