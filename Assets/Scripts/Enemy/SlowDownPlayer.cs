@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class SlowDownPlayer : MonoBehaviour {
-	public float speedToReduceFromPlayerSpeed = 0.01f;
-	public float timeReducingSpeed = 2f;
+	public float speedToReduceFromPlayerSpeed = 0.02f;
+	public float timeReducingSpeed = 10f;
 	public float timeToDestroyOnWall = 0.5f;
+	public bool useSelfYPosition = true;
 	private Collider colliderComponent;
 	private bool collidedWithPlayer = false;
 	private ChangeClass changeClassScript;
@@ -17,7 +18,7 @@ public class SlowDownPlayer : MonoBehaviour {
 	private float timePassed = 0f;
 	private Rigidbody rb;
 
-	void Awake(){
+	public virtual void Awake(){
 		changeClassScript = GameObject.FindGameObjectWithTag(Tags.characterClassesContainer).GetComponent<ChangeClass>();
 
 		rb = GetComponent<Rigidbody>();
@@ -48,7 +49,7 @@ public class SlowDownPlayer : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter(Collider collider){
+	public virtual void OnTriggerEnter(Collider collider){
 		if(collider.tag == Tags.wall && !collidedWithPlayer){
 			Destroy(this.gameObject, timeToDestroyOnWall);
 		}
@@ -68,7 +69,12 @@ public class SlowDownPlayer : MonoBehaviour {
 	}
 	*/
 	void FollowPlayer(){
-		transform.position = changeClassScript.GetActiveClass().transform.position /*- positionFromPlayer*/;
+		if(useSelfYPosition){
+			Vector3 activeClassPosition = changeClassScript.GetActiveClass().transform.position;
+			transform.position = new Vector3(activeClassPosition.x, transform.position.y, activeClassPosition.z);
+		}else{
+			transform.position = changeClassScript.GetActiveClass().transform.position /*- positionFromPlayer*/;
+		}
 	}
 
 	void ObjectStopOnPlayer(Collider collidedTarget){
@@ -120,4 +126,8 @@ public class SlowDownPlayer : MonoBehaviour {
 	}
 //########Slow Down Effect END
 //###########################################
+
+	public bool getCollidedWithPlayer(){
+		return collidedWithPlayer;
+	}
 }

@@ -11,6 +11,7 @@ public class SpiderWebAttack : MonoBehaviour {
 
 	public GameObject webPrefab;
 	public Transform webPosition;
+	public float webYPosition = 1f;
 	public float webForce = 10f;
 	public float angleFromPlayerToAttack = 10f;
 	private GameObject lastWeb;
@@ -66,7 +67,8 @@ public class SpiderWebAttack : MonoBehaviour {
 	//function called with an event in the attack animation, when the hitbox should start to cause damage
 	public void AttackWebLaunch(){
 		lastWeb = Instantiate(webPrefab);
-		lastWeb.transform.position = webPosition.transform.position;
+		lastWeb.transform.position = new Vector3 (webPosition.transform.position.x, webYPosition, webPosition.transform.position.z);
+		lastWeb.transform.rotation = transform.rotation;
 		lastWeb.GetComponent<Rigidbody>().AddForce(transform.forward*webForce);
 	}
 	

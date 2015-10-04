@@ -8,8 +8,8 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     4300000: Sphere001
-    7400000: Grudando
-    7400002: Voando
+    7400000: Hit_Web
+    7400002: Flying_Web
     9500000: //RootNode
     13700000: //RootNode
   materials:
@@ -33,7 +33,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Voando
+      name: Flying_Web
       takeName: Take 001
       firstFrame: 0
       lastFrame: 10
@@ -61,7 +61,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Grudando
+      name: Hit_Web
       takeName: Take 001
       firstFrame: 10
       lastFrame: 12
