@@ -71,11 +71,15 @@ public class DefaultMovement : MonoBehaviour {
 		ragDollObjects = GetObjectsWithRigidbody(ragDollObjects);
 		ragDollRigidbodies = GetRigidbodiesFromObjects(ragDollObjects);
 
-		DefaultMovement.pauseObjects = GameObject.FindGameObjectsWithTag(Tags.pauseObject);
-		DefaultMovement.setPause(false);
+		if(GameObject.FindGameObjectsWithTag(Tags.pauseObject).Length != 0){
+			DefaultMovement.pauseObjects = GameObject.FindGameObjectsWithTag(Tags.pauseObject);
+			DefaultMovement.setPause(false);
+		}
 
-		DefaultMovement.gameOverObjects = GameObject.FindGameObjectsWithTag(Tags.gameOverObject);
-		DefaultMovement.setGameOverObjects(false);
+		if(GameObject.FindGameObjectsWithTag(Tags.gameOverObject).Length != 0){
+			DefaultMovement.gameOverObjects = GameObject.FindGameObjectsWithTag(Tags.gameOverObject);
+			DefaultMovement.setGameOverObjects(false);
+		}
 	}
 
 
@@ -118,10 +122,6 @@ public class DefaultMovement : MonoBehaviour {
 
 		if(!isDead && !stoppedOnAnimation){
 			RotateToMouse();
-		}
-		
-		if(Input.GetKey("e")){
-			playerRigidbody.AddForce(0f,150f,0f);
 		}
 		
 	}

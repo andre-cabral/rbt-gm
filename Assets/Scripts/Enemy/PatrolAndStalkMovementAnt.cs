@@ -10,6 +10,10 @@ public class PatrolAndStalkMovementAnt : PatrolAndStalkMovement {
 	
 	public override void Awake(){
 		base.Awake();
+
+		lastPlayerSeenAnt = new Vector3(9999f,9999f,9999f);
+		anyAntCanSeePlayer = false;
+		lastAntWhoSeenPlayer = null;
 	}
 	
 	public override void Update(){

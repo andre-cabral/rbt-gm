@@ -79,7 +79,7 @@ public class StealthClassMovement : MonoBehaviour {
 //###########################################
 	void StartRunning(){
 		if(!running){
-			gameObject.name = ClassesObjectsNames.stealthRunning;
+			//gameObject.name = ClassesObjectsNames.stealthRunning;
 			defaultMovementScript.setMovementSpeed(runningSpeed);
 			animator.SetBool(hashStealth.run, true);
 			running = true;
@@ -88,7 +88,7 @@ public class StealthClassMovement : MonoBehaviour {
 
 	void EndRunning(){
 		if(running){
-			gameObject.name = ClassesObjectsNames.stealth;
+			//gameObject.name = ClassesObjectsNames.stealth;
 			defaultMovementScript.setMovementSpeed(walkingSpeed);
 			animator.SetBool(hashStealth.run, false);
 			running = false;
@@ -101,6 +101,10 @@ public class StealthClassMovement : MonoBehaviour {
 
 	public bool getIsDodging(){
 		return isDodging;
+	}
+
+	public bool getRunning(){
+		return running;
 	}
 
 }

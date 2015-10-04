@@ -23,11 +23,15 @@ public class PlayerSeeingArea : MonoBehaviour {
 	void OnTriggerStay(Collider collider) {
 		GameObject collidedObject = collider.gameObject;
 		if(collidedObject.tag == Tags.characterClass){
-			if( (canSeeStealthPlayer || collidedObject.name != ClassesObjectsNames.stealth) 
-			   && stalkerNavMeshScript.getLastPlayerSeen() != collidedObject.transform.position){
+			if(stalkerNavMeshScript.getLastPlayerSeen() != collidedObject.transform.position){
 				
 				bool canSeePlayer = true;
-				if(needLineOfSightToGetPlayer){
+				//check if stealth is running
+				if(canSeePlayer && !canSeeStealthPlayer && collidedObject.name == ClassesObjectsNames.stealth){
+					canSeePlayer = collidedObject.GetComponent<StealthClassMovement>().getRunning();
+				}
+				//check if need LOS or if its a hearing area
+				if(canSeePlayer && needLineOfSightToGetPlayer){
 					canSeePlayer = HasLineOfSight(enemyTransform.position, collidedObject.transform.position);
 				}
 				
