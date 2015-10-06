@@ -51,7 +51,7 @@ public class EnemyLife : MonoBehaviour {
 			isDead = true;
 			if(dropWhenDead.Length >0){
 				for(int i=0; i<dropWhenDead.Length; i++){
-					GameObject objectInstatiated = (GameObject)Instantiate(dropWhenDead[i], transform.position, transform.rotation);
+					GameObject objectInstatiated = (GameObject)Instantiate(dropWhenDead[i], transform.position, dropWhenDead[i].transform.rotation);
 				}
 			}
 			Destroy(gameObject);

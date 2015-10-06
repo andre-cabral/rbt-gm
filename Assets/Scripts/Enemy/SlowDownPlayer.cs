@@ -7,8 +7,10 @@ public class SlowDownPlayer : MonoBehaviour {
 	public float timeReducingSpeed = 10f;
 	public float timeToDestroyOnWall = 0.5f;
 	public bool useSelfYPosition = true;
+	public bool rotateWithTarget = true;
 	private Collider colliderComponent;
 	private bool collidedWithPlayer = false;
+	Quaternion startingRotation;
 	private ChangeClass changeClassScript;
 	private Vector3 positionFromPlayer = new Vector3();
 	private DefaultMovement[] allPlayersMovements;
@@ -23,6 +25,8 @@ public class SlowDownPlayer : MonoBehaviour {
 
 		rb = GetComponent<Rigidbody>();
 		colliderComponent = GetComponent<Collider>();
+
+		startingRotation = transform.rotation;
 	}
 
 	void Start(){
@@ -74,6 +78,13 @@ public class SlowDownPlayer : MonoBehaviour {
 			transform.position = new Vector3(activeClassPosition.x, transform.position.y, activeClassPosition.z);
 		}else{
 			transform.position = changeClassScript.GetActiveClass().transform.position /*- positionFromPlayer*/;
+		}
+
+		if(rotateWithTarget){
+			//to add two quaternions, you need to multiply them
+			//to subtract you use the inverse:
+			//transform.rotation = newRotation * Quaternion.Inverse(otherTransform.rotation) 
+			transform.rotation = startingRotation * changeClassScript.GetActiveClass().transform.rotation;
 		}
 	}
 
