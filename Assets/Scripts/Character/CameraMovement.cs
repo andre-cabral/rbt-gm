@@ -6,6 +6,8 @@ public class CameraMovement : MonoBehaviour {
 	public GameObject characterClassesContainer;
 	//public float height = 15.5f;
 	public float distance = 10f;
+	public GameObject audioListenerObject;
+	//public float audioListenerDistance = 10f;
 	public float yAdjust = 0.1f;
 	public float minZoomDistance = 6f;
 	public float maxZoomDistance = 15f;
@@ -37,6 +39,8 @@ public class CameraMovement : MonoBehaviour {
 
 				Vector3 targetPosition = new Vector3(classObject.transform.position.x, distance + (yAdjust * distance), classObject.transform.position.z-distance);
 				transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, Time.deltaTime * smoothVelocity);
+
+				audioListenerObject.transform.position = classObject.transform.position;
 			}
 		}
 	}

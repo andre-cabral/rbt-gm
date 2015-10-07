@@ -10,7 +10,7 @@ public class EnemyAttackCollider : MonoBehaviour {
 	public bool isDodgeable = true;
 	private bool isDodged = false;
 	private int damageReduction = 0;
-	public AudioSource damageSound;
+	public AudioClip damageSound;
 
 	private GameObject characterClassesContainerObject;
 	private GameObject playerPower;
@@ -100,9 +100,7 @@ public class EnemyAttackCollider : MonoBehaviour {
 
 	void PlayDamageSound(){
 		if(damageSound != null){
-			if(!damageSound.isPlaying){
-				damageSound.Play();
-			}
+			AudioSource.PlayClipAtPoint(damageSound, transform.position);
 		}
 	}
 

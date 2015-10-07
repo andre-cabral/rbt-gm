@@ -4,7 +4,7 @@ using System.Collections;
 public class GetGreenKey : MonoBehaviour {
 
 	public string message;
-	public GameObject gotKeySoundObject;
+	public AudioClip gotKeySound;
 	private ScreenMessageManager screenMessageManager;
 	private InventoryManager inventory;
 
@@ -18,7 +18,7 @@ public class GetGreenKey : MonoBehaviour {
 		if(col.gameObject.tag == Tags.characterClass){
 			inventory.setHasGreenKey(true);
 			screenMessageManager.NewMessage(message);
-			Instantiate(gotKeySoundObject, transform.position, transform.rotation);
+			AudioSource.PlayClipAtPoint(gotKeySound, transform.position);
 			Destroy(gameObject);
 		}
 	}

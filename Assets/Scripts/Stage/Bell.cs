@@ -29,7 +29,9 @@ public class Bell : MonoBehaviour {
 			if(!(ringOnlyOnce && ringed)){
 				ringing = true;
 				ringed = true;
-				bellSound.Play();
+				if(bellSound != null){
+					bellSound.Play();
+				}
 				gameObject.tag = Tags.bellRinging;
 			}
 		}
