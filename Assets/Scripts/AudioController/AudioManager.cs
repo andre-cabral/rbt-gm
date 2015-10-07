@@ -51,6 +51,14 @@ public class AudioManager : MonoBehaviour {
 		//musicVolume = volume;
 	}
 
+	public static void StopAllMusic(){
+		foreach(AudioSource soundToCheck in audioSounds.Values){
+			if(soundToCheck.tag == Tags.backgroundMusicObject){
+				soundToCheck.Stop();
+			}
+		}
+	}
+
 	public static void PlaySound(string soundName, Vector3 positionToPlay){
 		audioSounds[soundName].transform.position = positionToPlay;
 		audioSounds[soundName].PlayOneShot(audioSounds[soundName].clip);

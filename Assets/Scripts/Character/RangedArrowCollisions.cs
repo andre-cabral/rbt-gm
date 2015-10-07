@@ -3,8 +3,8 @@ using System.Collections;
 
 public class RangedArrowCollisions : MonoBehaviour {
 
-	public AudioClip hitOnWallSound;
-	public AudioClip hitOnEnemySound;
+	public AudioNames hitOnWallSound;
+	public AudioNames hitOnEnemySound;
 	Rigidbody arrowRigidBody;
 	Collider arrowCollider;
 	public float timeToDestroy = 0.2f;
@@ -16,10 +16,10 @@ public class RangedArrowCollisions : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collider){
 		if(collider.tag == Tags.enemy){
-			AudioSource.PlayClipAtPoint(hitOnEnemySound, transform.position);
+			AudioManager.PlaySound(hitOnEnemySound.ToString(), transform.position);
 		}
 		if(collider.tag == Tags.wall){
-			AudioSource.PlayClipAtPoint(hitOnWallSound, transform.position);
+			AudioManager.PlaySound(hitOnWallSound.ToString(), transform.position);
 		}
 		if(collider.tag == Tags.enemy || collider.tag == Tags.wall || collider.tag == Tags.bell){
 			ArrowStopOnTarget(collider);

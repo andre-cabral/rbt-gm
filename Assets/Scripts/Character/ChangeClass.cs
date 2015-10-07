@@ -9,7 +9,7 @@ public class ChangeClass : MonoBehaviour {
 	public GameObject class0;
 	public GameObject class1;
 	public GameObject class2;
-	public AudioClip changeClassSound; 
+	public AudioNames changeClassSound; 
 	private List<GameObject> classesObjects = new List<GameObject>();
 
 	void Awake(){
@@ -37,7 +37,8 @@ public class ChangeClass : MonoBehaviour {
 		}
 
 		classSelected.SetActive(true);
-		AudioSource.PlayClipAtPoint(changeClassSound, classSelected.transform.position);
+
+		AudioManager.PlaySound(changeClassSound.ToString(), classSelected.transform.position);
 
 		changingClass = false;
 

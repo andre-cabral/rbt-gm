@@ -4,7 +4,7 @@ using System.Collections;
 public class HealthPickup : MonoBehaviour {
 
 	public int lifeToGain = 1;
-	public AudioClip healthGotSound;
+	public AudioNames healthGotSound;
 	private LifeManager lifeManager;
 	
 	void Awake(){
@@ -22,7 +22,7 @@ public class HealthPickup : MonoBehaviour {
 		if(lifeManager.GetLife() < lifeManager.maxLife){
 			lifeManager.LifeGain(lifeToGain);
 			if(healthGotSound != null){
-				AudioSource.PlayClipAtPoint(healthGotSound, transform.position);
+				AudioManager.PlaySound(healthGotSound.ToString(), transform.position);
 			}
 			Destroy(gameObject);
 		}
