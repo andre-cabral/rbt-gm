@@ -16,5 +16,9 @@ public enum AudioNames{
 	Arrow_Hit_On_Enemy,
 	Arrow_Hit_On_Wall,
 	Punch_Hit_Tough_Player,
-	Punch_Tough_Player
+	Punch_Tough_Player,
+	Web_Hit_Player,
+	Web_Shooted,
+	Need_Key_To_Enter_Exit,
+	Arrow_Shooted
 };

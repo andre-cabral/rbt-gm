@@ -55,6 +55,7 @@ public class RangedClassMovement : MonoBehaviour {
 		latestArrowRigidBody.isKinematic = false;
 		latestArrowRigidBody.AddForce( arrowForce * transform.forward );
 		latestArrow.GetComponent<Collider>().enabled = true;
+		latestArrow.GetComponent<AudioSource>().Play();
 	}
 
 	void ShootingAnimationEnd(){
