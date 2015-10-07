@@ -42,6 +42,7 @@ public class DefaultMovement : MonoBehaviour {
 	private Collider playerCollider;
 	private Rigidbody playerRigidbody;
 	public static GameObject[] gameOverObjects;
+	public AudioSource gameOverSound;
 
 	public static bool isPaused = false;
 	public static GameObject[] pauseObjects;
@@ -489,6 +490,7 @@ public class DefaultMovement : MonoBehaviour {
 
 		if(lifeManager.GetLife() <= 0){
 			setIsDead(true);
+			gameOverSound.Play();
 			DefaultMovement.setGameOverObjects(true);
 		}
 	}

@@ -5,6 +5,7 @@ public class Bell : MonoBehaviour {
 
 	public float timeToRing = 3f;
 	public bool ringOnlyOnce = true;
+	public AudioSource bellSound;
 	bool ringed = false;
 	bool ringing = false;
 	float timeRinged = 0f;
@@ -28,6 +29,7 @@ public class Bell : MonoBehaviour {
 			if(!(ringOnlyOnce && ringed)){
 				ringing = true;
 				ringed = true;
+				bellSound.Play();
 				gameObject.tag = Tags.bellRinging;
 			}
 		}

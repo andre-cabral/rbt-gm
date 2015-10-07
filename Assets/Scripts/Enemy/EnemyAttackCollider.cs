@@ -10,6 +10,7 @@ public class EnemyAttackCollider : MonoBehaviour {
 	public bool isDodgeable = true;
 	private bool isDodged = false;
 	private int damageReduction = 0;
+	public AudioSource damageSound;
 
 	private GameObject characterClassesContainerObject;
 	private GameObject playerPower;
@@ -85,12 +86,22 @@ public class EnemyAttackCollider : MonoBehaviour {
 	public int DamageDealt(){
 		if( (playerPower.activeSelf && !isBlockable) || (playerStealth.activeSelf && !isDodgeable) 
 		   || (playerPower.activeSelf && !isBlocked) || (playerStealth.activeSelf && !isDodged) ){
+			PlayDamageSound();
 			return damage;
 		}else{
 			if(damage > damageReduction ){
+				PlayDamageSound();
 				return damage - damageReduction;
 			}else{
 				return 0;
+			}
+		}
+	}
+
+	void PlayDamageSound(){
+		if(damageSound != null){
+			if(!damageSound.isPlaying){
+				damageSound.Play();
 			}
 		}
 	}

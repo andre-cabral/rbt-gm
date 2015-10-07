@@ -4,6 +4,9 @@ using System.Collections;
 public class BeeExplosionAttack : MonoBehaviour {
 	
 	public float attackDelay = 1f;
+	public float soundDelay = 0.5f;
+	//public GameObject explosionSoundObject;
+	//bool playedSound = false;
 	private Animator enemyAnimator;
 	private HashAnimatorStalkerEnemy hashAnimator;
 	
@@ -61,6 +64,12 @@ public class BeeExplosionAttack : MonoBehaviour {
 	
 	void AttackDelayCounter(){
 		if(attackDelay >= attackingDelayPassed){
+			/*
+			if(!playedSound && soundDelay <= attackingDelayPassed){
+				playedSound = true;
+				Instantiate(explosionSoundObject, transform.position, transform.rotation);
+			}
+			*/
 			attackingDelayPassed += Time.deltaTime;
 		}else{
 			AttackDelayFinish();

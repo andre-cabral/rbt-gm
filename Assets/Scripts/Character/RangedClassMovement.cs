@@ -63,7 +63,7 @@ public class RangedClassMovement : MonoBehaviour {
 
 	void NewArrow(){
 		isArrowFollowingPositionObject = true;
-		latestArrow = new GameObject();
+		//latestArrow = new GameObject();
 		latestArrow = Instantiate(arrowPrefab);
 		latestArrowRigidBody = latestArrow.GetComponent<Rigidbody>();
 		latestArrow.transform.SetParent(arrowPositionObject.transform);

@@ -46,12 +46,21 @@ public class PlayerSeeingArea : MonoBehaviour {
 			}
 		}
 		if(collidedObject.tag == Tags.bellRinging){
-			if(stalkerNavMeshScript.getLastPlayerSeen() == stalkerNavMeshScript.getLastPlayerSeenResetPosition()){
-				lastBellHeard = collidedObject.GetComponent<Bell>();
-				stalkerNavMeshScript.setLastPlayerSeen(collidedObject.transform.position);
-				if(!stalkerNavMeshScript.getIsSeeingPlayer() ){
-					SetHearIcon();
-					stalkerNavMeshScript.setIsSeeingPlayer(true);
+
+			bool canSeePlayer = true;
+			//check if need LOS or if its a hearing area
+			if(canSeePlayer && needLineOfSightToGetPlayer){
+				canSeePlayer = HasLineOfSight(enemyTransform.position, collidedObject.transform.position);
+			}
+
+			if(canSeePlayer){
+				if(stalkerNavMeshScript.getLastPlayerSeen() == stalkerNavMeshScript.getLastPlayerSeenResetPosition()){
+					lastBellHeard = collidedObject.GetComponent<Bell>();
+					stalkerNavMeshScript.setLastPlayerSeen(collidedObject.transform.position);
+					if(!stalkerNavMeshScript.getIsSeeingPlayer() ){
+						SetHearIcon();
+						stalkerNavMeshScript.setIsSeeingPlayer(true);
+					}
 				}
 			}
 		}
