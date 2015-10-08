@@ -14,6 +14,6 @@ public class MusicPlay : MonoBehaviour {
 	
 	public void PlayTheMusic () {
 		AudioManager.StopAllMusic();
-		AudioManager.PlaySound(musicToPlay.ToString(), transform.position);
+		AudioManager.PlayMusic(musicToPlay.ToString(), transform.position);
 	}
 }

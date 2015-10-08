@@ -8,6 +8,7 @@ public class LifeManager : MonoBehaviour {
 	HealthbarObjects healthBarObjects;
 	GameObject[] lowLifeObjects;
 	int lifePoints;
+	CameraEffects cameraEffects;
 
 	void Awake () {
 		//if there will be persistence on life, get the life here
@@ -15,6 +16,8 @@ public class LifeManager : MonoBehaviour {
 		lowLifeObjects = GameObject.FindGameObjectsWithTag(Tags.lowLifeObject);
 		SetLowLifeObjects(false);
 		lifePoints = initialLife;
+
+		cameraEffects = Camera.main.GetComponent<CameraEffects>();
 	}
 
 	public void LifeGain(int gainedLife){
@@ -29,6 +32,7 @@ public class LifeManager : MonoBehaviour {
 
 	public void LifeLoss (int lifeToLose){
 		lifePoints -= lifeToLose;
+		cameraEffects.StartChromaticAberrationChange();
 		changedLife();
 	}
 

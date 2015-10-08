@@ -7,8 +7,8 @@ public class AudioManager : MonoBehaviour {
 	static AudioManager audioManager;
 	public static Dictionary<string, AudioSource> audioSounds;
 	Dictionary<string, float> backgroundMusicStartingVolume;
-	float musicVolume = 1f;
-	float effectsVolume = 1f;
+	static float musicVolume = 1f;
+	static float effectsVolume = 1f;
 
 	void Awake () {
 		if(audioManager == null){
@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour {
 	public void SetEffectsVolume(float volume){
 		volume = Mathf.Clamp(volume, 0.0f, 1.0f);
 		AudioListener.volume = volume;
-		//effectsVolume = volume;
+		effectsVolume = volume;
 	}
 
 	public void SetMusicVolume(float volume){
@@ -48,7 +48,7 @@ public class AudioManager : MonoBehaviour {
 				soundToCheck.volume = backgroundMusicStartingVolume[soundToCheck.name] * volume;
 			}
 		}
-		//musicVolume = volume;
+		musicVolume = volume;
 	}
 
 	public static void StopAllMusic(){
@@ -64,11 +64,24 @@ public class AudioManager : MonoBehaviour {
 		audioSounds[soundName].PlayOneShot(audioSounds[soundName].clip);
 	}
 
+	public static void PlayMusic(string musicName, Vector3 positionToPlay){
+		audioSounds[musicName].transform.position = positionToPlay;
+		audioSounds[musicName].Play();
+	}
+
 	public static GameObject CopySound(string soundName, Transform parentTransform){
 		GameObject soundCopiedObject = Instantiate(audioSounds[soundName].gameObject);
 		soundCopiedObject.transform.parent = parentTransform;
 		soundCopiedObject.transform.localPosition = Vector3.zero;
 
 		return soundCopiedObject;
+	}
+
+	public static float getMusicVolume(){
+		return musicVolume;
+	}
+
+	public static float getEffectsVolume(){
+		return effectsVolume;
 	}
 }
