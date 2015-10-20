@@ -14,6 +14,10 @@ public class CameraMovement : MonoBehaviour {
 	public float zoomSpeed = 1f;
 	public float zoomSpeedMouseScrollZoomAxis = 100f;
 	public float smoothVelocity = 7f;
+	public bool followMouse = true;
+	public float mouseFollowXLimit = 3f;
+	public float mouseFollowYLimit = 3f;
+	Vector3 mouseFollowPosition = Vector3.zero;
 
 	private List<GameObject> classesObjects;
 
@@ -37,7 +41,12 @@ public class CameraMovement : MonoBehaviour {
 				//transform.LookAt(classObject.transform.position);
 				//Vector3 targetPosition = new Vector3(classObject.transform.position.x, height, classObject.transform.position.z-distance);
 
-				Vector3 targetPosition = new Vector3(classObject.transform.position.x, distance + (yAdjust * distance), classObject.transform.position.z-distance);
+				if(followMouse){
+					mouseFollowPosition = Input.mousePosition;
+					mouseFollowPosition = new Vector3( ((mouseFollowPosition.x/Screen.width)-0.5f)*2*mouseFollowXLimit, ((mouseFollowPosition.y/Screen.height)-0.5f)*2*mouseFollowYLimit, 0f);
+				}
+
+				Vector3 targetPosition = new Vector3(classObject.transform.position.x+mouseFollowPosition.x, distance + (yAdjust * distance), classObject.transform.position.z-distance+mouseFollowPosition.y);
 				transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, Time.deltaTime * smoothVelocity);
 
 				audioListenerObject.transform.position = classObject.transform.position;
