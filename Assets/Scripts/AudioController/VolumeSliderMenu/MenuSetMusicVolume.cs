@@ -14,6 +14,6 @@ public class MenuSetMusicVolume : MonoBehaviour {
 	}
 	
 	public void SetMusicVolume(){
-		audioManager.SetMusicVolume(slider.value/100);
+		audioManager.SetMusicVolume(slider.value/slider.maxValue);
 	}
 }
