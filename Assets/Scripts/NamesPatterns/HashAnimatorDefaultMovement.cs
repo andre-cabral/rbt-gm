@@ -10,6 +10,7 @@ public class HashAnimatorDefaultMovement : MonoBehaviour {
 	public int grounded;
 	public int verticalSpeed;
 	public int jumpStart;
+	public int use;
 	
 	void Awake() {
 		valueX = Animator.StringToHash("ValueX");
@@ -19,5 +20,6 @@ public class HashAnimatorDefaultMovement : MonoBehaviour {
 		grounded = Animator.StringToHash("Grounded");
 		verticalSpeed = Animator.StringToHash("VerticalSpeed");
 		jumpStart = Animator.StringToHash("JumpStart");
+		use = Animator.StringToHash("Use");
 	}
 }

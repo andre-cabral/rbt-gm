@@ -474,6 +474,19 @@ public class DefaultMovement : MonoBehaviour {
 //########JUMP END
 //###########################################
 
+//########USE INTERACT START
+//###########################################
+	public void StartUse(Vector3 targetToLook){
+		transform.rotation = Quaternion.Euler(transform.rotation.x,Quaternion.LookRotation(targetToLook-transform.position).eulerAngles.y, transform.rotation.z);
+		stoppedOnAnimation = true;
+		animator.SetBool(hash.use, true);
+	}
+	public void EndUse(){
+		stoppedOnAnimation = false;
+	}
+//########USE INTERACT END
+//###########################################
+
 //########Life Manager START
 //###########################################
 	public void LifeGain(int gainedLife){
