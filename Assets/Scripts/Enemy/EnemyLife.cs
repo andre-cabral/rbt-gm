@@ -26,7 +26,7 @@ public class EnemyLife : MonoBehaviour {
 	void OnTriggerEnter(Collider collider){
 		GameObject collidedObject = collider.gameObject;
 		if( collidedObject.tag == Tags.playerAttackCollider && !flickerWhenDamage.getFlicker() ){
-			int damage = collidedObject.GetComponent<PlayerAttackCollider>().damage;
+			int damage = collidedObject.GetComponent<PlayerAttackCollider>().DamageToDeal();
 			if(damage > 0){
 				life -= damage;
 				flickerWhenDamage.startFlickering();
