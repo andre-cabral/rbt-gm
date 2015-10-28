@@ -8,15 +8,15 @@ public class VolumeSlider : MonoBehaviour {
 	public enum EffectsOrMusic{effects, music};
 	public EffectsOrMusic effectsOrMusic;
 
-	void Start () {
+	void OnEnable() {
 		slider = GetComponent<Slider>();
 
 		if(effectsOrMusic == EffectsOrMusic.effects){
-			slider.value = AudioManager.getEffectsVolume() * 100;
+			slider.value = AudioManager.getEffectsVolume() * 1;
 		}
 
 		if(effectsOrMusic == EffectsOrMusic.music){
-			slider.value = AudioManager.getMusicVolume() * 100;
+			slider.value = AudioManager.getMusicVolume() * 1;
 		}
 	}
 

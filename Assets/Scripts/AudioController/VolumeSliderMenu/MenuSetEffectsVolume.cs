@@ -14,6 +14,8 @@ public class MenuSetEffectsVolume : MonoBehaviour {
 	}
 	
 	public void SetEffectsVolume(){
-		audioManager.SetEffectsVolume(slider.value/slider.maxValue);
+		if(slider != null && audioManager != null){
+			audioManager.SetEffectsVolume(slider.value/slider.maxValue);
+		}
 	}
 }
