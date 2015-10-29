@@ -21,5 +21,6 @@ public enum AudioNames{
 	Web_Shooted,
 	Need_Key_To_Enter_Exit,
 	Arrow_Shooted,
-	Punch_Power_Up_Got
+	Punch_Power_Up_Got,
+	Message_New
 };
